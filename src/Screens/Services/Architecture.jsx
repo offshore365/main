@@ -415,7 +415,7 @@ const Architecture = () => {
     return () => clearInterval(interval);
   }, [features.length]);
 
-  const activeGradient = "linear-gradient(744deg, #00008B, #3A8DFF 60%, #87CEFA)";
+const activeGradient = "linear-gradient(744deg, #AFC5CD, #4F6D7A 35%, #3B5560 70%, #2C3E47)";
 
 
   return (

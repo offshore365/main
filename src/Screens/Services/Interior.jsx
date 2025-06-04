@@ -368,7 +368,7 @@ const Architecture = () => {
     return () => clearInterval(interval);
   }, [features.length]);
 
-  const activeGradient = "linear-gradient(744deg, #FF8C00  , #FFBF00 40%, #FFD700 80%)";
+const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65%, #D4B4A0)";
 
   return (
     <div className="min-h-screen">

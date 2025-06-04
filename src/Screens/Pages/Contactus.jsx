@@ -92,7 +92,7 @@ export default function ContactPage() {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-[32px] sm:text-[40px] md:text-[50px] font-extrabold tracking-wide mb-4 drop-shadow-2xl leading-tight"
+            className="text-[100px] font-extrabold tracking-wide mb-4 drop-shadow-2xl leading-tight"
           >
             Let’s Get Started
           </motion.h1>
@@ -101,7 +101,7 @@ export default function ContactPage() {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.2 }}
-            className="text-base sm:text-lg md:text-xl lg:text-[20px] font-light max-w-2xl mx-auto text-gray-200"
+            className="text-[20px] font-light max-w-2xl mx-auto text-white"
           >
             Power up your productivity with Offshore365
           </motion.p>
@@ -113,7 +113,7 @@ export default function ContactPage() {
                 boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-white text-[#003087] rounded-xl transition-all duration-300 text-base shadow-lg"
+              className="px-6 py-3 bg-white text-[#0d3557] regular rounded-xl transition-all duration-300 text-base shadow-lg"
             >
               Schedule a Consultation
             </motion.button>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-[#003087] transition-all duration-300 regular text-base shadow-lg"
+                className="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-[#0d3557] transition-all duration-300 regular text-base shadow-lg"
               >
                 Contact Our Team
               </motion.button>
@@ -135,7 +135,7 @@ export default function ContactPage() {
       </motion.section>
 
       <Contact />
-
+ {/* Map Section - Adelaide Office */}
       <section className="p-0 h-[400px] sm:h-[500px] relative">
         <div
           className="animate-on-scroll h-full"
@@ -146,60 +146,86 @@ export default function ContactPage() {
           }}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799160891!2d-74.25987368715491!3d40.697670063539654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sus!4v1703123456789!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.8234567890!2d138.5234567890!3d-34.8876543210!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0c123456789ab%3A0x123456789abcdef0!2s76%20Wood%20Ave%2C%20Ridleyton%20SA%205008%2C%20Australia!5e0!3m2!1sen!2sus!4v1703123456789!5m2!1sen!2sus"
             width="100%"
             height="100%"
             className="border-0"
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Our Location"
+            title="Adelaide Office Location"
           />
         </div>
       </section>
-
       <section className="py-20 px-4 sm:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#003087] mb-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0d3557] mb-4 text-center">
             More ways to reach us
           </h2>
-          <p className="text-md sm:text-lg text-gray-600 mb-12 text-center">
-            Need some content about joining us in a partner or career adventure!
+          <p className="text-md sm:text-lg text-[#0d3557] mb-12 text-center">
+            Connect with us across our global locations or explore partnership opportunities!
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white text-[#003087] rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl regular mb-2">Join our team</h3>
-              <p className="text-gray-600 mb-4">
-                Interested in applying for a position? View our Careers page for open positions and apply.
+          
+          {/* Address Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* Delhi Office */}
+            <div className="bg-white text-[#0d3557] rounded-xl p-6 border border-gray-200 ">
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin className="w-5 h-5 text-[#006BFF]" />
+                <h3 className="text-lg font-semibold">Delhi, India</h3>
+              </div>
+              <p className="text-[#0d3557] text-sm leading-relaxed">
+                J-129, Kirti Nagar<br />
+                Delhi, 110015<br />
+                India
               </p>
-              <a href="#" className="text-[#006BFF] regular flex items-center gap-2">
-                Calendly careers <ArrowRight className="w-5 h-5" />
-              </a>
             </div>
-            <div className="bg-white text-[#003087] rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl regular mb-2">Become a partner</h3>
-              <p className="text-gray-600 mb-4">
-                For general queries, including partnership opportunities.
+
+            {/* Ahmedabad Office */}
+            <div className="bg-white text-[#0d3557] rounded-xl p-6 border border-gray-200 ">
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin className="w-5 h-5 text-[#006BFF]" />
+                <h3 className="text-lg font-semibold">Ahmedabad, India</h3>
+              </div>
+              <p className="text-[#0d3557] text-sm leading-relaxed">
+                27, Adarsh Nagar<br />
+                Ahmedabad, 380019<br />
+                India
               </p>
-              <a href="#" className="text-[#006BFF] regular flex items-center gap-2">
-                Get in touch with partners <ArrowRight className="w-5 h-5" />
-              </a>
             </div>
-            <div className="bg-white text-[#003087] rounded-xl p-6 shadow-lg">
-              <span className="inline-block bg-[#E6F0FA] text-[#006BFF] text-xs regular px-2.5 py-0.5 rounded-full mb-2">
-                FEATURED
-              </span>
-              <h3 className="text-xl regular mb-2">2024 Report: The State of Meetings</h3>
-              <p className="text-gray-600 mb-4">
-                See the latest data on meeting culture and productivity
+
+            {/* Sydney Office */}
+            <div className="bg-white text-[#0d3557] rounded-xl p-6 border border-gray-200 ">
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin className="w-5 h-5 text-[#006BFF]" />
+                <h3 className="text-lg font-semibold">Sydney, Australia</h3>
+              </div>
+              <p className="text-[#0d3557] text-sm leading-relaxed">
+                Unit 514, 4 Uhrig Road<br />
+                Lidcombe, NSW 2041<br />
+                Australia
               </p>
-              <a href="#" className="text-[#006BFF] regular flex items-center gap-2">
-                Easy ahead <ArrowRight className="w-5 h-5" />
-              </a>
+            </div>
+
+            {/* Adelaide Office */}
+            <div className="bg-white text-[#0d3557] rounded-xl p-6 border border-gray-200 ">
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin className="w-5 h-5 text-[#006BFF]" />
+                <h3 className="text-lg font-semibold">Adelaide, Australia</h3>
+              </div>
+              <p className="text-[#0d3557] text-sm leading-relaxed">
+                6/76 Wood Ave<br />
+                Ridleyton, Adelaide 5008<br />
+                South Australia
+              </p>
             </div>
           </div>
+
+      
         </div>
       </section>
+
+     
 
       <style jsx>{`
         .wave {

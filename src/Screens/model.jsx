@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Clock, DollarSign, Layers, Users, TrendingUp } from 'lucide-react';
-import card1 from "../assets/time.png";
+import card1 from "../assets/team.webp";
 import card2 from "../assets/fixed.png";
 import card3 from "../assets/time.png";
 import card4 from "../assets/project.png";
@@ -137,8 +137,8 @@ const Model = () => {
                     loading="lazy"
                   />
                   <div className="absolute bottom-3 right-3">
-                    <button className="bg-white/30 text-sm sm:text-base text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300">
-                      Choose Model
+                    <button className="bg-white/30 text-sm  regular sm:text-base text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300">
+                     <span className='regular'>Choose Model</span>
                     </button>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ const Model = () => {
               loading="lazy"
             />
             <div className="absolute bottom-4 right-4">
-              <button className="bg-white/30 text-base md:text-lg text-white px-4 py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300">
+              <button className="bg-white/30 regular text-base md:text-lg text-white px-4 py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300">
                 Choose Model
               </button>
             </div>

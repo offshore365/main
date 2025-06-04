@@ -297,7 +297,7 @@ const CareersPage = () => {
             data-aos="zoom-in"
             data-aos-delay="300"
           >
-            Contact Us
+           Join Us
           </button>
 
         

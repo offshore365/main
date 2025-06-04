@@ -81,16 +81,16 @@ const Architecture = () => {
         "We provide end-to-end Interior solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
-        { name: "SCHEMATIC DESIGN", image: serviceImage },
-        { name: "DESIGN DEVELOPMENT", image: serviceImage },
-        { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
-        { name: "SPACE PLANNING", image: serviceImage },
-        { name: "DRAFTING", image: serviceImage },
+     
+
+        { name: " 3D EXTERIOR RENDERING", image: serviceImage },
+        { name: "3D INTERIOR RENDERING", image: serviceImage },
+        { name: "STILL RENDERING", image: serviceImage },
+        { name: "MARKETING RENDERING", image: serviceImage },
+        { name: "WALKTHROUGHS AND FLYTHROUGHS", image: serviceImage },
         { name: "INTERIOR 3D MODELLING & RENDERING", image: serviceImage },
-        { name: "360 DEGREE INTERIOR", image: serviceImage },
-        { name: "MILLWORK DRAWINGS", image: serviceImage },
+        { name: "360 DEGREE PANORAMIC VIEW", image: serviceImage },
         { name: "QUALITY CHECKS", image: serviceImage },
-        { name: "BOQ AND MATERIAL TAKE OFF", image: serviceImage },
       ],
     },
     tools: {
@@ -329,7 +329,7 @@ const Architecture = () => {
           question:
             "What are the advantages of hiring Uppteam for architectural rendering?",
           answer:
-            "Uppteam’s skilled and certified architectural designers produce architectural renderings that are ideal for seeing what a project will appear after completion. Our 3D renderings allow you to make informed decisions based on the visualization, minimizing the chances of errors and helping in cost-efficiency.",
+            "Uppteam’s skilled and certified architectural designers produce architectural renderings that are ideal for seeing what a project will appear after completion.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -500,7 +500,7 @@ const Architecture = () => {
     return () => clearInterval(interval);
   }, [features.length]);
 
-  const activeGradient = "linear-gradient(744deg, #FFE3A1, #FCD073 50%, #C28E23)";
+const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #C8C679 65%, #A6A65F)";
 
   return (
     <div className="min-h-screen">

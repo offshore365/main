@@ -42,12 +42,12 @@ const cardData = [
   },
 ];
 
-const readMoreColors = ['red-500', 'yellow-500', 'green-500', 'blue-500'];
+const readMoreColors = ['pastel-red', 'pastel-yellow', 'pastel-green', 'pastel-blue'];
 const colorMap = {
-  'red-500': '#ef4444',
-  'yellow-500': '#eab308',
-  'green-500': '#22c55e',
-  'blue-500': '#3b82f6',
+  'pastel-red': '#F4E7DD',
+  'pastel-yellow': '#FFCF72',
+  'pastel-green': '#E2E0A0',
+  'pastel-blue': '#B2E7F1',
 };
 
 const FeatureCard = React.memo(({ data, dataIndex }) => {
@@ -101,8 +101,11 @@ const FeatureCard = React.memo(({ data, dataIndex }) => {
         whileHover="hover"
       >
         <div className="relative w-32 h-16">
-          <div
-            className={`absolute bottom-0 right-0 w-32 h-16 bg-${readMoreColor} rounded-tl-full overflow-hidden flex items-center justify-center`}>
+         <div
+  style={{ backgroundColor: colorMap[readMoreColor] }}
+  className="absolute bottom-0 right-0 w-32 h-16 rounded-tl-full overflow-hidden flex items-center justify-center"
+>
+
             <div className="flex items-center gap-2 text-white text-sm font-medium">
 
 
