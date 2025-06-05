@@ -615,13 +615,13 @@ import {
             <div className="max-w-7xl mx-auto text-center relative">
              
               <motion.div
-                className="absolute left-8 sm:left-[-200px] bottom-20 w-[400px]  h-[400px]  bg-blue-300 rounded-full opacity-50"
+                className="absolute left-8 sm:left-[-200px] bottom-20 w-[400px]  h-[400px]  bg-[#B2E7F1] rounded-full opacity-50"
                 variants={floatVariants}
                 animate="animate"
                 transition={{ delay: 0.2 }}
               />
               <motion.div
-                className="absolute right-4 sm:right-[-200px] top-10 w-[400px]  h-[400px]  bg-blue-400 rounded-full opacity-40"
+                className="absolute right-4 sm:right-[-200px] top-10 w-[400px]  h-[400px]  bg-[#E1C2C1] rounded-full opacity-40"
                 variants={floatVariants}
                 animate="animate"
                 transition={{ delay: 0.4 }}

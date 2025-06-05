@@ -41,27 +41,28 @@ const AboutOffshore365 = () => {
       title: "Vision",
       metric:
         "To be the most trusted offshore partner, delivering innovative solutions for Architecture, Interior Design, and Engineering through expertise and excellence.",
-      borderColor: "border-blue-500",
-      textColor: "text-blue-500",
-      circleColor: "bg-blue-500",
+      borderColor: "border-[#B2E7F1]",       // soft blue
+      textColor: "text-[#B2E7F1]",
+      circleColor: "bg-[#B2E7F1]",
     },
     {
       title: "Mission",
       metric:
         "Improving the quality of every project building process by delivering cutting-edge solutions and empowering client success through innovation and excellence.",
-      borderColor: "border-yellow-500",
-      textColor: "text-yellow-500",
-      circleColor: "bg-yellow-500",
+      borderColor: "border-[#FFCF72]",       // soft yellow-orange
+      textColor: "text-[#FFCF72]",
+      circleColor: "bg-[#FFCF72]",
     },
     {
       title: "Core Values",
       metric:
         "Commitment to Excellence, Continuous Process Innovation, Partner in Growth, and upholding Integrity and Trust in every interaction.",
-      borderColor: "border-purple-500",
-      textColor: "text-purple-500",
-      circleColor: "bg-purple-500",
+      borderColor: "border-[#CCB4FE]",       // soft purple
+      textColor: "text-[#CCB4FE]",
+      circleColor: "bg-[#CCB4FE]",
     },
   ];
+
 
   const leaders = [
     {
@@ -108,9 +109,9 @@ const AboutOffshore365 = () => {
         data-aos-delay="100"
       >
         <div
-          className={`absolute left-[-100px] top-[20%] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] rounded-full animate-float transition-colors duration-1000 ${circleColor} z-0`}
+          className={`absolute left-[-100px] top-[20%] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] rounded-full animate-float transition-colors duration-1000 bg-[#E1C2C1] z-0`}
         ></div>
-        <div className="absolute right-[-100px] bottom-[-100px] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] bg-blue-100 rounded-full animate-float z-0"></div>
+        <div className="absolute right-[-100px] bottom-[-100px] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] bg-[#E1C2C1] rounded-full animate-float z-0"></div>
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="inline-block bg-blue-100 rounded-full px-3 py-1 mb-6 sm:mb-8">
             <span className="text-blue-500 text-sm regular">About Us</span>
@@ -152,7 +153,7 @@ const AboutOffshore365 = () => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 md:mt-20">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl text-red-500 font-bold mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#E1C2C1] font-bold mb-4">
                 500+
               </h2>
               <p className="text-base sm:text-lg md:text-xl">
@@ -160,7 +161,7 @@ const AboutOffshore365 = () => {
               </p>
             </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl text-blue-500 font-bold mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#B2E7F1] font-bold mb-4">
                 250+
               </h2>
               <p className="text-base sm:text-lg md:text-xl">
@@ -168,7 +169,7 @@ const AboutOffshore365 = () => {
               </p>
             </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl text-green-500 font-bold mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#FFCF72] font-bold mb-4">
                 6+
               </h2>
               <p className="text-base sm:text-lg md:text-xl">
@@ -186,7 +187,7 @@ const AboutOffshore365 = () => {
         data-aos-delay="300"
       >
         <div
-          className={`absolute left-[-100px] top-[20%] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] rounded-full animate-float transition-colors duration-1000 bg-yellow-100 z-0`}
+          className={`absolute left-[-100px] top-[20%] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] rounded-full animate-float transition-colors duration-1000 bg-[#B2E7F1] z-0`}
         ></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-16 md:mb-20 text-center">
@@ -246,64 +247,67 @@ const AboutOffshore365 = () => {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              {[
-                {
-                  icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-                  color: "text-red-600",
-                  title: "Office Space, Desks & Tools",
-                },
-                {
-                  icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-                  color: "text-green-600",
-                  title: "Computer Hardware + Office Software",
-                },
-                {
-                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-                  color: "text-blue-600",
-                  title: "Data Security",
-                },
-                {
-                  icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-                  color: "text-yellow-600",
-                  title: "Payroll, Taxes & Benefits",
-                },
-                {
-                  icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9",
-                  color: "text-purple-600",
-                  title: "Remote Tools, Training & Support",
-                },
-                {
-                  icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
-                  color: "text-pink-600",
-                  title: "Family Health Insurance",
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className=" rounded-xl p-4 sm:p-6 hover:shadow-md transition-all duration-300 text-center"
-                  data-aos="zoom-in"
-                  data-aos-delay={`${500 + index * 100}`}
-                >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg
-                      className={`w-6 h-6 sm:w-8 sm:h-8 ${item.color}`}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d={item.icon}
-                      />
-                    </svg>
+              {
+                [
+                  {
+                    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+                    color: "text-[#F1B2B2]", // Soft Coral Red
+                    title: "Office Space, Desks & Tools",
+                  },
+                  {
+                    icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+                    color: "text-[#B2F1C1]", // Pastel Green
+                    title: "Computer Hardware + Office Software",
+                  },
+                  {
+                    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+                    color: "text-[#B2E7F1]", // Light Blue
+                    title: "Data Security",
+                  },
+                  {
+                    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+                    color: "text-[#FFCF72]", // Warm Yellow
+                    title: "Payroll, Taxes & Benefits",
+                  },
+                  {
+                    icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9",
+                    color: "text-[#CCB4FE]", // Light Purple
+                    title: "Remote Tools, Training & Support",
+                  },
+                  {
+                    icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+                    color: "text-[#F1C1E3]", // Soft Pink
+                    title: "Family Health Insurance",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="rounded-xl p-4 sm:p-6 hover:shadow-md transition-all duration-300 text-center"
+                    data-aos="zoom-in"
+                    data-aos-delay={`${500 + index * 100}`}
+                  >
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg
+                        className={`w-6 h-6 sm:w-8 sm:h-8 ${item.color}`}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d={item.icon}
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-sm sm:text-base regular text-[#0d3557]">
+                      {item.title}
+                    </h3>
                   </div>
-                  <h3 className="text-sm sm:text-base regular text-[#0d3557]">
-                    {item.title}
-                  </h3>
-                </div>
-              ))}
+                ))
+              }
+
             </div>
           </div>
         </div>

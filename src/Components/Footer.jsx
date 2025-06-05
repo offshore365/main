@@ -22,8 +22,8 @@ const Footer = () => {
   return (
     <footer className="relative border-t border-gray-200 text-[#0d3557] pt-8 sm:pt-12 lg:pt-16 pb-6 sm:pb-8 lg:pb-10 bg-white overflow-hidden">
       {/* Animated Circles */}
-      <div className="absolute w-32 sm:w-48 lg:w-60 h-32 sm:h-48 lg:h-60 top-[-20px] sm:top-[-40px] lg:top-[-50px] right-[-20px] sm:right-[-40px] lg:right-[-50px] bg-blue-100 backdrop-blur-lg rounded-full z-0 animate-float-right" />
-      <div className="absolute w-40 sm:w-56 lg:w-72 h-40 sm:h-56 lg:h-72 bottom-[-24px] sm:bottom-[-48px] lg:bottom-[-60px] left-[-24px] sm:left-[-48px] lg:left-[-60px] bg-blue-100 backdrop-blur-lg rounded-full z-0 animate-float-left" />
+      <div className="absolute w-32 sm:w-48 lg:w-60 h-32 sm:h-48 lg:h-60 top-[-20px] sm:top-[-40px] lg:top-[-50px] right-[-20px] sm:right-[-40px] lg:right-[-50px] bg-[#E1C2C1] backdrop-blur-lg rounded-full z-0 animate-float-right" />
+      <div className="absolute w-40 sm:w-56 lg:w-72 h-40 sm:h-56 lg:h-72 bottom-[-24px] sm:bottom-[-48px] lg:bottom-[-60px] left-[-24px] sm:left-[-48px] lg:left-[-60px]  bg-[#B2E7F1] backdrop-blur-lg rounded-full z-0 animate-float-left" />
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 z-0" />

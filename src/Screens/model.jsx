@@ -12,48 +12,49 @@ const Model = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  const sections = [
-    {
-      title: "Hourly Billing Model",
-      description:
-        "Clients are billed based on the number of hours worked by the outsourcing team. Suitable for projects with dynamic requirements and variable scopes.",
-      image: card3,
-      colorClass: "bg-red-500",
-      icon: <Clock className="h-5 w-5 md:h-6 md:w-6 text-red-500 mr-2" />,
-    },
-    {
-      title: "Fixed Fee Model",
-      description:
-        "A predetermined, fixed cost is agreed upon for the entire project. Appropriate for well-defined projects with clear specifications.",
-      image: card2,
-      colorClass: "bg-yellow-500",
-      icon: <DollarSign className="h-5 w-5 md:h-6 md:w-6 text-yellow-500 mr-2" />,
-    },
-    {
-      title: "Project Based Model",
-      description:
-        "Costs are determined based on the overall scope and milestones of the project. Ideal for projects with distinct phases and deliverables.",
-      image: card4,
-      colorClass: "bg-green-500",
-      icon: <Layers className="h-5 w-5 md:h-6 md:w-6 text-green-500 mr-2" />,
-    },
-    {
-      title: "Dedicated Team Model",
-      description:
-        "The outsourcing firm provides a dedicated team of architects and professionals exclusively for the client. Suited for long-term projects requiring ongoing collaboration and support.",
-      image: card1,
-      colorClass: "bg-blue-500",
-      icon: <Users className="h-5 w-5 md:h-6 md:w-6 text-blue-500 mr-2" />,
-    },
-    {
-      title: "Performance Model",
-      description:
-        "Payment is tied to specific project outcomes or performance metrics. Encourages the outsourcing firm to meet or exceed predefined goals.",
-      image: card6,
-      colorClass: "bg-purple-500",
-      icon: <TrendingUp className="h-5 w-5 md:h-6 md:w-6 text-purple-500 mr-2" />,
-    },
-  ];
+ const sections = [
+  {
+    title: "Hourly Billing Model",
+    description:
+      "Clients are billed based on the number of hours worked by the outsourcing team. Suitable for projects with dynamic requirements and variable scopes.",
+    image: card3,
+    colorClass: "bg-[#E1C2C1]",
+    icon: <Clock className="h-5 w-5 md:h-6 md:w-6 text-[#E1C2C1] mr-2" />,
+  },
+  {
+    title: "Fixed Fee Model",
+    description:
+      "A predetermined, fixed cost is agreed upon for the entire project. Appropriate for well-defined projects with clear specifications.",
+    image: card2,
+    colorClass: "bg-[#FFCF72]",
+    icon: <DollarSign className="h-5 w-5 md:h-6 md:w-6 text-[#FFCF72] mr-2" />,
+  },
+  {
+    title: "Project Based Model",
+    description:
+      "Costs are determined based on the overall scope and milestones of the project. Ideal for projects with distinct phases and deliverables.",
+    image: card4,
+    colorClass: "bg-[#E2E0A0]",
+    icon: <Layers className="h-5 w-5 md:h-6 md:w-6 text-[#E2E0A0] mr-2" />,
+  },
+  {
+    title: "Dedicated Team Model",
+    description:
+      "The outsourcing firm provides a dedicated team of architects and professionals exclusively for the client. Suited for long-term projects requiring ongoing collaboration and support.",
+    image: card1,
+    colorClass: "bg-[#B2E7F1]",
+    icon: <Users className="h-5 w-5 md:h-6 md:w-6 text-[#B2E7F1] mr-2" />,
+  },
+  {
+    title: "Performance Model",
+    description:
+      "Payment is tied to specific project outcomes or performance metrics. Encourages the outsourcing firm to meet or exceed predefined goals.",
+    image: card6,
+    colorClass: "bg-[#CCB4FE]",
+    icon: <TrendingUp className="h-5 w-5 md:h-6 md:w-6 text-[#CCB4FE] mr-2" />,
+  },
+];
+
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });

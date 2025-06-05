@@ -13,10 +13,10 @@ export default function TestimonialMetrics() {
       company: "Chris P",
       designation: "Operations Director",
       metric: "<1%",
-      description: "Less than 1% rework due to Offshore 365's precise architectural  work.",
-      color: "bg-red-500",
-      hoverColor: "bg-red-700",
-      dotColor: "#ef4444",
+      description: "Less than 1% rework due to Offshore 365's precise architectural work.",
+      color: "bg-[#B5C7D6]",
+      hoverColor: "bg-[#9EB3C8]",
+      dotColor: "#7A95B0",
       textColor: "text-white",
     },
     {
@@ -24,9 +24,9 @@ export default function TestimonialMetrics() {
       designation: "CEO",
       metric: "40%",
       description: "Operational costs cut by 40% without compromising on quality.",
-      color: "bg-blue-500",
-      hoverColor: "bg-blue-700",
-      dotColor: "#3b82f6",
+      color: "bg-[#B2E7F1]",
+      hoverColor: "bg-[#90d9eb]",
+      dotColor: "#6ECBD9",
       textColor: "text-white",
     },
     {
@@ -34,9 +34,9 @@ export default function TestimonialMetrics() {
       designation: "Project Lead",
       metric: "2x",
       description: "Doubled our team's capacity with scalable offshore talent.",
-      color: "bg-amber-500",
-      hoverColor: "bg-amber-700",
-      dotColor: "#f59e0b",
+      color: "bg-[#E2E0A0]",
+      hoverColor: "bg-[#CDCB8F]",
+      dotColor: "#B8B67E",
       textColor: "text-white",
     },
     {
@@ -44,9 +44,9 @@ export default function TestimonialMetrics() {
       designation: "Principal",
       metric: "30%",
       description: "Accelerated timelines by 30% using the time zone advantage.",
-      color: "bg-purple-500",
-      hoverColor: "bg-purple-700",
-      dotColor: "#a855f7",
+      color: "bg-[#E1C2C1]",
+      hoverColor: "bg-[#CBA9A8]",
+      dotColor: "#B28E8D",
       textColor: "text-white",
     },
     {
@@ -54,9 +54,9 @@ export default function TestimonialMetrics() {
       designation: "Senior Project Architect",
       metric: "100%",
       description: "Top-tier BIM expertise powering our tech-heavy deliverables.",
-      color: "bg-red-500",
-      hoverColor: "bg-red-700",
-      dotColor: "#ef4444",
+      color: "bg-[#FFCF72]",
+      hoverColor: "bg-[#E6BA60]",
+      dotColor: "#C9A24E",
       textColor: "text-white",
     },
     {
@@ -64,12 +64,13 @@ export default function TestimonialMetrics() {
       designation: "Design Director",
       metric: "35%",
       description: "Project output increased by 35% in Q1 with seamless integration.",
-      color: "bg-blue-500",
-      hoverColor: "bg-blue-700",
-      dotColor: "#3b82f6",
+      color: "bg-[#CCB4FE]",
+      hoverColor: "bg-[#B99FF0]",
+      dotColor: "#9B7CD3",
       textColor: "text-white",
     },
   ];
+
 
   useEffect(() => {
     // Auto-slide interval
@@ -208,17 +209,18 @@ export default function TestimonialMetrics() {
                 >
                   <div
                     className={`liquid-dot w-2.5 h-2.5 sm:w-3 sm:h-3 border border-white rounded-full transition-all duration-500 flex items-center justify-center ${isActive ? "scale-125" : "scale-100 opacity-70 hover:opacity-100"}`}
-                    style={{ background: item.dotColor }}
+                    style={{ backgroundColor: item.dotColor }}
                   >
                     <div
                       className={`absolute inset-0 rounded-full overflow-hidden ${isActive ? "animate-pulse" : ""}`}
                     >
                       <div
                         className="liquid-bubble absolute w-4 h-4 sm:w-5 sm:h-5 rounded-full"
-                        style={{ background: item.dotColor }}
+                        style={{ backgroundColor: item.dotColor }}
                       />
                     </div>
                   </div>
+
                 </button>
               )
             })}

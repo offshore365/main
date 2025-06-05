@@ -131,7 +131,7 @@ export default function ContactPage() {
     <div className="min-h-screen px-4 py-8 sm:px-6 sm:py-12 md:px-8 lg:px-16 bg-white relative overflow-hidden">
       {/* Animated Background Circle */}
       <div
-        className={`absolute left-0 top-1/2 transform -translate-y-1/2 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px] rounded-full animate-float transition-colors duration-1000 ${circleColor} z-0 opacity-50`}
+        className={`absolute left-0 top-1/2 transform -translate-y-1/2 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px] rounded-full animate-float transition-colors duration-1000 bg-[#B2E7F1] z-0 opacity-50`}
       ></div>
 
       {/* Toast Notification */}
@@ -271,9 +271,9 @@ export default function ContactPage() {
                       strokeWidth={2}
                       d="M19 9l-7 7-7-7"
                     />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                  </svg>
+                </div>
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
 
               {/* Message */}
@@ -310,39 +310,43 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-4 sm:space-y-6">
-              <div className="border-b-2 border-yellow-500 pb-3 sm:pb-4">
+              <div className="border-b-2 pb-3 sm:pb-4" style={{ borderColor: "#FFCF72" }}>
                 <CountUp
                   target={500}
-                  className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-500 mb-2"
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFCF72] mb-2"
                   delay={500}
+               
                 />
-                <div className="text-yellow-500 regular text-sm sm:text-base md:text-lg">
+                <div className="regular text-sm sm:text-base md:text-lg" style={{ color: "#FFCF72" }}>
                   projects completed globally
                 </div>
               </div>
 
-              <div className="border-b-2 border-blue-500 pb-3 sm:pb-4">
+              <div className="border-b-2 pb-3 sm:pb-4" style={{ borderColor: "#B2E7F1" }}>
                 <CountUp
                   target={150}
-                  className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-500 mb-2"
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#B2E7F1] mb-2"
                   delay={600}
+                  style={{ color: "#B2E7F1" }}
                 />
-                <div className="text-blue-500 regular text-sm sm:text-base md:text-lg">
+                <div className="regular text-sm sm:text-base md:text-lg" style={{ color: "#B2E7F1" }}>
                   AEC firms partnered
                 </div>
               </div>
 
-              <div className="border-b-2 border-red-500 pb-3 sm:pb-4">
+              <div className="border-b-2 pb-3 sm:pb-4" style={{ borderColor: "#E1C2C1" }}>
                 <CountUp
                   target={25}
-                  className="text-3xl sm:text-4xl  md:text-5xl font-bold text-red-500 mb-2"
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#E1C2C1] mb-2"
                   delay={700}
+                  style={{ color: "#E1C2C1" }}
                 />
-                <div className="text-red-500 regular text-sm sm:text-base md:text-lg">
+                <div className="regular text-sm sm:text-base md:text-lg" style={{ color: "#E1C2C1" }}>
                   countries with active engagements
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

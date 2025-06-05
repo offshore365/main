@@ -368,7 +368,7 @@ const Architecture = () => {
     return () => clearInterval(interval);
   }, [features.length]);
 
-const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65%, #D4B4A0)";
+  const activeGradient = "linear-gradient(744deg, #D9B3B2, #C89D9C 30%, #B78485 65%, #A66A6C)";
 
   return (
     <div className="min-h-screen">
@@ -414,7 +414,7 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
                 <div className="text-[34] sm:text-[48px] regular font-bold text-white">
                   {stat.number}+
                 </div>
-                <p className="text-[16px] sm:text-[18px] regular text-white max-w-[250px]">
+                <p className="text-[20px] regular text-white max-w-[250px]">
                   {stat.label}
                 </p>
               </motion.div>
@@ -477,7 +477,7 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
                 onClick={() => handleTabClick(tab.id)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className={`relative px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold transition-all duration-300 mx-1 text-white hover:text-amber-600 hover:bg-amber-100 rounded-md`}
+                className={`relative px-4 sm:px-6 py-2 regular text-sm  transition-all duration-300 mx-1 text-white hover:text-amber-600 hover:bg-amber-100 rounded-md`}
               >
                 {tab.label}
                 {activeTab === tab.id && (
@@ -509,7 +509,7 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
           <div className="flex flex-col lg:flex-row items-start gap-4  px-4 sm:px-8">
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1" data-aos="fade-right">
-              <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
+              <h1 className="text-[40px] font-bold mb-2 text-[#0d3557] tracking-wide leading-snug">
                 Efficient Design Documentation for interior professionals
               </h1>
               <p className="text-[18px]  text-[#0d3557] leading-relaxed">
@@ -591,7 +591,7 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <span className="text-[#0d3557] regular text-[10px] text-center">
+                        <span className="text-[#0d3557] regular text-[12px] text-center">
                           {feature.name}
                         </span>
                       </div>
@@ -617,10 +617,10 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
         >
           <div className="container max-w-4xl mx-auto flex flex-col lg:flex-row items-start gap-4">
             <div className="flex-1" data-aos="fade-left">
-              <h1 className="text-[32px] sm:text-[40px] tracking-wide text-[#0d3557] text-justify font-extrabold mb-4">
+              <h1 className="text-[40px]  text-[#0d3557] text-left font-extrabold mb-2">
                 {tabData.tools.title}
               </h1>
-              <p className="text-[18px] sm:text-[20px] text-left text-[#0d3557] mb-12 sm:mb-16 leading-relaxed">
+              <p className="text-[18px] sm:text-[20px] text-left text-[#0d3557] mb-16 leading-relaxed">
                 {tabData.tools.description}
               </p>
               <div className="grid grid-cols-3 sm:grid-cols-4 gap-0 justify-items-center">
@@ -661,10 +661,10 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
         >
           <div className="max-w-full    ">
             <div className="text-center mb-8">
-              <h1 className="text-[40px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
+              <h1 className="text-[40px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-2">
                 {tabData.plans.title}
               </h1>
-              <p className="text-[20px]  text-center text-[#0d3557] mb-16 leading-relaxed">
+              <p className="text-[18px]  text-center text-[#0d3557] mb-16 leading-relaxed">
                 {tabData.plans.description}
               </p>
             </div>
@@ -754,14 +754,13 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 mb-20 scroll-mt-20 rounded-2xl px-4 sm:px-8 text-gray-800"
+          className="py-12 sm:py-16 scroll-mt-20 mb-20 rounded-2xl px-4 sm:px-8 text-gray-800"
           id="why-us"
           data-aos="zoom-in"
         >
           <div className="flex flex-col lg:flex-row-reverse items-start gap-8 md:gap-12">
             {/* Right side content: title, description, stats, benefits */}
             <div className="flex-1" data-aos="fade-left">
-
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
                 {tabData["why-us"].stats.map((stat, index) => (
                   <div
@@ -773,7 +772,9 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
                     <div className="text-[34px] text-[#0d3557] mt-4 font-bold mb-2">
                       {stat.number}+
                     </div>
-                    <div className="text-[20px] regular text-[#0d3557] mb-2">{stat.label}</div>
+                    <div className="text-[20px] regular text-[#0d3557] mb-2">
+                      {stat.label}
+                    </div>
                     <div className="w-full bg-amber-300 rounded-full h-2.5">
                       <motion.div
                         className="bg-amber-500 h-2.5 rounded-full"
@@ -813,11 +814,11 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
                           />
                         </svg>
                       </div>
-                      <h1 className="text-[18px]  text-amber-800 tracking-wide font-semibold">
+                      <h1 className="text-[14px]  text-amber-800 tracking-wide font-semibold">
                         {benefit.title}
                       </h1>
                     </div>
-                    <p className="text-[16px] text-[#0d3557] leading-relaxed">
+                    <p className="text-[12px] text-[#0d3557] leading-relaxed">
                       {benefit.description}
                     </p>
                   </motion.div>
@@ -836,7 +837,7 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
               <h1 className="text-[40px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
                 Transform the way your organisation works
               </h1>
-              <div className="grid grid-cols-2 gap-2 text-gray-800">
+              <div className="grid grid-cols-2 gap-2 text-[#0d3557]">
                 {[
                   "AEC Expertise",
                   "Global Talent",
@@ -867,59 +868,60 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
                         <path d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-[14px] text-[#0d3557]  regular">{point}</span>
+                    <span className="text-[14px] text-[#0d3557]  regular">
+                      {point}
+                    </span>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
-
           </div>
 
           {/* <div className="py-16 px-4 sm:px-6 lg:px-20">
-            <div className="text-center mb-14">
-              <h1 className="text-[40px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
-                Our Expertise</h1>
-              <p className="text-gray-500 mt-3 text-base max-w-xl mx-auto">
-                We specialize in delivering solutions that drive real results. Here's what makes us stand out.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-              {tabData["why-us"].benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-start text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-amber-500 hover:text-white hover:shadow-2xl"
-                >
-                  <div className="mb-6 p-2">
-                    <div className="flex items-start justify-center w-12 h-12 border border-amber-500 rounded-full bg-amber-100 text-amber-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-amber-800">
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <h3 className="text-[20px] tracking-wide font-semibold mb-4 transition-colors duration-300">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-[16px] leading-relaxed transition-colors duration-300">
-                    {benefit.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div> */}
+                 <div className="text-center mb-14">
+                   <h1 className="text-[40px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
+                     Our Expertise</h1>
+                   <p className="text-gray-500 mt-3 text-base max-w-xl mx-auto">
+                     We specialize in delivering solutions that drive real results. Here's what makes us stand out.
+                   </p>
+                 </div>
+                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                   {tabData["why-us"].benefits.map((benefit, index) => (
+                     <div
+                       key={index}
+                       className="flex flex-col items-start text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-amber-500 hover:text-white hover:shadow-2xl"
+                     >
+                       <div className="mb-6 p-2">
+                         <div className="flex items-start justify-center w-12 h-12 border border-amber-500 rounded-full bg-amber-100 text-amber-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-amber-800">
+                           <svg
+                             className="w-6 h-6"
+                             fill="none"
+                             stroke="currentColor"
+                             strokeWidth={2}
+                             viewBox="0 0 24 24"
+                           >
+                             <path
+                               strokeLinecap="round"
+                               strokeLinejoin="round"
+                               d="M5 13l4 4L19 7"
+                             />
+                           </svg>
+                         </div>
+                       </div>
+                       <h3 className="text-[20px] tracking-wide font-semibold mb-4 transition-colors duration-300">
+                         {benefit.title}
+                       </h3>
+                       <p className="text-[16px] leading-relaxed transition-colors duration-300">
+                         {benefit.description}
+                       </p>
+                     </div>
+                   ))}
+                 </div>
+               </div> */}
         </motion.section>
 
-       {/* Get Started Section */}
-       <motion.section
+        {/* Get Started Section */}
+        <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
@@ -1010,55 +1012,55 @@ const activeGradient = "linear-gradient(744deg, #FAF1EB, #F4E7DD 30%, #E7CFC0 65
           </motion.section>
         )}
 
-        {/* FAQ Section */}
-        <motion.section
-          ref={(ref) => setRef("faq", ref)}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8"
-          id="faq"
-          data-aos="fade-up"
-        >
-          <div className="p-4 sm:p-8 rounded-lg">
-            {/* Title */}
-            <h4 className="text-[36px] sm:text-[48px] md:text-[54px] lg:text-[40px] font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
-              {tabData.faq.title}
-            </h4>
-
-            {/* Subtitle */}
-            <p className="text-center text-[#0d3557] text-base sm:text-lg md:text-xl lg:text-[20px] mt-2 max-w-3xl mx-auto">
-              {tabData.faq.description}
-            </p>
-
-            {/* FAQ Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-12 px-2 xl:px-12 mt-8">
-              {tabData.faq.faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start space-x-4"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="mt-1">{faq.icon}</div>
-                  <div>
-                    <h4 className="text-[20px] font-bold text-[#0d3557]">
-                      {faq.question}
-                    </h4>
-                    <p className="text-[#0d3557] text-[14px] my-2 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
+         {/* FAQ Section */}
+               <motion.section
+                 ref={(ref) => setRef("faq", ref)}
+                 initial={{ opacity: 0, y: 50 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.8 }}
+                 viewport={{ once: true }}
+                 className="py-12 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8"
+                 id="faq"
+                 data-aos="fade-up"
+               >
+                 <div className="p-4 sm:p-8 rounded-lg">
+                   {/* Title */}
+                   <h4 className="text-[40px]  font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
+                     {tabData.faq.title}
+                   </h4>
+       
+                   {/* Subtitle */}
+                   <p className="text-center text-[#0d3557] text-[20px] mt-2 max-w-3xl mx-auto">
+                     {tabData.faq.description}
+                   </p>
+       
+                   {/* FAQ Cards Grid */}
+                   <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-12 px-2 xl:px-12 mt-8">
+                     {tabData.faq.faqs.map((faq, index) => (
+                       <motion.div
+                         key={index}
+                         initial={{ opacity: 0, y: 20 }}
+                         whileInView={{ opacity: 1, y: 0 }}
+                         transition={{ duration: 0.5, delay: index * 0.1 }}
+                         viewport={{ once: true }}
+                         className="flex items-start space-x-4"
+                         data-aos="fade-up"
+                         data-aos-delay={index * 100}
+                       >
+                         <div className="mt-1">{faq.icon}</div>
+                         <div>
+                           <h4 className="text-[20px] font-bold text-[#0d3557]">
+                             {faq.question}
+                           </h4>
+                           <p className="text-[#0d3557] text-[14px] my-2 leading-relaxed">
+                             {faq.answer}
+                           </p>
+                         </div>
+                       </motion.div>
+                     ))}
+                   </div>
+                 </div>
+               </motion.section>
 
       </div>
     </div>

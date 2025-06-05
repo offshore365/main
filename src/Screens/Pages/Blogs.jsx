@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import blogImage from "../../assets/blogs.png"; // Adjust path if needed
+import blogImage from "../../assets/blog2.png"; // Adjust path if needed
 
 const Offshore365Blog = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -200,47 +200,47 @@ const Offshore365Blog = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
-      <section
-  className="py-16 min-h-screen px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden"
-  data-aos="fade-up"
->
-  <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 relative z-10">
-    
-    {/* Left Content - Blog Info */}
-    <div>
-      <div className="inline-block bg-blue-100 rounded-full px-3 py-1 mb-6 sm:mb-8">
-        <span className="text-blue-600  text-sm regular">
-        Blogs
-        </span>
-      </div>
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6 sm:mb-8 text-[#0d3557]">
-  Insights & Innovations:  Through Our Expert Blogs
-</h1>
+        <section
+          className="py-16 min-h-screen px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden"
+          data-aos="fade-up"
+        >
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 relative z-10">
 
-      <p className="text-[20px] sm:text-lg md:text-xl mb-8 sm:mb-12 opacity-80 leading-relaxed text-[#0d3557]">
-        Stay updated with insights, strategies, and real-world solutions
-        from Offshore 365's expert blog. Discover how our global AEC
-        support teams drive sustainable growth and seamless project
-        execution.
-      </p>
-      <button className="bg-[#006bff] regular hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-        Explore the Blog
-      </button>
-      <p className="mt-16 text-sm sm:text-base md:text-lg text-[#0d3557]">
-        Trusted by global AEC leaders—from agile design studios to
-        mega-construction firms.
-      </p>
-    </div>
+            {/* Left Content - Blog Info */}
+            <div>
+              <div className="inline-block bg-blue-100 rounded-full px-3 py-1 mb-6 sm:mb-8">
+                <span className="text-blue-600  text-sm regular">
+                  Blogs
+                </span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6 sm:mb-8 text-[#0d3557]">
+                Insights & Innovations:  Through Our Expert Blogs
+              </h1>
 
-    {/* Right Side - Image */}
-    <div className="relative mx-auto w-full max-w-md">
-      <img
-          src={blogImage}
-         className="rounded-lg shadow-xl w-full h-[400px] object-cover"
-      />
-    </div>
-  </div>
-</section>
+              <p className="text-[20px] sm:text-lg md:text-xl mb-8 sm:mb-12 opacity-80 leading-relaxed text-[#0d3557]">
+                Stay updated with insights, strategies, and real-world solutions
+                from Offshore 365's expert blog. Discover how our global AEC
+                support teams drive sustainable growth and seamless project
+                execution.
+              </p>
+              <button className="bg-[#006bff] regular hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Explore the Blog
+              </button>
+              <p className="mt-16 text-sm sm:text-base md:text-lg text-[#0d3557]">
+                Trusted by global AEC leaders—from agile design studios to
+                mega-construction firms.
+              </p>
+            </div>
+
+            {/* Right Side - Image */}
+            <div className="relative mx-auto w-full max-w-md">
+              <img
+                src={blogImage}
+                className="rounded-lg shadow-xl w-full h-[400px] object-cover"
+              />
+            </div>
+          </div>
+        </section>
 
         {/* Latest Articles Section */}
         <section className="mb-16" data-aos="fade-up">
@@ -257,52 +257,54 @@ const Offshore365Blog = () => {
             {blogPosts.map((post, index) => (
               <article
                 key={post.id}
-                className="bg-white rounded-xl border border-gray-200 hover:shadow-lg transition-shadow duration-300 overflow-hidden group cursor-pointer"
+                className="bg-white rounded-xl p-[5px] border border-gray-200 hover:shadow-lg transition-shadow duration-300 overflow-hidden group cursor-pointer"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden rounded-lg">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-[300px] object-cover"
+                    className="w-full h-[500px] object-cover rounded-lg"
                   />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-[20px] text-[#0d3557] mb-3 group-hover:text-[#0a2a44] transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-[14px] text-[#0d3557] mb-4 line-clamp-2">
-                    {post.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <button
-                      onClick={openModal}
-                      className="text-[#0d3557] regular  text-[14px] regular hover:text-[#0a2a44] flex items-center"
-                    >
-                      Read now
-                      <svg
-                        className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d3557cc] to-transparent flex flex-col justify-end p-4 transition-all">
+                    <h3 className="text-[20px] text-white mb-2 group-hover:text-[#cbd5e1] transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-[14px] text-white mb-4 line-clamp-2">
+                      {post.description}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <button
+                        onClick={openModal}
+                        className="text-white text-[14px] hover:text-[#e2e8f0] flex items-center"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </button>
-                    <span className="text-xs regular text-[#0d3557]">
-                      {post.readTime}
-                    </span>
+                        Read now
+                        <svg
+                          className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </button>
+                      <span className="text-xs text-white">
+                        {post.readTime}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </article>
             ))}
           </div>
+
         </section>
       </main>
 
