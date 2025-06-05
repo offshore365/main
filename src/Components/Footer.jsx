@@ -200,7 +200,7 @@ const Footer = () => {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 sm:w-9 lg:w-10 h-8 sm:h-9 lg:h-10 flex items-center justify-center rounded-full border border-[#0d3557] text-[#0d3557] hover:bg-[#256bff] hover:text-white hover:border-[#256bff] transition duration-300"
+              className="w-8 sm:w-9 lg:w-10 h-8 sm:h-9 lg:h-10 flex items-center justify-center rounded-full border border-[#0d3557] text-[#0d3557] hover:bg-[#B2E7F1] hover:text-white hover:border-[#B2E7F1] transition duration-300"
             >
               <Icon size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
             </a>

@@ -13,109 +13,103 @@ const Navbar = () => {
   const location = useLocation();
 
   // Define tabs for each navigation link
-  const navLinksWithTabs = [
-    { 
-      label: "Architecture", 
-      href: "/architecture",
-      activeColor: "bg-blue-500 text-white",
-      hoverColor: "hover:bg-blue-50 hover:text-blue-600",
-      tabs: [
-        { id: "services", label: "Services", icon: Home },
-        { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: Briefcase },
-        { id: "why-us", label: "Why Us?", icon: Award },
-        { id: "get-started", label: "Get Started", icon: Calendar },
-        { id: "faq", label: "FAQ", icon: FileText },
+ const navLinksWithTabs = [
+  { 
+    label: "Architecture", 
+    href: "/architecture",
+    activeColor: "bg-[#2C3E47] text-white",
+    hoverColor: "hover:bg-[#E3E8EA] hover:text-[#2C3E47]",
+    tabs: [
+      { id: "services", label: "Services", icon: Home },
+      { id: "tools", label: "Tools", icon: Zap },
+      { id: "plans", label: "Plans", icon: Briefcase },
+      { id: "why-us", label: "Why Us?", icon: Award },
+      { id: "get-started", label: "Get Started", icon: Calendar },
+      { id: "faq", label: "FAQ", icon: FileText },
+    ]
+  },
+  { 
+    label: "Interior", 
+    href: "/interior",
+    activeColor: "bg-[#A66A6C] text-white",
+    hoverColor: "hover:bg-[#F0E6E6] hover:text-[#A66A6C]",
+    tabs: [
+      { id: "services", label: "Services", icon: Home },
+      { id: "tools", label: "Tools", icon: Zap },
+      { id: "plans", label: "Plans", icon: Briefcase },
+      { id: "why-us", label: "Why Us?", icon: Award },
+      { id: "get-started", label: "Get Started", icon: Calendar },
+      { id: "faq", label: "FAQ", icon: FileText },
+    ]
+  },
+  { 
+    label: "BIM", 
+    href: "/bim",
+    activeColor: "bg-[#C28E23] text-white",
+    hoverColor: "hover:bg-[#F5EBD5] hover:text-[#C28E23]",
+    tabs: [
+      { id: "services", label: "Services", icon: Home },
+      { id: "tools", label: "Tools", icon: Zap },
+      { id: "plans", label: "Plans", icon: Briefcase },
+      { id: "why-us", label: "Why Us?", icon: Award },
+      { id: "get-started", label: "Get Started", icon: Calendar },
+      { id: "faq", label: "FAQ", icon: FileText },
+    ]
+  },
+  { 
+    label: "3D Visualization", 
+    href: "/3dvisualization",
+    activeColor: "bg-[#A6A65F] text-white",
+    hoverColor: "hover:bg-[#F4F4E3] hover:text-[#A6A65F]",
+    tabs: [
+      { id: "services", label: "Services", icon: Home },
+      { id: "tools", label: "Tools", icon: Zap },
+      { id: "plans", label: "Plans", icon: Briefcase },
+      { id: "why-us", label: "Why Us?", icon: Award },
+      { id: "get-started", label: "Get Started", icon: Calendar },
+      { id: "faq", label: "FAQ", icon: FileText },
+    ]
+  },
+  { 
+    label: "IT", 
+    href: "/it",
+    activeColor: "bg-[#8F6FFF] text-white",
+    hoverColor: "hover:bg-[#ECE9FF] hover:text-[#8F6FFF]",
+    tabs: [
+      { id: "services", label: "Services", icon: Home },
+      { id: "tools", label: "Tools", icon: Zap },
+      { id: "why-us", label: "Why Us?", icon: Award },
+      { id: "get-started", label: "Get Started", icon: Calendar },
+      { id: "faq", label: "FAQ", icon: FileText },
+    ]
+  },
+  { 
+    label: "Marketing", 
+    href: "/marketing",
+    activeColor: "bg-[#3A8CA1] text-white",
+    hoverColor: "hover:bg-[#E1EFF3] hover:text-[#3A8CA1]",
+    tabs: [
+      { id: "services", label: "Services", icon: Home },
+      { id: "tools", label: "Tools", icon: Zap },
+      { id: "why-us", label: "Why Us?", icon: Award },
+      { id: "get-started", label: "Get Started", icon: Calendar },
+      { id: "faq", label: "FAQ", icon: FileText },
+    ]
+  },
+  { 
+    label: "Admin", 
+    href: "/admin",
+    activeColor: "bg-[#8F8A75] text-white",
+    hoverColor: "hover:bg-[#EFEDE6] hover:text-[#8F8A75]",
+    tabs: [
+      { id: "services", label: "Services", icon: Home },
+      { id: "why-us", label: "Why Us?", icon: Award },
+      { id: "get-started", label: "Get Started", icon: Calendar },
+      { id: "faq", label: "FAQ", icon: FileText },
+    ]
+  },
+];
 
-      ]
-    },
-    { 
-      label: "Interior", 
-      href: "/interior",
-      activeColor: "bg-yellow-500 text-white",
-      hoverColor: "hover:bg-yellow-50 hover:text-yellow-600",
-      tabs: [
-        { id: "services", label: "Services", icon: Home },
-        { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: Briefcase },
-        { id: "why-us", label: "Why Us?", icon: Award },
-        { id: "get-started", label: "Get Started", icon: Calendar },
-        { id: "faq", label: "FAQ", icon: FileText },
-
-      ]
-    },
-    { 
-      label: "BIM", 
-      href: "/bim",
-      activeColor: "bg-red-500 text-white",
-      hoverColor: "hover:bg-red-50 hover:text-red-600",
-      tabs: [
-        { id: "services", label: "Services", icon: Home },
-        { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: Briefcase },
-        { id: "why-us", label: "Why Us?", icon: Award },
-        { id: "get-started", label: "Get Started", icon: Calendar },
-        { id: "faq", label: "FAQ", icon: FileText },
-
-      ]
-    },
-    { 
-      label: "3D Visualization", 
-      href: "/3dvisualization",
-      activeColor: "bg-green-500 text-white",
-      hoverColor: "hover:bg-green-50 hover:text-green-600",
-      tabs: [
-        { id: "services", label: "Services", icon: Home },
-        { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: Briefcase },
-        { id: "why-us", label: "Why Us?", icon: Award },
-        { id: "get-started", label: "Get Started", icon: Calendar },
-        { id: "faq", label: "FAQ", icon: FileText },
-
-      ]
-    },
-    { 
-      label: "IT", 
-      href: "/it",
-      activeColor: "bg-purple-500 text-white",
-      hoverColor: "hover:bg-purple-50 hover:text-purple-600",
-      tabs: [
-        { id: "services", label: "Services", icon: Home },
-        { id: "tools", label: "Tools", icon: Zap },
-        { id: "why-us", label: "Why Us?", icon: Award },
-        { id: "get-started", label: "Get Started", icon: Calendar },
-        { id: "faq", label: "FAQ", icon: FileText },
-
-      ]
-    },
-    { 
-      label: "Marketing", 
-      href: "/marketing",
-      activeColor: "bg-pink-500 text-white",
-      hoverColor: "hover:bg-pink-50 hover:text-pink-600",
-      tabs: [
-        { id: "services", label: "Services", icon: Home },
-        { id: "tools", label: "Tools", icon: Zap },
-        { id: "why-us", label: "Why Us?", icon: Award },
-        { id: "get-started", label: "Get Started", icon: Calendar },
-        { id: "faq", label: "FAQ", icon: FileText },
-
-      ]
-    },
-    { 
-      label: "Admin", 
-      href: "/admin",
-      activeColor: "bg-gray-500 text-white",
-      hoverColor: "hover:bg-gray-50 hover:text-gray-600",
-      tabs: [
-        { id: "services", label: "Services", icon: Home },
-        { id: "why-us", label: "Why Us?", icon: Award },
-        { id: "get-started", label: "Get Started", icon: Calendar },
-        { id: "faq", label: "FAQ", icon: FileText },
-
-      ]
-    },
-  ];
 
   const moreLinks = [
     { label: "About Us", href: "/about", icon: Users },

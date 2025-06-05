@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import blogImage from "../../assets/blog2.png"; // Adjust path if needed
+import blogImage from "../../assets/blogs3.png"; // Adjust path if needed
 
 const Offshore365Blog = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
