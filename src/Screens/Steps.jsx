@@ -28,7 +28,7 @@ const steps = [
     id: 4,
     title: "Measure and optimise",
     description: "Track progress and continuously optimize to ensure success.",
-    gradient: "linear-gradient(744deg, #E3E0D6, #C7C0AE 50%, #8F8A75)", // Red
+    gradient: "linear-gradient(744deg, #E2E0A0 30%, #C8C679 65%, #A6A65F)", // Red
   },
 ];
 

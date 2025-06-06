@@ -9,6 +9,7 @@ import {
   useInView,
   useAnimation,
 } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ Import Link for navigation
 
 import card1 from "../assets/architecture.webp";
 import card2 from "../assets/interior.webp";
@@ -18,14 +19,15 @@ import card5 from "../assets/admin.png";
 import card6 from "../assets/it.webp";
 import card7 from "../assets/Marketing.webp";
 
+// ✅ Add route links
 const cards = [
-  { id: 1, title: "Reduce no-shows", image: card1, overlayText: "Architecture" },
-  { id: 2, title: "Share your booking page", image: card2, overlayText: "Interior" },
-  { id: 3, title: "Manage your schedule", image: card3, overlayText: "BIM" },
-  { id: 4, title: "Connect your calendar", image: card4, overlayText: "3D Visualisation" },
-  { id: 5, title: "Customize your experience", image: card6, overlayText: "IT" },
-  { id: 6, title: "Marketing Tools", image: card7, overlayText: "Marketing" },
-  { id: 7, title: "Admin Tools", image: card5, overlayText: "Admin" },
+  { id: 1, title: "Reduce no-shows", image: card1, overlayText: "Architecture", link: "/architecture" },
+  { id: 2, title: "Share your booking page", image: card2, overlayText: "Interior", link: "/interior" },
+  { id: 3, title: "Manage your schedule", image: card3, overlayText: "BIM", link: "/bim" },
+  { id: 4, title: "Connect your calendar", image: card4, overlayText: "3D Visualisation", link: "/3dvisualization" },
+  { id: 5, title: "Customize your experience", image: card6, overlayText: "IT", link: "/it" },
+  { id: 6, title: "Marketing Tools", image: card7, overlayText: "Marketing", link: "/marketing" },
+  { id: 7, title: "Admin Tools", image: card5, overlayText: "Admin", link: "/admin" },
 ];
 
 const AnimatedText = ({ text, className, delay = 0 }) => {
@@ -133,14 +135,18 @@ const CardCarousel = () => {
                       {card.overlayText}
                     </motion.h2>
                   </div>
-                  <motion.p
-                    className="absolute top-4 right-4 text-white bg-white/30 px-4 py-2 rounded-full text-sm hover:bg-white/60 transition-colors"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: isActive ? 0.4 : 0 }}
-                  >
-                    Learn More
-                  </motion.p>
+
+                  {/* ✅ Learn More link */}
+                  <Link to={card.link}>
+                    <motion.p
+                      className="absolute top-4 right-4 text-white bg-white/30 px-4 py-2 rounded-full text-sm hover:bg-white/60 transition-colors cursor-pointer"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: isActive ? 0.4 : 0 }}
+                    >
+                      Learn More
+                    </motion.p>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -192,11 +198,21 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 1 }}
             >
               <motion.button
-                className="w-full sm:w-auto  text-lg sm:text-xl bg-[#256bff] text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
+                className="w-full sm:w-auto text-lg sm:text-xl bg-[#256bff] text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <motion.span className="regular" whileHover={{ x: 5 }} transition={{ duration: 0.3 }}>
+                <motion.span
+                  className="regular cursor-pointer"
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => {
+                    const section = document.getElementById("scheduling");
+                    if (section) {
+                      section.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
                   Schedule a Meet
                 </motion.span>
               </motion.button>

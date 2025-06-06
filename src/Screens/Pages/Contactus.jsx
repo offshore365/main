@@ -72,27 +72,31 @@ export default function ContactPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="py-20 px-4 sm:px-8 min-h-screen transition-all duration-1000 text-white flex justify-center items-center relative overflow-hidden bg-gradient-to-r from-[#003087] to-[#006BFF]"
+        className="py-12 sm:py-16 lg:py-20 h-[400px] sm:h-[500px] lg:h-[600px] transition-all duration-1000 text-white flex justify-center items-center relative overflow-hidden"
+        style={{
+          background: "linear-gradient(90deg, #003087, #006BFF)",
+        }}
       >
+        {/* Background Waves */}
         {[...Array(3)].map((_, i) => (
           <div
             key={`bg-wave-${i}`}
-            className="wave absolute w-[300%] h-[300%] opacity-30 left-[-0%] top-[-0%] rounded-full"
+            className="wave absolute w-[300%] h-[300%] opacity-20 sm:opacity-25 lg:opacity-30 left-[-50%] top-[-50%] rounded-full"
             style={{
-              background:
-                "linear-gradient(744deg, #003087, #006BFF 60%, #E6F0FA)",
+              background: "linear-gradient(744deg, #003087, #006BFF 60%, #E6F0FA)",
               animationDelay: `${i * 2}s`,
               animationDuration: `${15 + i * 5}s`,
             }}
           />
         ))}
 
-        <div className="relative text-center z-10 max-w-6xl mx-auto">
+        {/* Foreground Content */}
+        <div className="relative text-center px-4 sm:px-6 lg:px-4 z-10 max-w-6xl mx-auto" data-aos="fade-up">
           <motion.h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-[100px] font-extrabold tracking-wide mb-4 drop-shadow-2xl leading-tight"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[100px] font-extrabold tracking-wide mb-3 sm:mb-4 drop-shadow-2xl leading-tight"
           >
             Let’s Get Started
           </motion.h1>
@@ -101,41 +105,18 @@ export default function ContactPage() {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.2 }}
-            className="text-[20px] font-light max-w-2xl mx-auto text-white"
+            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] font-light max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
             Power up your productivity with Offshore365
           </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6 sm:mt-8">
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-white text-[#0d3557] regular rounded-xl transition-all duration-300 text-base shadow-lg"
-            >
-              Schedule a Consultation
-            </motion.button>
-
-            <Link to="/contact">
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-[#0d3557] transition-all duration-300 regular text-base shadow-lg"
-              >
-                Contact Our Team
-              </motion.button>
-            </Link>
-          </div>
+         
         </div>
       </motion.section>
 
+
       <Contact />
- {/* Map Section - Adelaide Office */}
+      {/* Map Section - Adelaide Office */}
       <section className="p-0 h-[400px] sm:h-[500px] relative">
         <div
           className="animate-on-scroll h-full"
@@ -146,15 +127,16 @@ export default function ContactPage() {
           }}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.8234567890!2d138.5234567890!3d-34.8876543210!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0c123456789ab%3A0x123456789abcdef0!2s76%20Wood%20Ave%2C%20Ridleyton%20SA%205008%2C%20Australia!5e0!3m2!1sen!2sus!4v1703123456789!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.032514960684!2d-73.98565868428388!3d40.7642099431287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258fdd3899f41%3A0x94d79ae64f617c5d!2s1755%20Broadway%2C%20New%20York%2C%20NY%2010019%2C%20USA!5e0!3m2!1sen!2sin!4v1717666263274!5m2!1sen!2sin"
             width="100%"
             height="100%"
             className="border-0"
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Adelaide Office Location"
+            title="New York Office Location"
           />
+
         </div>
       </section>
       <section className="py-20 px-4 sm:px-8 bg-white">
@@ -165,7 +147,7 @@ export default function ContactPage() {
           <p className="text-md sm:text-lg text-[#0d3557] mb-12 text-center">
             Connect with us across our global locations or explore partnership opportunities!
           </p>
-          
+
           {/* Address Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {/* Delhi Office */}
@@ -221,11 +203,11 @@ export default function ContactPage() {
             </div>
           </div>
 
-      
+
         </div>
       </section>
 
-     
+
 
       <style jsx>{`
         .wave {

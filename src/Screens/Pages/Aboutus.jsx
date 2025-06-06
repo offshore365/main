@@ -6,10 +6,12 @@ import shivaniImg from "../../assets/shivani.png";
 import rubyImg from "../../assets/ruby.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const AboutOffshore365 = () => {
   const [circleColor, setCircleColor] = useState("bg-blue-100");
-
+  const navigate = useNavigate();
+  const location = useLocation();
   useEffect(() => {
     // Initialize AOS animation library
     AOS.init({
@@ -124,9 +126,41 @@ const AboutOffshore365 = () => {
             solutions deliver exceptional projects, scale your operations
             seamlessly, enhance productivity, and drive sustainable growth.
           </p>
-          <button className="bg-[#006bff] hover:bg-blue-700 text-white regular px-4 py-2 rounded-lg text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-            Schedule a meet
-          </button>
+         <button
+      className="bg-[#006bff] hover:bg-blue-700 text-white regular px-4 py-2 rounded-lg text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      onClick={() => {
+        const currentPath = location.pathname;
+        const targetPath = "/";
+
+        // Reset scroll position immediately
+        window.scrollTo(0, 0);
+
+        if (currentPath === targetPath) {
+          // Same page - just scroll to section
+          const element = document.getElementById("scheduling");
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        } else {
+          // Different page - navigate and scroll to section
+          navigate("/#scheduling");
+          setTimeout(() => {
+            const element = document.getElementById("scheduling");
+            if (element) {
+              element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }, 100);
+        }
+      }}
+    >
+      Schedule a meet
+    </button>
           <p className="mt-24 sm:mt-12 md:mt-16 text-sm sm:text-base md:text-lg regular">
             The trusted offshore AEC partner for firms globally, from dynamic
             design studios to large-scale construction enterprises.
@@ -230,7 +264,7 @@ const AboutOffshore365 = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-            <div className="text-left">
+            <div className="text-center lg:text-left">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0d3557] mb-6 leading-tight">
                 Offshore 365 Infrastructure
               </h2>

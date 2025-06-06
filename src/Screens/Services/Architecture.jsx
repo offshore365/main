@@ -13,6 +13,17 @@ import architectureVideo from "../../assets/architecture.mp4";
 import Scheduling from "../Scheduling";
 import figmaLogo from "../../assets/ms.png";
 import offshoreLogo from "../../assets/logowh.png"; // adjust path if needed
+import autocad from "../../assets/autocad.png";
+import revit from "../../assets/revit.jpg";
+import sketchup from "../../assets/sketchup.png";
+import vray from "../../assets/vray.png";
+import lumion from "../../assets/lumion.png";
+import enscape from "../../assets/enscape.png";
+import photoshop from "../../assets/photoshop.jpg";
+import illustrator from "../../assets/illustrator.jpg";
+import archicad from "../../assets/archicad.jpg";
+import msoffice from "../../assets/ms.png";
+
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
@@ -23,6 +34,18 @@ const Architecture = () => {
   const tabsRef = useRef(null);
   const placeholderRef = useRef(null);
   const originalTopRef = useRef(null);
+const toolsList = [
+  { name: "AutoCAD", image: autocad },
+  { name: "Revit", image: revit },
+  { name: "SketchUp", image: sketchup },
+  { name: "V-Ray", image: vray },
+  { name: "Lumion", image: lumion },
+  { name: "Enscape", image: enscape },
+  { name: "Photoshop", image: photoshop },
+  { name: "Illustrator", image: illustrator },
+  { name: "Archicad", image: archicad },
+  { name: "MS Office", image: msoffice },
+];
 
   const tabs = [
     { id: "services", label: "Services" },
@@ -663,25 +686,26 @@ const Architecture = () => {
               </div>
 
               {/* Tools Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
-                {tabData.tools.software.slice(0, 8).map((tool, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center group hover:scale-105 transition-all duration-300 ease-out"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-xl overflow-hidden mb-2 sm:mb-3 group-hover:shadow-xl transition-shadow duration-300">
-                      <img
-                        src={figmaLogo}
-                        alt={tool.name}
-                        className="w-full h-full object-contain bg-white p-2 sm:p-3"
-                      />
-                    </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+  {toolsList.map((tool, index) => (
+    <div
+      key={index}
+      className="flex flex-col items-center group hover:scale-105 transition-all duration-300 ease-out"
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+    >
+      <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-xl overflow-hidden mb-2 sm:mb-3 group-hover:shadow-xl transition-shadow duration-300">
+        <img
+          src={tool.image}
+          alt={tool.name}
+          className="w-full h-full object-contain bg-white p-2 sm:p-3"
+        />
+      </div>
+      <p className="text-sm sm:text-base text-[#0d3557] font-medium">{tool.name}</p>
+    </div>
+  ))}
+</div>
 
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
@@ -704,12 +728,91 @@ const Architecture = () => {
                 </p>
               </div>
 
-              {/* Plans Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 justify-items-center">
+              {/* Plans Grid - Mobile Horizontal Scroll, Desktop Grid */}
+              <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 sm:gap-4 lg:gap-6 sm:justify-items-center">
+                {/* Mobile Horizontal Scroll Container */}
+                <div className="sm:hidden">
+                  <div className="overflow-x-auto pb-4" id="mobile-plans-scroll">
+                    <div className="flex gap-4 px-2" style={{ width: 'max-content' }}>
+                      {tabData.plans.plans.slice(0, 5).map((plan, index) => (
+                        <div
+                          key={index}
+                          className="group relative flex-shrink-0 w-[280px] h-[200px] bg-[#4F6D7A] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
+                          style={{
+                            border: "2px solid transparent",
+                          }}
+                        >
+                          {/* Wave Effects */}
+                          {[...Array(3)].map((_, i) => (
+                            <div
+                              key={`wave-${index}-${i}`}
+                              className={`wave absolute w-[320px] h-[320px] opacity-50 left-0 ${i === 0 ? "top-0 -mt-[70%]" : "top-[150px]"
+                                } -ml-[50%] rounded-[40%]`}
+                              style={{
+                                background:
+                                  i === 0
+                                    ? "#AFC5CD" // Light shore blue
+                                    : i === 1
+                                      ? "#4F6D7A" // Core blue
+                                      : "#2C3E47", // Deep slate
+                                animationDelay: `${i * 1}s`,
+                                animationDuration: `${5 + i * 2}s`,
+                              }}
+                            />
+                          ))}
+
+                          {/* Card Content */}
+                          <div className="relative z-10 flex flex-col items-center text-center justify-center h-full text-white px-6">
+                            <h1 className="text-xl tracking-wider text-white font-regular mb-3 transition-transform duration-300 group-hover:scale-110 leading-tight">
+                              {plan.title}
+                            </h1>
+                            <p className="text-base text-white/80 mb-4 leading-relaxed transition-transform duration-300 group-hover:scale-110 line-clamp-3">
+                              {plan.description.slice(0, 60)}...
+                            </p>
+                            <button className="w-full py-2.5 text-base rounded-lg bg-white text-[#0d3557] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95">
+                              Get started
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Mobile Navigation Buttons */}
+                  <div className="flex justify-center items-center gap-4 mt-6">
+                    <button
+                      onClick={() => {
+                        const container = document.getElementById('mobile-plans-scroll');
+                        container.scrollBy({ left: -300, behavior: 'smooth' });
+                      }}
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4F6D7A] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+
+
+
+                    <button
+                      onClick={() => {
+                        const container = document.getElementById('mobile-plans-scroll');
+                        container.scrollBy({ left: 300, behavior: 'smooth' });
+                      }}
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4F6D7A] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Desktop Grid Items - Hidden on Mobile */}
                 {tabData.plans.plans.slice(0, 5).map((plan, index) => (
                   <div
                     key={index}
-                    className="group relative w-full max-w-[280px] sm:w-[250px] lg:w-[240px] xl:w-[250px] h-[180px] sm:h-[200px] lg:h-[220px] xl:h-[200px] bg-[#4F6D7A] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
+                    className="group relative hidden sm:block w-full max-w-[280px] sm:w-[250px] lg:w-[240px] xl:w-[250px] h-[180px] sm:h-[200px] lg:h-[220px] xl:h-[200px] bg-[#4F6D7A] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
                     style={{
                       border: "2px solid transparent",
                     }}
@@ -717,7 +820,7 @@ const Architecture = () => {
                     {/* Wave Effects */}
                     {[...Array(3)].map((_, i) => (
                       <div
-                        key={`wave-${index}-${i}`}
+                        key={`wave-desktop-${index}-${i}`}
                         className={`wave absolute w-[280px] sm:w-[320px] lg:w-[350px] h-[280px] sm:h-[320px] lg:h-[350px] opacity-50 left-0 ${i === 0 ? "top-0 -mt-[60%] sm:-mt-[70%]" : "top-[120px] sm:top-[150px]"
                           } -ml-[40%] sm:-ml-[50%] rounded-[40%]`}
                         style={{
@@ -753,54 +856,77 @@ const Architecture = () => {
 
           {/* Styles */}
           <style jsx>{`
-        .wave {
-          animation: wave 5s infinite linear;
-          pointer-events: none;
-        }
+    .wave {
+      animation: wave 5s infinite linear;
+      pointer-events: none;
+    }
 
-        .wave:nth-child(2) {
-          animation-duration: 7s;
-        }
+    .wave:nth-child(2) {
+      animation-duration: 7s;
+    }
 
-        .wave:nth-child(3) {
-          animation-duration: 9s;
-        }
+    .wave:nth-child(3) {
+      animation-duration: 9s;
+    }
 
-        .group:hover .wave {
-          animation-play-state: paused;
-        }
+    .group:hover .wave {
+      animation-play-state: paused;
+    }
 
-        @keyframes wave {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
+    @keyframes wave {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
 
-        .line-clamp-3 {
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
-        /* Mobile-specific optimizations */
-        @media (max-width: 640px) {
-          .wave {
-            animation-duration: 6s;
-          }
-          
-          .wave:nth-child(2) {
-            animation-duration: 8s;
-          }
+    /* Mobile horizontal scroll styling */
+    .overflow-x-auto {
+      scrollbar-width: thin;
+      scrollbar-color: #4F6D7A transparent;
+    }
 
-          .wave:nth-child(3) {
-            animation-duration: 10s;
-          }
-        }
-      `}</style>
+    .overflow-x-auto::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+      background-color: #4F6D7A;
+      border-radius: 3px;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+      background-color: #0d3557;
+    }
+
+    /* Mobile-specific optimizations */
+    @media (max-width: 640px) {
+      .wave {
+        animation-duration: 6s;
+      }
+      
+      .wave:nth-child(2) {
+        animation-duration: 8s;
+      }
+
+      .wave:nth-child(3) {
+        animation-duration: 10s;
+      }
+    }
+  `}</style>
         </>
 
         {/* Why Us Section */}
@@ -1072,54 +1198,144 @@ const Architecture = () => {
         )}
 
         {/* FAQ Section */}
-        <motion.section
-          ref={(ref) => setRef("faq", ref)}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="py-8 sm:py-12 lg:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-6 lg:px-8"
-          id="faq"
-          data-aos="fade-up"
-        >
-          <div className="p-4 sm:p-6 lg:p-8 rounded-lg max-w-7xl mx-auto">
-            {/* Title */}
-            <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
-              {tabData.faq.title}
-            </h4>
-
-            {/* Subtitle */}
-            <p className="text-center text-[#0d3557] text-base sm:text-lg lg:text-[20px] mt-3 sm:mt-2 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-              {tabData.faq.description}
-            </p>
-
-            {/* FAQ Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 xl:gap-12 px-0 sm:px-2 xl:px-12 mt-6 sm:mt-8">
-              {tabData.faq.faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 lg:p-0 rounded-lg bg-white/50 sm:bg-transparent sm:border-none"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="mt-1 flex-shrink-0">{faq.icon}</div>
+   <motion.section
+  ref={(ref) => setRef("faq", ref)}
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="py-8 sm:py-12 lg:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-6 lg:px-8"
+  id="faq"
+  data-aos="fade-up"
+>
+  <div className="p-4 sm:p-6 lg:p-8 rounded-lg max-w-7xl mx-auto">
+    {/* Title */}
+    <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
+      {tabData.faq.title}
+    </h4>
+    
+    {/* Subtitle */}
+    <p className="text-center text-[#0d3557] text-base sm:text-lg lg:text-[20px] mt-3 sm:mt-2 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+      {tabData.faq.description}
+    </p>
+    
+    {/* FAQ Cards - Mobile Horizontal Scroll, Desktop Grid */}
+    <div className="mt-6 sm:mt-8">
+      {/* Mobile Horizontal Scroll Container */}
+      <div className="md:hidden">
+        <div className="overflow-x-auto pb-4" id="mobile-faq-scroll">
+          <div className="flex gap-4 px-2" style={{ width: 'max-content' }}>
+            {tabData.faq.faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex-shrink-0 w-[320px] p-4 rounded-lg bg-white/80 backdrop-blur-sm   transition-all duration-300 hover:scale-105 "
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="flex items-start space-x-3">
+                  <div className="mt-1 flex-shrink-0 text-[#4F6D7A]">{faq.icon}</div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="text-lg sm:text-xl lg:text-[20px] font-bold text-[#0d3557] leading-tight">
+                    <h4 className="text-lg font-bold text-[#0d3557] leading-tight mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-[#0d3557] text-sm sm:text-base lg:text-[14px] my-2 leading-relaxed">
+                    <p className="text-[#0d3557] text-sm leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.section>
+        </div>
+        
+        {/* Mobile Navigation Buttons */}
+        <div className="flex justify-center items-center gap-4 mt-6">
+          <button 
+            onClick={() => {
+              const container = document.getElementById('mobile-faq-scroll');
+              container.scrollBy({ left: -340, behavior: 'smooth' });
+            }}
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4F6D7A] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          
+         
+          
+          <button 
+            onClick={() => {
+              const container = document.getElementById('mobile-faq-scroll');
+              container.scrollBy({ left: 340, behavior: 'smooth' });
+            }}
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4F6D7A] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Desktop Grid - Hidden on Mobile */}
+      <div className="hidden md:grid grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 xl:gap-12 px-0 sm:px-2 xl:px-12">
+        {tabData.faq.faqs.map((faq, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 lg:p-0 rounded-lg bg-white/50 sm:bg-transparent sm:border-none"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <div className="mt-1 flex-shrink-0">{faq.icon}</div>
+            <div className="flex-1 min-w-0">
+              <h4 className="text-lg sm:text-xl lg:text-[20px] font-bold text-[#0d3557] leading-tight">
+                {faq.question}
+              </h4>
+              <p className="text-[#0d3557] text-sm sm:text-base lg:text-[14px] my-2 leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  {/* Styles */}
+  <style jsx>{`
+    /* Mobile horizontal scroll styling */
+    .overflow-x-auto {
+      scrollbar-width: thin;
+      scrollbar-color: #4F6D7A transparent;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+      background-color: #4F6D7A;
+      border-radius: 3px;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+      background-color: #0d3557;
+    }
+  `}</style>
+</motion.section>
       </div>
     </div>
   );

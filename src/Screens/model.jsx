@@ -138,9 +138,18 @@ const Model = () => {
                     loading="lazy"
                   />
                   <div className="absolute bottom-3 right-3">
-                    <button className="bg-white/30 text-sm  regular sm:text-base text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300">
-                     <span className='regular'>Choose Model</span>
-                    </button>
+                   <button
+  onClick={() => {
+    const section = document.getElementById("scheduling");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+  className="bg-white/30 text-sm regular sm:text-base text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300"
+>
+  <span className="regular">Choose Model</span>
+</button>
+
                   </div>
                 </div>
               </div>
@@ -162,9 +171,18 @@ const Model = () => {
               loading="lazy"
             />
             <div className="absolute bottom-4 right-4">
-              <button className="bg-white/30 regular text-base md:text-lg text-white px-4 py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300">
-                Choose Model
-              </button>
+             <button
+  onClick={() => {
+    const section = document.getElementById("scheduling");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+  className="bg-white/30 text-sm regular sm:text-base text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300"
+>
+  <span className="regular">Choose Model</span>
+</button>
+
             </div>
           </div>
           <div className="mt-4 text-center">

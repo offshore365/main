@@ -95,9 +95,17 @@ const Blogs = () => {
               support teams drive sustainable growth and seamless project
               execution.
             </p>
-            <button className="bg-[#006bff] regular hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Explore the Blog
-            </button>
+          <button
+  onClick={() => {
+    const section = document.getElementById("blog");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+  className="bg-[#006bff] regular hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+  Explore the Blog
+</button>
+
             <p className="mt-16 text-sm sm:text-base md:text-lg text-[#0d3557]">
               Trusted by global AEC leaders—from agile design studios to
               mega-construction firms.
@@ -170,7 +178,8 @@ const Blogs = () => {
       </AnimatePresence>
 
       {/* Blog Grid Section */}
-      <main className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <main className="max-w-7xl mx-auto px-6 lg:px-8 py-16"  id="blog">
+
         <section className="mb-16" data-aos="fade-up">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl text-[#0d3557] font-extrabold leading-tight mb-4">

@@ -4,7 +4,20 @@ import { motion } from 'framer-motion';
 import AOS from 'aos';
 import gsap from 'gsap';
 import 'aos/dist/aos.css';
-import tools from "../assets/ms.png";
+import autocad from "../assets/autocad.png";
+import revit from "../assets/revit.jpg";
+import sketchup from "../assets/sketchup.png";
+import vray from "../assets/vray.png";
+import lumion from "../assets/lumion.png";
+import enscape from "../assets/enscape.png";
+import max3ds from "../assets/3ds max.png";
+import photoshop from "../assets/photoshop.jpg";
+import illustrator from "../assets/illustrator.jpg";
+import archicad from "../assets/archicad.jpg";
+import navisworks from "../assets/navisworks.png";
+import civil3d from "../assets/civil 360.png";
+import premierepro from "../assets/premier pro.jpeg";
+import msoffice from "../assets/ms.png";
 
 const cardData = [
   {
@@ -40,7 +53,22 @@ const cardData = [
     description: "Enabling your in-house staff to focus on strategic growth.",
   },
 ];
-
+const toolIcons = [
+  { name: "AutoCAD", image: autocad },
+  { name: "Revit", image: revit },
+  { name: "SketchUp", image: sketchup },
+  { name: "V-Ray", image: vray },
+  { name: "Lumion", image: lumion },
+  { name: "Enscape", image: enscape },
+  { name: "3ds Max", image: max3ds },
+  { name: "Photoshop", image: photoshop },
+  { name: "Illustrator", image: illustrator },
+  { name: "Archicad", image: archicad },
+  { name: "Navisworks", image: navisworks },
+  { name: "Civil 3D", image: civil3d },
+  { name: "Premiere Pro", image: premierepro },
+  { name: "MS Office", image: msoffice },
+];
 const readMoreColors = ['pastel-red', 'pastel-yellow', 'pastel-green', 'pastel-blue'];
 const colorMap = {
   'pastel-red': '#F4E7DD',
@@ -143,7 +171,7 @@ const Features = () => {
         Innovate with Offshore 365
       </h1>
 
-      <p className="text-[18px] sm:text-[20px] text-[#0d3557] mb-10 max-w-2xl mx-auto gsap-subtext">
+      <p className="text-[18px] sm:text-[20px] text-[#0d3557] mb-10 max-w-2xl mx-auto ">
         Deliver seamless projects with our exceptional expertise
       </p>
 
@@ -167,7 +195,7 @@ const Features = () => {
         <div className="absolute top-0 left-0 w-16 sm:w-24 h-full z-10 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
         <div className="absolute top-0 right-0 w-16 sm:w-24 h-full z-10 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none" />
 
-        <p className="text-[16px] sm:text-[20px] text-[#0d3557] mb-10 max-w-2xl mx-auto leading-relaxed px-1-">
+        <p className="text-[16px] px-12 sm:px  sm:text-[20px] text-[#0d3557] mb-10 max-w-2xl mx-auto leading-relaxed px-1-">
           We bring together the finest talent and the most advanced technologies to empower your business.
         </p>
 
@@ -183,19 +211,16 @@ const Features = () => {
             }}
           >
             {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex gap-10 sm:gap-12">
-                {[
-                  'AutoCAD', 'Revit', 'SketchUp', 'V-Ray', 'Lumion', 'Enscape',
-                  '3ds Max', 'Photoshop', 'Illustrator', 'Archicad', 'Navisworks',
-                  'Civil 3D', 'Premiere Pro', 'MS Office'
-                ].map((tool, idx) => (
-                  <div key={`${i}-${idx}`} className="flex flex-col items-center min-w-[80px] sm:min-w-[100px]">
-                    <img src={tools} alt={tool} className="w-8 h-8 sm:w-10 sm:h-10" />
-                    <p className="text-[12px] sm:text-[14px] text-[#0d3557] mt-2">{tool}</p>
-                  </div>
-                ))}
-              </div>
-            ))}
+  <div key={i} className="flex gap-10 sm:gap-12">
+    {toolIcons.map((tool, idx) => (
+      <div key={`${i}-${idx}`} className="flex flex-col items-center min-w-[80px] sm:min-w-[100px]">
+        <img src={tool.image} alt={tool.name} className="w-8 h-8 sm:w-10 sm:h-10" />
+        <p className="text-[12px] sm:text-[14px] text-[#0d3557] mt-2">{tool.name}</p>
+      </div>
+    ))}
+  </div>
+))}
+
           </motion.div>
         </div>
       </div>

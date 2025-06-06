@@ -13,103 +13,102 @@ const Navbar = () => {
   const location = useLocation();
 
   // Define tabs for each navigation link
- const navLinksWithTabs = [
-  { 
-    label: "Architecture", 
-    href: "/architecture",
-    activeColor: "bg-[#2C3E47] text-white",
-    hoverColor: "hover:bg-[#E3E8EA] hover:text-[#2C3E47]",
-    tabs: [
-      { id: "services", label: "Services", icon: Home },
-      { id: "tools", label: "Tools", icon: Zap },
-      { id: "plans", label: "Plans", icon: Briefcase },
-      { id: "why-us", label: "Why Us?", icon: Award },
-      { id: "get-started", label: "Get Started", icon: Calendar },
-      { id: "faq", label: "FAQ", icon: FileText },
-    ]
-  },
-  { 
-    label: "Interior", 
-    href: "/interior",
-    activeColor: "bg-[#A66A6C] text-white",
-    hoverColor: "hover:bg-[#F0E6E6] hover:text-[#A66A6C]",
-    tabs: [
-      { id: "services", label: "Services", icon: Home },
-      { id: "tools", label: "Tools", icon: Zap },
-      { id: "plans", label: "Plans", icon: Briefcase },
-      { id: "why-us", label: "Why Us?", icon: Award },
-      { id: "get-started", label: "Get Started", icon: Calendar },
-      { id: "faq", label: "FAQ", icon: FileText },
-    ]
-  },
-  { 
-    label: "BIM", 
-    href: "/bim",
-    activeColor: "bg-[#C28E23] text-white",
-    hoverColor: "hover:bg-[#F5EBD5] hover:text-[#C28E23]",
-    tabs: [
-      { id: "services", label: "Services", icon: Home },
-      { id: "tools", label: "Tools", icon: Zap },
-      { id: "plans", label: "Plans", icon: Briefcase },
-      { id: "why-us", label: "Why Us?", icon: Award },
-      { id: "get-started", label: "Get Started", icon: Calendar },
-      { id: "faq", label: "FAQ", icon: FileText },
-    ]
-  },
-  { 
-    label: "3D Visualization", 
-    href: "/3dvisualization",
-    activeColor: "bg-[#A6A65F] text-white",
-    hoverColor: "hover:bg-[#F4F4E3] hover:text-[#A6A65F]",
-    tabs: [
-      { id: "services", label: "Services", icon: Home },
-      { id: "tools", label: "Tools", icon: Zap },
-      { id: "plans", label: "Plans", icon: Briefcase },
-      { id: "why-us", label: "Why Us?", icon: Award },
-      { id: "get-started", label: "Get Started", icon: Calendar },
-      { id: "faq", label: "FAQ", icon: FileText },
-    ]
-  },
-  { 
-    label: "IT", 
-    href: "/it",
-    activeColor: "bg-[#8F6FFF] text-white",
-    hoverColor: "hover:bg-[#ECE9FF] hover:text-[#8F6FFF]",
-    tabs: [
-      { id: "services", label: "Services", icon: Home },
-      { id: "tools", label: "Tools", icon: Zap },
-      { id: "why-us", label: "Why Us?", icon: Award },
-      { id: "get-started", label: "Get Started", icon: Calendar },
-      { id: "faq", label: "FAQ", icon: FileText },
-    ]
-  },
-  { 
-    label: "Marketing", 
-    href: "/marketing",
-    activeColor: "bg-[#3A8CA1] text-white",
-    hoverColor: "hover:bg-[#E1EFF3] hover:text-[#3A8CA1]",
-    tabs: [
-      { id: "services", label: "Services", icon: Home },
-      { id: "tools", label: "Tools", icon: Zap },
-      { id: "why-us", label: "Why Us?", icon: Award },
-      { id: "get-started", label: "Get Started", icon: Calendar },
-      { id: "faq", label: "FAQ", icon: FileText },
-    ]
-  },
-  { 
-    label: "Admin", 
-    href: "/admin",
-    activeColor: "bg-[#8F8A75] text-white",
-    hoverColor: "hover:bg-[#EFEDE6] hover:text-[#8F8A75]",
-    tabs: [
-      { id: "services", label: "Services", icon: Home },
-      { id: "why-us", label: "Why Us?", icon: Award },
-      { id: "get-started", label: "Get Started", icon: Calendar },
-      { id: "faq", label: "FAQ", icon: FileText },
-    ]
-  },
-];
-
+  const navLinksWithTabs = [
+    { 
+      label: "Architecture", 
+      href: "/architecture",
+      activeColor: "bg-[#2C3E47] text-white",
+      hoverColor: "hover:bg-[#E3E8EA] hover:text-[#2C3E47]",
+      tabs: [
+        { id: "services", label: "Services", icon: Home },
+        { id: "tools", label: "Tools", icon: Zap },
+        { id: "plans", label: "Plans", icon: Briefcase },
+        { id: "why-us", label: "Why Us?", icon: Award },
+        { id: "get-started", label: "Get Started", icon: Calendar },
+        { id: "faq", label: "FAQ", icon: FileText },
+      ]
+    },
+    { 
+      label: "Interior", 
+      href: "/interior",
+      activeColor: "bg-[#A66A6C] text-white",
+      hoverColor: "hover:bg-[#F0E6E6] hover:text-[#A66A6C]",
+      tabs: [
+        { id: "services", label: "Services", icon: Home },
+        { id: "tools", label: "Tools", icon: Zap },
+        { id: "plans", label: "Plans", icon: Briefcase },
+        { id: "why-us", label: "Why Us?", icon: Award },
+        { id: "get-started", label: "Get Started", icon: Calendar },
+        { id: "faq", label: "FAQ", icon: FileText },
+      ]
+    },
+    { 
+      label: "BIM", 
+      href: "/bim",
+      activeColor: "bg-[#C28E23] text-white",
+      hoverColor: "hover:bg-[#F5EBD5] hover:text-[#C28E23]",
+      tabs: [
+        { id: "services", label: "Services", icon: Home },
+        { id: "tools", label: "Tools", icon: Zap },
+        { id: "plans", label: "Plans", icon: Briefcase },
+        { id: "why-us", label: "Why Us?", icon: Award },
+        { id: "get-started", label: "Get Started", icon: Calendar },
+        { id: "faq", label: "FAQ", icon: FileText },
+      ]
+    },
+    { 
+      label: "3D Visualization", 
+      href: "/3dvisualization",
+      activeColor: "bg-[#A6A65F] text-white",
+      hoverColor: "hover:bg-[#F4F4E3] hover:text-[#A6A65F]",
+      tabs: [
+        { id: "services", label: "Services", icon: Home },
+        { id: "tools", label: "Tools", icon: Zap },
+        { id: "plans", label: "Plans", icon: Briefcase },
+        { id: "why-us", label: "Why Us?", icon: Award },
+        { id: "get-started", label: "Get Started", icon: Calendar },
+        { id: "faq", label: "FAQ", icon: FileText },
+      ]
+    },
+    { 
+      label: "IT", 
+      href: "/it",
+      activeColor: "bg-[#8F6FFF] text-white",
+      hoverColor: "hover:bg-[#ECE9FF] hover:text-[#8F6FFF]",
+      tabs: [
+        { id: "services", label: "Services", icon: Home },
+        { id: "tools", label: "Tools", icon: Zap },
+        { id: "why-us", label: "Why Us?", icon: Award },
+        { id: "get-started", label: "Get Started", icon: Calendar },
+        { id: "faq", label: "FAQ", icon: FileText },
+      ]
+    },
+    { 
+      label: "Marketing", 
+      href: "/marketing",
+      activeColor: "bg-[#3A8CA1] text-white",
+      hoverColor: "hover:bg-[#E1EFF3] hover:text-[#3A8CA1]",
+      tabs: [
+        { id: "services", label: "Services", icon: Home },
+        { id: "tools", label: "Tools", icon: Zap },
+        { id: "why-us", label: "Why Us?", icon: Award },
+        { id: "get-started", label: "Get Started", icon: Calendar },
+        { id: "faq", label: "FAQ", icon: FileText },
+      ]
+    },
+    { 
+      label: "Admin", 
+      href: "/admin",
+      activeColor: "bg-[#8F8A75] text-white",
+      hoverColor: "hover:bg-[#EFEDE6] hover:text-[#8F8A75]",
+      tabs: [
+        { id: "services", label: "Services", icon: Home },
+        { id: "why-us", label: "Why Us?", icon: Award },
+        { id: "get-started", label: "Get Started", icon: Calendar },
+        { id: "faq", label: "FAQ", icon: FileText },
+      ]
+    },
+  ];
 
   const moreLinks = [
     { label: "About Us", href: "/about", icon: Users },
@@ -120,7 +119,6 @@ const Navbar = () => {
 
   // Function to restore scroll position to top for new page loads
   const resetScrollPosition = () => {
-    // Reset scroll position immediately without animation
     window.scrollTo(0, 0);
   };
 
@@ -180,7 +178,6 @@ const Navbar = () => {
 
   // Updated handleLinkClick to reset scroll position
   const handleLinkClick = (href) => {
-    // Reset scroll position immediately before navigation
     resetScrollPosition();
     navigate(href);
     closeDropdowns();
@@ -345,10 +342,10 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Action Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4 regular">
             <button
-              onClick={() => handleLinkClick('/schedule')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm regular transition-all duration-200 transform hover:scale-105 flex items-center space-x-2"
+              onClick={() => handleTabClick('/', 'scheduling')}
+              className="bg-blue-600 hover:bg-blue-700 regular text-white px-4 py-2 rounded-lg text-sm regular transition-all duration-200 transform hover:scale-105 flex items-center space-x-2"
             >
               <span className="regular">Schedule a Meet</span>
             </button>
@@ -416,7 +413,7 @@ const Navbar = () => {
                   <img 
                     src={logo} 
                     alt="OffShore365 Logo" 
-                    className=" w-auto"
+                    className="h-12 w-auto"
                   />
                 </div>
                 <button
@@ -438,7 +435,7 @@ const Navbar = () => {
                             handleLinkClick(link.href);
                             setMobileOpen(false);
                           }}
-                          className={`flex-1 text-left px-3 py-2 rounded-lg transition-all duration-200 font-medium transform hover:scale-[1.02] text-sm ${
+                          className={`flex-1 text-left px-3 py-2 rounded-lg transition-all duration-200 regular transform hover:scale-[1.02] text-sm ${
                             isActive 
                               ? link.activeColor 
                               : `text-gray-700 ${link.hoverColor}`
@@ -471,7 +468,7 @@ const Navbar = () => {
                                 className="flex items-center space-x-2 w-full p-2 text-left rounded-lg hover:bg-gray-50 transition-all duration-200 transform hover:scale-[1.02]"
                               >
                                 <IconComponent size={16} className="text-blue-600" />
-                                <span className="text-gray-700 font-medium text-sm">{tab.label}</span>
+                                <span className="text-gray-700 regular text-sm">{tab.label}</span>
                               </button>
                             );
                           })}
@@ -494,7 +491,7 @@ const Navbar = () => {
                       className="flex items-center space-x-3 w-full p-2 text-left rounded-lg hover:bg-gray-50 transition-all duration-200 transform hover:scale-[1.02]"
                     >
                       <IconComponent size={16} className="text-blue-600" />
-                      <span className="text-gray-700 font-medium text-sm">{link.label}</span>
+                      <span className="text-gray-700 regular text-sm">{link.label}</span>
                     </button>
                   );
                 })}
@@ -502,10 +499,10 @@ const Navbar = () => {
               <div className="border-t border-gray-200 pt-4 mt-6">
                 <button
                   onClick={() => {
-                    handleLinkClick('/schedule');
+                    handleTabClick('/', 'scheduling');
                     setMobileOpen(false);
                   }}
-                  className="w-full regular bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded-lg text-center  transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2"
+                  className="w-full regular bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded-lg text-center transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2"
                 >
                   <span>Schedule a Meet</span>
                 </button>

@@ -322,7 +322,7 @@ const CareersPage = () => {
             />
           </div>
 
-          <div data-aos="fade-left">
+          <div data-aos="fade-left" className="text-center lg:text-left">
             <h2 className="text-3xl sm:text-4xl tracking-wide  md:text-5xl font-bold mb-2 sm:mb-8  leading-relaxed relative z-10"            >
               Our Mission
             </h2>
@@ -434,40 +434,129 @@ const CareersPage = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <h2 className="text-3xl sm:text-4xl tracking-wide  md:text-5xl font-bold mb-2 sm:mb-8  leading-relaxed relative z-10"            >
+            <h2 className="text-3xl sm:text-4xl tracking-wide md:text-5xl font-bold mb-2 sm:mb-8 leading-relaxed relative z-10">
               Precision Talent Acquisition by Offshore 365
             </h2>
-            <p className="text-sm sm:text-base md:text-lg  max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
               Our comprehensive 5-step process ensures we find the perfect fit
               for both our team and your career aspirations.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 overflow-x-auto">
-            {steps.map((step, index) => (
-              <div
-                key={step.number}
-                className="process-card flex-1 min-w-[200px] sm:min-w-[180px] border border-gray-200 rounded-xl p-4 sm:p-6 flex flex-col items-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                style={{ animationDelay: `${index * 0.1}s` }}
-                data-aos="fade-up"
-                data-aos-delay={`${index * 100}`}
-              >
-                <div className="text-blue-500 font-bold text-lg sm:text-xl mb-2">
-                  {step.number}
+          {/* Process Steps - Mobile Horizontal Scroll, Desktop Flex */}
+          <div>
+            {/* Mobile Horizontal Scroll Container */}
+            <div className="sm:hidden">
+              <div className="overflow-x-auto pb-4" id="mobile-process-scroll">
+                <div className="flex gap-4 px-2" style={{ width: 'max-content' }}>
+                  {steps.map((step, index) => (
+                    <div
+                      key={step.number}
+                      className="process-card flex-shrink-0 w-[280px] border border-gray-200 rounded-xl p-6 flex flex-col items-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                      data-aos="fade-up"
+                      data-aos-delay={`${index * 100}`}
+                    >
+                      <div className="text-blue-500 font-bold text-xl mb-2">
+                        {step.number}
+                      </div>
+                      <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4 transition-colors duration-300 hover:bg-blue-200">
+                        {step.icon}
+                      </div>
+                      <h3 className="text-lg font-regular text-center mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-center flex-grow">
+                        {step.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-                <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4 transition-colors duration-300 hover:bg-blue-200">
-                  {step.icon}
-                </div>
-                <h3 className="text-base sm:text-lg regular text-center mb-2">
-                  {step.title}
-                </h3>
-                <p className=" text-xs sm:text-sm text-center flex-grow">
-                  {step.description}
-                </p>
               </div>
-            ))}
+
+              {/* Mobile Navigation Buttons */}
+              <div className="flex justify-center items-center gap-4 mt-6">
+                <button
+                  onClick={() => {
+                    const container = document.getElementById('mobile-process-scroll');
+                    container.scrollBy({ left: -300, behavior: 'smooth' });
+                  }}
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-blue-600"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+
+
+
+                <button
+                  onClick={() => {
+                    const container = document.getElementById('mobile-process-scroll');
+                    container.scrollBy({ left: 300, behavior: 'smooth' });
+                  }}
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-blue-600"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Desktop Flex Layout - Hidden on Mobile */}
+            <div className="hidden sm:flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+              {steps.map((step, index) => (
+                <div
+                  key={step.number}
+                  className="process-card flex-1 min-w-[200px] sm:min-w-[180px] border border-gray-200 rounded-xl p-4 sm:p-6 flex flex-col items-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  data-aos="fade-up"
+                  data-aos-delay={`${index * 100}`}
+                >
+                  <div className="text-blue-500 font-bold text-lg sm:text-xl mb-2">
+                    {step.number}
+                  </div>
+                  <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4 transition-colors duration-300 hover:bg-blue-200">
+                    {step.icon}
+                  </div>
+                  <h3 className="text-base sm:text-lg regular text-center mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-center flex-grow">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+
+        {/* Styles */}
+        <style jsx>{`
+    /* Mobile horizontal scroll styling */
+    .overflow-x-auto {
+      scrollbar-width: thin;
+      scrollbar-color: #3b82f6 transparent;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+      background-color: #3b82f6;
+      border-radius: 3px;
+    }
+
+    .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+      background-color: #2563eb;
+    }
+  `}</style>
       </section>
 
       {/* Careers Section */}
@@ -590,10 +679,10 @@ const CareersPage = () => {
                     {/* File Upload Area */}
                     <div
                       className={`border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 ${isDragOver
-                          ? 'border-blue-400 bg-blue-50'
-                          : selectedFile
-                            ? 'border-green-400 bg-green-50'
-                            : 'border-gray-300 bg-gray-50 hover:border-blue-400 hover:bg-blue-50'
+                        ? 'border-blue-400 bg-blue-50'
+                        : selectedFile
+                          ? 'border-green-400 bg-green-50'
+                          : 'border-gray-300 bg-gray-50 hover:border-blue-400 hover:bg-blue-50'
                         }`}
                       onDragOver={handleDragOver}
                       onDragLeave={handleDragLeave}
@@ -653,8 +742,8 @@ const CareersPage = () => {
                         onClick={handleSubmit}
                         disabled={!selectedFile}
                         className={`flex items-center space-x-2 px-8 py-3 rounded-lg regular transition-all duration-300 ${selectedFile
-                            ? 'bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1'
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                          ? 'bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1'
+                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                           }`}
                       >
                         <Send className="w-5 h-5" />

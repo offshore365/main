@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-
 import {
   FaFacebookF,
   FaInstagram,
@@ -25,23 +23,15 @@ const Footer = () => {
       <div className="absolute w-32 sm:w-48 lg:w-60 h-32 sm:h-48 lg:h-60 top-[-20px] sm:top-[-40px] lg:top-[-50px] right-[-20px] sm:right-[-40px] lg:right-[-50px] bg-[#E1C2C1] backdrop-blur-lg rounded-full z-0 animate-float-right" />
       <div className="absolute w-40 sm:w-56 lg:w-72 h-40 sm:h-56 lg:h-72 bottom-[-24px] sm:bottom-[-48px] lg:bottom-[-60px] left-[-24px] sm:left-[-48px] lg:left-[-60px]  bg-[#B2E7F1] backdrop-blur-lg rounded-full z-0 animate-float-left" />
 
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 z-0" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12">
           {/* About Us */}
           <div className="sm:col-span-2 lg:col-span-1" data-aos="fade-up">
-            <img
-              src={logo}
-              alt="OffShore365 Logo"
-              className="h-10 sm:h-12 mb-3 sm:mb-4" 
-            />
+            <img src={logo} alt="OffShore365 Logo" className="h-10 sm:h-12 mb-3 sm:mb-4" />
             <p className="text-xs sm:text-sm text-[#0d3557] mb-3 leading-relaxed">
-              Your global productivity partner delivering tech smart workforce
-              solutions tailored for your AEC Business ensuring seamless expansion
-              and efficiency.
+              Your global productivity partner delivering tech smart workforce solutions tailored for your AEC Business ensuring seamless expansion and efficiency.
             </p>
           </div>
 
@@ -50,39 +40,25 @@ const Footer = () => {
             <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#0d3557]">Services</h3>
             <ul className="text-xs sm:text-sm space-y-1.5 sm:space-y-2 text-[#0d3557]">
               <li>
-                <Link to="/architecture" className="hover:text-[#256bff] transition regular">
-                  Architecture
-                </Link>
+                <a href="/architecture" className="hover:text-[#256bff] transition regular">Architecture</a>
               </li>
               <li>
-                <Link to="/interior" className="hover:text-[#256bff] transition regular">
-                  Interior
-                </Link>
+                <a href="/interior" className="hover:text-[#256bff] transition regular">Interior</a>
               </li>
               <li>
-                <Link to="/3dvisualization" className="hover:text-[#256bff] transition regular">
-                  3D Visualisation
-                </Link>
+                <a href="/3dvisualization" className="hover:text-[#256bff] transition regular">3D Visualisation</a>
               </li>
               <li>
-                <Link to="/bim" className="hover:text-[#256bff] transition regular">
-                  BIM
-                </Link>
+                <a href="/bim" className="hover:text-[#256bff] transition regular">BIM</a>
               </li>
               <li>
-                <Link to="/it" className="hover:text-[#256bff] transition regular">
-                  IT
-                </Link>
+                <a href="/it" className="hover:text-[#256bff] transition regular">IT</a>
               </li>
               <li>
-                <Link to="/marketing" className="hover:text-[#256bff] transition regular">
-                  Marketing
-                </Link>
+                <a href="/marketing" className="hover:text-[#256bff] transition regular">Marketing</a>
               </li>
               <li>
-                <Link to="/admin" className="hover:text-[#256bff] transition regular">
-                  Admin
-                </Link>
+                <a href="/admin" className="hover:text-[#256bff] transition regular">Admin</a>
               </li>
             </ul>
           </div>
@@ -91,67 +67,27 @@ const Footer = () => {
           <div data-aos="fade-up" data-aos-delay="150">
             <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#0d3557]">Quick Links</h3>
             <ul className="text-xs sm:text-sm space-y-1.5 sm:space-y-2 text-[#0d3557]">
-              <li>
-                <a href="/" className="hover:text-[#256bff] transition regular">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/about"
-                  className="hover:text-[#256bff] transition regular"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/careers"
-                  className="hover:text-[#256bff] transition regular"
-                >
-                  Career
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/contact"
-                  className="hover:text-[#256bff] transition regular"
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/blogs"
-                  className="hover:text-[#256bff] transition regular"
-                >
-                  Blogs
-                </a>
-              </li>
+              <li><a href="/" className="hover:text-[#256bff] transition regular">Home</a></li>
+              <li><a href="/about" className="hover:text-[#256bff] transition regular">About Us</a></li>
+              <li><a href="/careers" className="hover:text-[#256bff] transition regular">Career</a></li>
+              <li><a href="/contact" className="hover:text-[#256bff] transition regular">Contact Us</a></li>
+              <li><a href="/blogs" className="hover:text-[#256bff] transition regular">Blogs</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div data-aos="fade-up" data-aos-delay="200">
-            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#0d3557]">
-              Contact Info
-            </h3>
+            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#0d3557]">Contact Info</h3>
             <div className="space-y-2 sm:space-y-3">
-              {/* Phone Number */}
               <div className="flex items-center gap-2">
-                <a 
-                  href="tel:+13469109009" 
-                  className="text-xs sm:text-sm text-[#0d3557] hover:text-[#256bff] transition regular"
-                >
+                <a href="tel:+13469109009" className="text-xs sm:text-sm text-[#0d3557] hover:text-[#256bff] transition regular">
                   +1 917 590 0037 
                 </a>
               </div>
-              
-              {/* Address */}
               <div className="flex items-start gap-2">
                 <div className="text-xs sm:text-sm text-[#0d3557] leading-relaxed">
-                  <div className="regular">1755 Broadway  </div>
-                  <div className="regular"> FRNT3 New York, NY 10019 </div>
+                  <div className="regular">1755 Broadway</div>
+                  <div className="regular">FRNT3 New York, NY 10019</div>
                 </div>
               </div>
             </div>
@@ -179,19 +115,10 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="mt-6 sm:mt-8 lg:mt-12 flex justify-center gap-3 sm:gap-4 lg:gap-5">
           {[
-            {
-              Icon: FaFacebookF,
-              url: "https://www.facebook.com/profile.php?id=61576854336791&mibextid=LQQJ4d",
-            },
+            { Icon: FaFacebookF, url: "https://www.facebook.com/profile.php?id=61576854336791&mibextid=LQQJ4d" },
             { Icon: FaXTwitter, url: "https://x.com/Offshore365_" },
-            {
-              Icon: FaInstagram,
-              url: "https://www.instagram.com/offshore365?igsh=MWI5bGg3YjV5bWd1MQ==",
-            },
-            {
-              Icon: FaLinkedinIn,
-              url: "https://www.linkedin.com/company/offshore365/",
-            },
+            { Icon: FaInstagram, url: "https://www.instagram.com/offshore365?igsh=MWI5bGg3YjV5bWd1MQ==" },
+            { Icon: FaLinkedinIn, url: "https://www.linkedin.com/company/offshore365/" },
             { Icon: FaYoutube, url: "https://www.youtube.com/@OFFSHORE_365" },
           ].map(({ Icon, url }, idx) => (
             <a
@@ -206,7 +133,6 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Copyright */}
         <div className="regular text-center mt-4 sm:mt-6 lg:mt-8 text-xs sm:text-sm text-[#0d3557] border-t border-gray-200 pt-4 sm:pt-6">
           © {new Date().getFullYear()} OffShore365. All rights reserved.
         </div>
