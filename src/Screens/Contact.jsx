@@ -295,7 +295,7 @@ export default function ContactPage() {
                   onClick={handleSubmit}
                   className="w-full h-10 sm:h-12 bg-blue-600 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl active:scale-95 relative overflow-hidden group text-sm sm:text-base"
                 >
-                  <span className="relative z-10">Submit Request</span>
+                  <span className="relative z-10 regular">Submit Request</span>
                 </button>
               </div>
             </div>

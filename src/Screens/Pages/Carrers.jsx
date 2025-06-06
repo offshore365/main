@@ -246,27 +246,27 @@ const CareersPage = () => {
         data-aos="fade-up"
       >
         <div className="max-w-7xl mx-auto text-center relative">
-         {/* Floating Shapes */}
-<div
-  className="absolute left-4 sm:left-10 md:left-20 top-20 sm:top-40 md:top-60 w-16 sm:w-24 md:w-32 h-16 sm:h-24 md:h-32 bg-[#B2E7F1] rounded-full transform rotate-45"
-  data-aos="zoom-in"
-  data-aos-delay="200"
-></div>
-<div
-  className="absolute right-4 sm:right-8 md:right-16 top-8 sm:top-10 md:top-12 w-12 sm:w-16 md:w-24 h-12 sm:h-16 md:h-24 bg-[#F1B2B2] rounded-full"
-  data-aos="zoom-in"
-  data-aos-delay="300"
-></div>
-<div
-  className="absolute left-8 sm:left-20 md:left-40 bottom-8 sm:bottom-10 md:bottom-12 w-14 sm:w-20 md:w-28 h-14 sm:h-20 md:h-28 bg-[#FFCF72] rounded-full transform -rotate-12"
-  data-aos="zoom-in"
-  data-aos-delay="400"
-></div>
-<div
-  className="absolute right-8 sm:right-20 md:right-40 bottom-12 sm:bottom-20 md:bottom-40 w-10 sm:w-16 md:w-20 h-10 sm:h-16 md:h-20 bg-[#CCB4FE] rounded-full"
-  data-aos="zoom-in"
-  data-aos-delay="500"
-></div>
+          {/* Floating Shapes */}
+          <div
+            className="absolute left-4 sm:left-10 md:left-20 top-20 sm:top-40 md:top-60 w-16 sm:w-24 md:w-32 h-16 sm:h-24 md:h-32 bg-[#B2E7F1] rounded-full transform rotate-45"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          ></div>
+          <div
+            className="absolute right-4 sm:right-8 md:right-16 top-8 sm:top-10 md:top-12 w-12 sm:w-16 md:w-24 h-12 sm:h-16 md:h-24 bg-[#F1B2B2] rounded-full"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          ></div>
+          <div
+            className="absolute left-8 sm:left-20 md:left-40 bottom-8 sm:bottom-10 md:bottom-12 w-14 sm:w-20 md:w-28 h-14 sm:h-20 md:h-28 bg-[#FFCF72] rounded-full transform -rotate-12"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          ></div>
+          <div
+            className="absolute right-8 sm:right-20 md:right-40 bottom-12 sm:bottom-20 md:bottom-40 w-10 sm:w-16 md:w-20 h-10 sm:h-16 md:h-20 bg-[#CCB4FE] rounded-full"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          ></div>
 
 
           <div className="inline-block bg-blue-100 rounded-full px-3 py-1 mb-6 sm:mb-8">
@@ -298,10 +298,10 @@ const CareersPage = () => {
             data-aos="zoom-in"
             data-aos-delay="300"
           >
-           Join Us
+            Join Us
           </button>
 
-        
+
         </div>
       </section>
 
@@ -317,13 +317,13 @@ const CareersPage = () => {
           >
             <img
               src={mission}
-            
+
               className="w-[800px] h-[400px] object-cover transform transition-transform duration-700 group-hover:scale-105"
             />
           </div>
 
           <div data-aos="fade-left">
-            <h2             className="text-3xl sm:text-4xl tracking-wide  md:text-5xl font-bold mb-2 sm:mb-8  leading-relaxed relative z-10"            >
+            <h2 className="text-3xl sm:text-4xl tracking-wide  md:text-5xl font-bold mb-2 sm:mb-8  leading-relaxed relative z-10"            >
               Our Mission
             </h2>
             <p className="text-sm sm:text-base md:text-lg mb-6 leading-relaxed">
@@ -434,7 +434,7 @@ const CareersPage = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <h2             className="text-3xl sm:text-4xl tracking-wide  md:text-5xl font-bold mb-2 sm:mb-8  leading-relaxed relative z-10"            >
+            <h2 className="text-3xl sm:text-4xl tracking-wide  md:text-5xl font-bold mb-2 sm:mb-8  leading-relaxed relative z-10"            >
               Precision Talent Acquisition by Offshore 365
             </h2>
             <p className="text-sm sm:text-base md:text-lg  max-w-3xl mx-auto">
@@ -533,154 +533,142 @@ const CareersPage = () => {
 
 
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
-      <div className="max-w-full mx-auto">
-        <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 sm:p-12 md:p-16 text-center relative overflow-hidden">
-          {/* Only 2 background circles */}
-          <div className="absolute top-4 sm:top-8 left-4 sm:left-8 w-16 sm:w-20 h-16 sm:h-20 bg-blue-300 rounded-full opacity-40"></div>
-          <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 w-12 sm:w-16 h-12 sm:h-16 bg-blue-200 rounded-full opacity-40"></div>
+        <div className="max-w-full mx-auto">
+          <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 sm:p-12 md:p-16 text-center relative overflow-hidden">
+            {/* Only 2 background circles */}
+            <div className="absolute top-4 sm:top-8 left-4 sm:left-8 w-16 sm:w-20 h-16 sm:h-20 bg-blue-300 rounded-full opacity-40"></div>
+            <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 w-12 sm:w-16 h-12 sm:h-16 bg-blue-200 rounded-full opacity-40"></div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 relative z-10">
-            Apply for Jobs
-          </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 relative z-10">
+              Apply for Jobs
+            </h2>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center mb-8 relative z-10">
-            <div className="bg-white rounded-2xl px-6 sm:px-8 py-4 shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <span className="text-blue-600 text-sm sm:text-lg regular">
-              Career@offshore365.in
-              </span>
-              <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
-                <ChevronRight className="w-4 h-4 text-blue-400" />
-              </div>
-             
-            </div>
-          </div>
-
-          <div className="max-w-3xl mx-auto relative z-10">
-            <p className="text-blue-100 leading-relaxed text-sm sm:text-base md:text-lg mb-6">
-              Offshore 365 welcomes all the talented and skilled Architects,
-              Interior Designers, 3D Visualizers, Revit experts, and Engineers
-              to partake in the rapidly growing organization with a global
-              footprint. Offshore 365 values and welcomes all applicants who
-              would help us in our aim of "Accelerating Growth Through
-              Delivery Excellence".
-            </p>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 mb-8">
-              <p className="text-white text-sm sm:text-base leading-relaxed">
-                We welcome all the talented and skilled Architects, Interior
-                Designers, 3D Visualizers, Revit experts, and Engineers to
-                partake in the rapidly growing organization with a global
-                footprint. We value and welcome all applicants who would help
-                Offshore 365 in our aim of "Accelerating Growth Through
-                Delivery Excellence"
-              </p>
-            </div>
-
-            <div>
-              <button 
-                onClick={() => setShowDropdown(!showDropdown)}
-                className="bg-white text-blue-600 hover:bg-blue-50 regular py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
-              >
-                Send Your Resume
-              </button>
-
-              {/* Dropdown File Upload Section */}
-              {showDropdown && (
-                <div className="mt-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-white/30 shadow-2xl animate-in slide-in-from-top-2 duration-300">
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-blue-800 regular text-lg">Upload Your Resume</h3>
-                    <button 
-                      onClick={() => setShowDropdown(false)}
-                      className="text-gray-500 hover:text-gray-700 transition-colors"
-                    >
-                      <X className="w-5 h-5" />
-                    </button>
-                  </div>
-
-                  {/* File Upload Area */}
-                  <div 
-                    className={`border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 ${
-                      isDragOver 
-                        ? 'border-blue-400 bg-blue-50' 
-                        : selectedFile 
-                          ? 'border-green-400 bg-green-50' 
-                          : 'border-gray-300 bg-gray-50 hover:border-blue-400 hover:bg-blue-50'
-                    }`}
-                    onDragOver={handleDragOver}
-                    onDragLeave={handleDragLeave}
-                    onDrop={handleDrop}
-                  >
-                    {selectedFile ? (
-                      <div className="space-y-4">
-                        <div className="flex items-center justify-center space-x-2">
-                          <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                            <Upload className="w-6 h-6 text-green-600" />
-                          </div>
-                        </div>
-                        <div>
-                          <p className="text-green-700 regular">{selectedFile.name}</p>
-                          <p className="text-gray-500 text-sm">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB</p>
-                        </div>
-                        <button
-                          onClick={removeFile}
-                          className="text-red-500 hover:text-red-700 text-sm regular transition-colors"
-                        >
-                          Remove File
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="space-y-4">
-                        <div className="flex items-center justify-center">
-                          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                            <Upload className="w-6 h-6 text-blue-600" />
-                          </div>
-                        </div>
-                        <div>
-                          <p className="text-gray-700 regular mb-2">
-                            Drag and drop your PDF here, or click to browse
-                          </p>
-                          <p className="text-gray-500 text-sm">PDF files only, max 10MB</p>
-                        </div>
-                        <input
-                          type="file"
-                          accept=".pdf"
-                          onChange={handleFileSelect}
-                          className="hidden"
-                          id="resume-upload"
-                        />
-                        <label
-                          htmlFor="resume-upload"
-                          className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg regular hover:bg-blue-700 transition-colors cursor-pointer"
-                        >
-                          Choose File
-                        </label>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Send Button */}
-                  <div className="mt-6 flex justify-center">
-                    <button
-                      onClick={handleSubmit}
-                      disabled={!selectedFile}
-                      className={`flex items-center space-x-2 px-8 py-3 rounded-lg regular transition-all duration-300 ${
-                        selectedFile
-                          ? 'bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1'
-                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                      }`}
-                    >
-                      <Send className="w-5 h-5" />
-                      <span>Send Resume</span>
-                    </button>
-                  </div>
+            <div className="flex flex-row items-center justify-center mb-8 relative z-10">
+              <div className="bg-white rounded-2xl px-6 sm:px-8 py-4 shadow-lg flex flex-row items-center space-x-4">
+                <span className="text-blue-600 text-sm sm:text-lg regular">
+                  Career@offshore365.in
+                </span>
+                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
+                  <ChevronRight className="w-4 h-4 text-blue-400" />
                 </div>
-              )}
+              </div>
+            </div>
+
+
+            <div className="max-w-3xl mx-auto relative z-10">
+              <p className="text-blue-100 leading-relaxed text-sm sm:text-base md:text-lg mb-6">
+                Offshore 365 welcomes all the talented and skilled Architects,
+                Interior Designers, 3D Visualizers, Revit experts, and Engineers
+                to partake in the rapidly growing organization with a global
+                footprint. Offshore 365 values and welcomes all applicants who
+                would help us in our aim of "Accelerating Growth Through
+                Delivery Excellence".
+              </p>
+
+
+              <div>
+                <button
+                  onClick={() => setShowDropdown(!showDropdown)}
+                  className="bg-white text-blue-600 hover:bg-blue-50 regular py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
+                >
+                  Send Your Resume
+                </button>
+
+                {/* Dropdown File Upload Section */}
+                {showDropdown && (
+                  <div className="mt-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-white/30 shadow-2xl animate-in slide-in-from-top-2 duration-300">
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="text-blue-800 regular text-lg">Upload Your Resume</h3>
+                      <button
+                        onClick={() => setShowDropdown(false)}
+                        className="text-gray-500 hover:text-gray-700 transition-colors"
+                      >
+                        <X className="w-5 h-5" />
+                      </button>
+                    </div>
+
+                    {/* File Upload Area */}
+                    <div
+                      className={`border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 ${isDragOver
+                          ? 'border-blue-400 bg-blue-50'
+                          : selectedFile
+                            ? 'border-green-400 bg-green-50'
+                            : 'border-gray-300 bg-gray-50 hover:border-blue-400 hover:bg-blue-50'
+                        }`}
+                      onDragOver={handleDragOver}
+                      onDragLeave={handleDragLeave}
+                      onDrop={handleDrop}
+                    >
+                      {selectedFile ? (
+                        <div className="space-y-4">
+                          <div className="flex items-center justify-center space-x-2">
+                            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                              <Upload className="w-6 h-6 text-green-600" />
+                            </div>
+                          </div>
+                          <div>
+                            <p className="text-green-700 regular">{selectedFile.name}</p>
+                            <p className="text-gray-500 text-sm">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB</p>
+                          </div>
+                          <button
+                            onClick={removeFile}
+                            className="text-red-500 hover:text-red-700 text-sm regular transition-colors"
+                          >
+                            Remove File
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="space-y-4">
+                          <div className="flex items-center justify-center">
+                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                              <Upload className="w-6 h-6 text-blue-600" />
+                            </div>
+                          </div>
+                          <div>
+                            <p className="text-gray-700 regular mb-2">
+                              Drag and drop your PDF here, or click to browse
+                            </p>
+                            <p className="text-gray-500 text-sm">PDF files only, max 10MB</p>
+                          </div>
+                          <input
+                            type="file"
+                            accept=".pdf"
+                            onChange={handleFileSelect}
+                            className="hidden"
+                            id="resume-upload"
+                          />
+                          <label
+                            htmlFor="resume-upload"
+                            className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg regular hover:bg-blue-700 transition-colors cursor-pointer"
+                          >
+                            Choose File
+                          </label>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Send Button */}
+                    <div className="mt-6 flex justify-center">
+                      <button
+                        onClick={handleSubmit}
+                        disabled={!selectedFile}
+                        className={`flex items-center space-x-2 px-8 py-3 rounded-lg regular transition-all duration-300 ${selectedFile
+                            ? 'bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1'
+                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                          }`}
+                      >
+                        <Send className="w-5 h-5" />
+                        <span>Send Resume</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  {/* <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
+      </section>
+      {/* <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
   <div className="max-w-full mx-auto">
     <div className="bg-gradient-to-br from-[#B2E7F1] to-[#CCB4FE] rounded-3xl p-8 sm:p-12 md:p-16 text-center relative overflow-hidden">
       <div className="absolute top-4 sm:top-8 left-4 sm:left-8 w-16 sm:w-20 h-16 sm:h-20 bg-[#F1B2B2] rounded-full opacity-40"></div>

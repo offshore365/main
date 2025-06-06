@@ -151,7 +151,7 @@ const AboutOffshore365 = () => {
             and stunning 3D Visualization for Interior Design, Architecture, and
             Engineering projects.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 md:mt-20">
+          <div className="grid grid-cols-3 sm:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 md:mt-20">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#E1C2C1] font-bold mb-4">
                 500+

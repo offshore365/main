@@ -53,7 +53,7 @@ const Architecture = () => {
       ],
     },
     tools: {
-      title: "Connect with Offshore365 with the tools to already use",
+      title: "Connect with Offshore365 with the tools you already use",
       description:
         "Work seamlessly with offshore experts skilled in leading AEC software.",
       image: toolsImage,
@@ -559,12 +559,12 @@ const Architecture = () => {
             {/* RIGHT: FEATURES + CAROUSEL */}
             <div className="flex-1 w-full lg:w-auto flex flex-col gap-4 sm:gap-6" data-aos="fade-left">
               {/* Feature boxes */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-[#1F3B4D]">
                 {features.map((feature, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.02, backgroundColor: "#f1f5f9" }}
-                    className="flex items-start p-3 sm:p-2 bg-white rounded-xl hover:shadow-lg transition-all duration-300 "
+                    className="flex items-start p-1 sm:p-2 bg-white rounded-xl hover:shadow-lg transition-all duration-300 "
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -931,8 +931,10 @@ const Architecture = () => {
 
         {/* Get Started Section */}
         <section
+          ref={(ref) => setRef("get-started", ref)}
           className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 min-h-[400px] sm:min-h-[500px] lg:h-[550px] transition-all duration-1000 text-white flex rounded-2xl justify-center items-center relative overflow-hidden"
           style={{ background: activeGradient }}
+          id="get-started"
         >
           {/* Background Waves - Responsive */}
           {[...Array(3)].map((_, i) => (
@@ -960,7 +962,7 @@ const Architecture = () => {
               <img
                 src={offshoreLogo}
                 alt="Offshore365 Logo"
-                className="w-48 sm:w-64 md:w-80 lg:w-[500px] xl:w-[600px] h-auto object-contain transition-all duration-500"
+                className="w-[300px] sm:w-64 md:w-80 lg:w-[500px] xl:w-[600px]  object-contain transition-all duration-500"
               />
             </div>
 
@@ -970,20 +972,22 @@ const Architecture = () => {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-md sm:max-w-none mx-auto">
+            {/* Action Buttons */}
+            <div className="flex flex-row flex-wrap justify-center items-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
               <button
                 onClick={() => setShowSchedulingSection(true)}
-                className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-white text-gray-700 rounded-xl transition-all duration-300 text-sm sm:text-base regular shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
+                className="group px-6 sm:px-8 py-3 sm:py-3.5 bg-white text-gray-700 rounded-xl transition-all duration-300 text-sm sm:text-base regular shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
               >
-                <span className="group-hover:animate-pulse regular ">Schedule a Meet</span>
+                <span className="group-hover:animate-pulse regular">Schedule a Meet</span>
               </button>
 
               <button
-                className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 border border-white text-white rounded-xl hover:bg-white hover:text-gray-700 transition-all duration-300 regular text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
+                className="group px-6 sm:px-8 py-3 sm:py-3.5 border border-white text-white rounded-xl hover:bg-white hover:text-gray-700 transition-all duration-300 regular text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
               >
                 <span className="group-hover:animate-pulse regular">Contact Our Team</span>
               </button>
             </div>
+
 
 
           </div>
