@@ -533,7 +533,7 @@ const Architecture = () => {
 
 
       {/* Main Content */}
-      <div className="container mx-auto px-24  ">
+<div className="container mx-auto px-2 sm:px-24">
         {/* Services Section */}
         <motion.section
           ref={(ref) => setRef("services", ref)}
