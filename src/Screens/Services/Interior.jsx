@@ -793,7 +793,7 @@ const Architecture = () => {
                         const container = document.getElementById('mobile-plans-scroll');
                         container.scrollBy({ left: -300, behavior: 'smooth' });
                       }}
-                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A66A6C] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A66A6C] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#B78485]"
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -807,7 +807,7 @@ const Architecture = () => {
                         const container = document.getElementById('mobile-plans-scroll');
                         container.scrollBy({ left: 300, behavior: 'smooth' });
                       }}
-                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A66A6C] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A66A6C] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#B78485]"
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -859,7 +859,7 @@ const Architecture = () => {
                             target.scrollIntoView({ behavior: "smooth" });
                           }
                         }}
-                        className="w-full py-2 sm:py-2.5 text-sm sm:text-base lg:text-[16px] rounded-lg bg-white text-[#0d3557] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
+                        className="w-full py-2 sm:py-2.5 text-sm sm:text-base lg:text-[16px] rounded-lg bg-white text-[#A66A6C] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
                       >
                         Get started
                       </button>
@@ -1276,7 +1276,7 @@ const Architecture = () => {
                       const container = document.getElementById('mobile-faq-scroll');
                       container.scrollBy({ left: -340, behavior: 'smooth' });
                     }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A66A6C] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A66A6C] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#A66A6C]"
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -1290,7 +1290,7 @@ const Architecture = () => {
                       const container = document.getElementById('mobile-faq-scroll');
                       container.scrollBy({ left: 340, behavior: 'smooth' });
                     }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A66A6C] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A66A6C] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#A66A6C]"
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

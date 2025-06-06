@@ -206,7 +206,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#4F6D7A]"
+              className="h-12 w-12 text-[#8F8A75]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -230,7 +230,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#4F6D7A]"
+              className="h-12 w-12 text-[#8F8A75]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -252,7 +252,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#4F6D7A]"
+              className="h-12 w-12 text-[#8F8A75]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -273,7 +273,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#4F6D7A]"
+              className="h-12 w-12 text-[#8F8A75]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -294,7 +294,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#4F6D7A]"
+              className="h-12 w-12 text-[#8F8A75]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -316,7 +316,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#4F6D7A]"
+              className="h-12 w-12 text-[#8F8A75]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -438,8 +438,7 @@ const Architecture = () => {
     return () => clearInterval(interval);
   }, [features.length]);
 
-  const activeGradient = "linear-gradient(744deg, #AFC5CD, #4F6D7A 35%, #3B5560 70%, #2C3E47)";
-
+  const activeGradient = "linear-gradient(744deg, #E3E0D6, #C7C0AE 50%, #8F8A75)";
 
   return (
     <div className="min-h-screen">
@@ -471,8 +470,7 @@ const Architecture = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[100px] font-extrabold tracking-wide mb-3 sm:mb-4 drop-shadow-2xl leading-tight"
           >
-            Architecture
-          </motion.h1>
+Admin          </motion.h1>
 
           <motion.p
             initial={{ y: 30, opacity: 0 }}
@@ -529,7 +527,7 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-[#4F6D7A] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
+        className={`z-20 bg-[#8F8A75] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
           }`}
       >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -542,8 +540,8 @@ const Architecture = () => {
                 whileTap={{ scale: 0.97 }}
                 className={`relative px-4 sm:px-6 py-2 text-sm regular rounded-md transition-all duration-300
             ${activeTab === tab.id
-                    ? "bg-[#AFC5CD] text-[#4F6D7A] font-semibold"
-                    : "text-white hover:bg-[#AFC5CD] hover:text-[#4F6D7A]"
+                    ? "bg-[#C7C0AE] text-[#8F8A75] font-semibold"
+                    : "text-white hover:bg-[#C7C0AE] hover:text-[#8F8A75]"
                   }`}
               >
                 {tab.label}
@@ -591,9 +589,9 @@ const Architecture = () => {
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
-                    <div className="bg-[#AFC5CD] rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                    <div className="bg-[#C7C0AE] rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
                       <svg
-                        className="w-4 h-4 text-[#4F6D7A]"
+                        className="w-4 h-4 text-[#8F8A75]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -737,7 +735,7 @@ const Architecture = () => {
                       {tabData.plans.plans.slice(0, 5).map((plan, index) => (
                         <div
                           key={index}
-                          className="group relative flex-shrink-0 w-[280px] h-[200px] bg-[#4F6D7A] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
+                          className="group relative flex-shrink-0 w-[280px] h-[200px] bg-[#8F8A75] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
                           style={{
                             border: "2px solid transparent",
                           }}
@@ -751,9 +749,9 @@ const Architecture = () => {
                               style={{
                                 background:
                                   i === 0
-                                    ? "#AFC5CD" // Light shore blue
+                                    ? "#C7C0AE" // Light shore blue
                                     : i === 1
-                                      ? "#4F6D7A" // Core blue
+                                      ? "#8F8A75" // Core blue
                                       : "#2C3E47", // Deep slate
                                 animationDelay: `${i * 1}s`,
                                 animationDuration: `${5 + i * 2}s`,
@@ -776,7 +774,7 @@ const Architecture = () => {
                                   target.scrollIntoView({ behavior: "smooth" });
                                 }
                               }}
-                              className="w-full py-2.5 text-base rounded-lg bg-white text-[#0d3557] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
+                              className="w-full py-2.5 text-base rounded-lg bg-white text-[#8F8A75] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
                             >
                               Get started
                             </button>
@@ -794,7 +792,7 @@ const Architecture = () => {
                         const container = document.getElementById('mobile-plans-scroll');
                         container.scrollBy({ left: -300, behavior: 'smooth' });
                       }}
-                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4F6D7A] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#8F8A75] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -808,7 +806,7 @@ const Architecture = () => {
                         const container = document.getElementById('mobile-plans-scroll');
                         container.scrollBy({ left: 300, behavior: 'smooth' });
                       }}
-                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4F6D7A] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#8F8A75] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -821,7 +819,7 @@ const Architecture = () => {
                 {tabData.plans.plans.slice(0, 5).map((plan, index) => (
                   <div
                     key={index}
-                    className="group relative hidden sm:block w-full max-w-[280px] sm:w-[250px] lg:w-[240px] xl:w-[250px] h-[180px] sm:h-[200px] lg:h-[220px] xl:h-[200px] bg-[#4F6D7A] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
+                    className="group relative hidden sm:block w-full max-w-[280px] sm:w-[250px] lg:w-[240px] xl:w-[250px] h-[180px] sm:h-[200px] lg:h-[220px] xl:h-[200px] bg-[#8F8A75] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
                     style={{
                       border: "2px solid transparent",
                     }}
@@ -835,9 +833,9 @@ const Architecture = () => {
                         style={{
                           background:
                             i === 0
-                              ? "#AFC5CD" // Light shore blue
+                              ? "#C7C0AE" // Light shore blue
                               : i === 1
-                                ? "#4F6D7A" // Core blue
+                                ? "#8F8A75" // Core blue
                                 : "#2C3E47", // Deep slate
                           animationDelay: `${i * 1}s`,
                           animationDuration: `${5 + i * 2}s`,
@@ -860,7 +858,7 @@ const Architecture = () => {
                             target.scrollIntoView({ behavior: "smooth" });
                           }
                         }}
-                        className="w-full py-2 sm:py-2.5 text-sm sm:text-base lg:text-[16px] rounded-lg bg-white text-[#0d3557] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
+                        className="w-full py-2 sm:py-2.5 text-sm sm:text-base lg:text-[16px] rounded-lg bg-white text-[#8F8A75] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
                       >
                         Get started
                       </button>
@@ -910,7 +908,7 @@ const Architecture = () => {
     /* Mobile horizontal scroll styling */
     .overflow-x-auto {
       scrollbar-width: thin;
-      scrollbar-color: #4F6D7A transparent;
+      scrollbar-color: #8F8A75 transparent;
     }
 
     .overflow-x-auto::-webkit-scrollbar {
@@ -922,7 +920,7 @@ const Architecture = () => {
     }
 
     .overflow-x-auto::-webkit-scrollbar-thumb {
-      background-color: #4F6D7A;
+      background-color: #8F8A75;
       border-radius: 3px;
     }
 
@@ -994,9 +992,9 @@ const Architecture = () => {
                       data-aos-delay={index * 100}
                     >
                       <div className="flex items-start mb-2">
-                        <div className="bg-[#AFC5CD] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
+                        <div className="bg-[#C7C0AE] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
                           <svg
-                            className="w-3 h-3 sm:w-4 sm:h-4 text-[#4F6D7A]"
+                            className="w-3 h-3 sm:w-4 sm:h-4 text-[#8F8A75]"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -1047,9 +1045,9 @@ const Architecture = () => {
                       data-aos="fade-up"
                       data-aos-delay={index * 100}
                     >
-                      <div className="bg-[#AFC5CD] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 ">
+                      <div className="bg-[#C7C0AE] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 ">
                         <svg
-                          className="w-3 h-3 sm:w-4 sm:h-4 text-[#4F6D7A]"
+                          className="w-3 h-3 sm:w-4 sm:h-4 text-[#8F8A75]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -1255,7 +1253,7 @@ const Architecture = () => {
                         data-aos-delay={index * 100}
                       >
                         <div className="flex items-start space-x-3">
-                          <div className="mt-1 flex-shrink-0 text-[#4F6D7A]">{faq.icon}</div>
+                          <div className="mt-1 flex-shrink-0 text-[#8F8A75]">{faq.icon}</div>
                           <div className="flex-1 min-w-0">
                             <h4 className="text-lg font-bold text-[#0d3557] leading-tight mb-2">
                               {faq.question}
@@ -1277,7 +1275,7 @@ const Architecture = () => {
                       const container = document.getElementById('mobile-faq-scroll');
                       container.scrollBy({ left: -340, behavior: 'smooth' });
                     }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4F6D7A] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#8F8A75] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -1291,7 +1289,7 @@ const Architecture = () => {
                       const container = document.getElementById('mobile-faq-scroll');
                       container.scrollBy({ left: 340, behavior: 'smooth' });
                     }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4F6D7A] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#8F8A75] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -1333,7 +1331,7 @@ const Architecture = () => {
     /* Mobile horizontal scroll styling */
     .overflow-x-auto {
       scrollbar-width: thin;
-      scrollbar-color: #4F6D7A transparent;
+      scrollbar-color: #8F8A75 transparent;
     }
 
     .overflow-x-auto::-webkit-scrollbar {
@@ -1345,7 +1343,7 @@ const Architecture = () => {
     }
 
     .overflow-x-auto::-webkit-scrollbar-thumb {
-      background-color: #4F6D7A;
+      background-color: #8F8A75;
       border-radius: 3px;
     }
 

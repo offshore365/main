@@ -81,13 +81,20 @@ const Footer = () => {
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center gap-2">
                 <a href="tel:+13469109009" className="text-xs sm:text-sm text-[#0d3557] hover:text-[#256bff] transition regular">
-                  +1 917 590 0037 
+                  +1 917 590 0037
                 </a>
               </div>
               <div className="flex items-start gap-2">
                 <div className="text-xs sm:text-sm text-[#0d3557] leading-relaxed">
-                  <div className="regular">1755 Broadway</div>
-                  <div className="regular">FRNT3 New York, NY 10019</div>
+                  <div className="regular">1755 Broadway
+
+                  </div>
+                  <div className="regular">FRNT 3 #1165</div>
+                  <div className="regular">New York, NY 10019
+                  </div>
+
+                  <div className="regular">United States</div>
+
                 </div>
               </div>
             </div>
