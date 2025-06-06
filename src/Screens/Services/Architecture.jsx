@@ -533,7 +533,7 @@ const Architecture = () => {
 
 
       {/* Main Content */}
-<div className="container mx-auto px-2 sm:px-24">
+      <div className="container mx-auto px-2 sm:px-24">
         {/* Services Section */}
         <motion.section
           ref={(ref) => setRef("services", ref)}
@@ -1058,11 +1058,10 @@ const Architecture = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="py-12 sm:py-16 scroll-mt-20"
             id="scheduling-section"
             data-aos="fade-up"
           >
-            <div className="container mx-auto px-4 sm:px-6">
+            <div className="">
               <Scheduling />
             </div>
           </motion.section>
@@ -1075,23 +1074,23 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8"
+          className="py-8 sm:py-12 lg:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-6 lg:px-8"
           id="faq"
           data-aos="fade-up"
         >
-          <div className="p-4 sm:p-8 rounded-lg">
+          <div className="p-4 sm:p-6 lg:p-8 rounded-lg max-w-7xl mx-auto">
             {/* Title */}
-            <h4 className="text-[40px]  font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
               {tabData.faq.title}
             </h4>
 
             {/* Subtitle */}
-            <p className="text-center text-[#0d3557] text-[20px] mt-2 max-w-3xl mx-auto">
+            <p className="text-center text-[#0d3557] text-base sm:text-lg lg:text-[20px] mt-3 sm:mt-2 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
               {tabData.faq.description}
             </p>
 
             {/* FAQ Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-12 px-2 xl:px-12 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 xl:gap-12 px-0 sm:px-2 xl:px-12 mt-6 sm:mt-8">
               {tabData.faq.faqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -1099,16 +1098,16 @@ const Architecture = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-4"
+                  className="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 lg:p-0 rounded-lg bg-white/50 sm:bg-transparent sm:border-none"
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
-                  <div className="mt-1">{faq.icon}</div>
-                  <div>
-                    <h4 className="text-[20px] font-bold text-[#0d3557]">
+                  <div className="mt-1 flex-shrink-0">{faq.icon}</div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-lg sm:text-xl lg:text-[20px] font-bold text-[#0d3557] leading-tight">
                       {faq.question}
                     </h4>
-                    <p className="text-[#0d3557] text-[14px] my-2 leading-relaxed">
+                    <p className="text-[#0d3557] text-sm sm:text-base lg:text-[14px] my-2 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>

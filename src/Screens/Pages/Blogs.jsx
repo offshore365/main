@@ -162,9 +162,7 @@ const Blogs = () => {
                 <p className="text-[#334155] text-[15px] leading-relaxed whitespace-pre-line">
                   {selectedPost.fullDescription}
                 </p>
-                <p className="text-sm text-[#64748b] font-medium">
-                  ⏱ {selectedPost.readTime}
-                </p>
+               
               </div>
             </motion.div>
           </motion.div>

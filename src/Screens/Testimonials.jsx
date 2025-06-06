@@ -71,9 +71,7 @@ export default function TestimonialMetrics() {
     },
   ];
 
-
   useEffect(() => {
-    // Auto-slide interval
     if (isPaused) return
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % testimonials.length)
@@ -81,75 +79,55 @@ export default function TestimonialMetrics() {
     return () => clearInterval(interval)
   }, [isPaused, testimonials.length])
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length)
-  }
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % testimonials.length)
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  const goToSlide = (index) => setCurrentSlide(index)
+  const handleMouseEnter = () => setIsPaused(true)
+  const handleMouseLeave = () => setIsPaused(false)
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index)
-  }
-
-  const handleMouseEnter = () => {
-    setIsPaused(true)
-  }
-
-  const handleMouseLeave = () => {
-    setIsPaused(false)
-  }
-
-  // Responsive slide and card settings
-  const totalSlides = testimonials.length
-  const getVisibleSlides = () => {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth < 640) return 1
-      if (window.innerWidth < 1024) return 2
-      return 4
-    }
-    return 4
-  }
-  const [visibleSlides, setVisibleSlides] = useState(getVisibleSlides())
+  const [visibleSlides, setVisibleSlides] = useState(1)
 
   useEffect(() => {
     const handleResize = () => {
-      setVisibleSlides(getVisibleSlides())
+      if (window.innerWidth < 640) setVisibleSlides(1)
+      else if (window.innerWidth < 1024) setVisibleSlides(2)
+      else setVisibleSlides(4)
     }
+    handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
   const displaySlides = [...testimonials, ...testimonials, ...testimonials]
   const cardWidth = visibleSlides === 1 ? 280 : visibleSlides === 2 ? 260 : 250
-  const gap = visibleSlides === 1 ? 16 : 8
+  const gap = visibleSlides === 1 ? 16 : 12
   const slideWidth = cardWidth + gap
   const containerWidth = slideWidth * visibleSlides
+  const offsetX = visibleSlides === 1 ? (window.innerWidth - cardWidth) / 2 - gap : 0
 
   return (
     <div className="w-full bg-white py-12 px-4 sm:py-16 sm:px-6 lg:py-20 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 sm:mb-12">
           <div className="max-w-2xl mb-6 md:mb-0">
-            <h1 className="text-[50px] font-extrabold text-[#0d3557] mb-2 tracking-wide">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0d3557] mb-2 tracking-tight">
               This Impact Is Real
             </h1>
-            <p className="text-[#0d3557] text-[20px]">
+            <p className="text-base sm:text-lg md:text-xl text-[#0d3557] max-w-2xl mx-auto">
               Discover how businesses grow with offshore 365
             </p>
           </div>
           <div className="flex space-x-3">
             <button
               onClick={prevSlide}
-              className="p-3 sm:p-4 border border-gray-300 rounded-full hover:bg-gray-100 touch-manipulation"
+              className="p-3 sm:p-4 border border-gray-300 rounded-full hover:bg-gray-100"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-[#0d3557]" />
             </button>
             <button
               onClick={nextSlide}
-              className="p-3 sm:p-4 border border-gray-300 rounded-full hover:bg-gray-100 touch-manipulation"
+              className="p-3 sm:p-4 border border-gray-300 rounded-full hover:bg-gray-100"
               aria-label="Next slide"
             >
               <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-[#0d3557]" />
@@ -158,8 +136,7 @@ export default function TestimonialMetrics() {
         </div>
 
         <div
-          className="flex justify-center overflow-hidden"
-          style={{ width: `${containerWidth}px`, margin: "0 auto" }}
+          className="w-full overflow-hidden"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           ref={sliderRef}
@@ -167,60 +144,53 @@ export default function TestimonialMetrics() {
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{
-              transform: `translateX(-${(currentSlide % totalSlides) * slideWidth}px)`,
+              transform: `translateX(-${(currentSlide % testimonials.length) * slideWidth - (offsetX || 0)}px)`,
               gap: `${gap}px`,
+              paddingLeft: visibleSlides === 1 ? `${offsetX}px` : 0
             }}
           >
             {displaySlides.map((item, index) => (
               <div
                 key={index}
-                className={`testimonial-card card ${item.color} ${item.textColor} rounded-2xl shadow-xl`}
-                style={{ minWidth: `${cardWidth}px`, height: visibleSlides === 1 ? "400px" : "370px", flexShrink: 0 }}
+                className={`testimonial-card ${item.color} ${item.textColor} rounded-2xl shadow-xl`}
+                style={{
+                  minWidth: `${cardWidth}px`,
+                  height: visibleSlides === 1 ? "400px" : "370px",
+                  flexShrink: 0
+                }}
               >
-                <div className="z-10 relative text-center px-6 sm:px-8 py-8 sm:py-10">
-                  <span className="font-semibold text-[20px] block mb-1">
-                    {item.company}
-                  </span>
-                  <span className="text-[14px] block mb-4 regular ">
-                    {item.designation}
-                  </span>
-                  <h3 className="text-[50px] font-bold mb-2">
-                    {item.metric}
-                  </h3>
-                  <p className="text-[16px] leading-relaxed">
-                    {item.description}
-                  </p>
+                <div className="text-center px-6 sm:px-8 py-8 sm:py-10">
+                  <span className="font-semibold text-[20px] block mb-1">{item.company}</span>
+                  <span className="text-[14px] block mb-4">{item.designation}</span>
+                  <h3 className="text-[50px] font-bold mb-2">{item.metric}</h3>
+                  <p className="text-[16px] leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="flex justify-center mt-8 sm:mt-12 relative z-10">
+        <div className="flex justify-center mt-8 sm:mt-12">
           <div className="flex space-x-3 sm:space-x-4">
             {testimonials.map((item, index) => {
-              const isActive = (currentSlide % totalSlides) === index
+              const isActive = (currentSlide % testimonials.length) === index
               return (
                 <button
                   key={`dot-${index}`}
                   onClick={() => goToSlide(index)}
-                  className="relative focus:outline-none group touch-manipulation"
+                  className="relative focus:outline-none"
                   aria-label={`Go to testimonial ${item.company}`}
                 >
                   <div
-                    className={`liquid-dot w-2.5 h-2.5 sm:w-3 sm:h-3 border border-white rounded-full transition-all duration-500 flex items-center justify-center ${isActive ? "scale-125" : "scale-100 opacity-70 hover:opacity-100"}`}
+                    className={`w-2.5 h-2.5 sm:w-3 sm:h-3 border border-white rounded-full transition-all duration-500 flex items-center justify-center ${isActive ? "scale-125" : "scale-100 opacity-70 hover:opacity-100"}`}
                     style={{ backgroundColor: item.dotColor }}
                   >
                     <div
-                      className={`absolute inset-0 rounded-full overflow-hidden ${isActive ? "animate-pulse" : ""}`}
+                      className={`absolute inset-0 rounded-full ${isActive ? "animate-pulse" : ""}`}
                     >
-                      <div
-                        className="liquid-bubble absolute w-4 h-4 sm:w-5 sm:h-5 rounded-full"
-                        style={{ backgroundColor: item.dotColor }}
-                      />
+                     
                     </div>
                   </div>
-
                 </button>
               )
             })}
