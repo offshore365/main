@@ -297,9 +297,16 @@ const CareersPage = () => {
             className="bg-blue-600 regular hover:bg-blue-700 text-white px-6 sm:px-8 py-3 rounded-xl text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 mb-12 sm:mb-16 relative z-10"
             data-aos="zoom-in"
             data-aos-delay="300"
+            onClick={() => {
+              const section = document.getElementById("apply-jobs");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
             Join Us
           </button>
+
 
 
         </div>
@@ -338,14 +345,15 @@ const CareersPage = () => {
               innovation — together.
             </p>
             <div className="mt-8">
-              <a
-                href="#join-us"
-                className="inline-block regular px-6 py-3 bg-blue-600 text-white text-base sm:text-lg rounded-xl shadow hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
-                data-aos="zoom-in"
-                data-aos-delay="100"
-              >
-                Join Our Journey
-              </a>
+            <a
+  href="#apply-jobs"
+  className="inline-block regular px-6 py-3 bg-blue-600 text-white text-base sm:text-lg rounded-xl shadow hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+  data-aos="zoom-in"
+  data-aos-delay="100"
+>
+  Join Our Journey
+</a>
+
             </div>
           </div>
         </div>
@@ -609,10 +617,17 @@ const CareersPage = () => {
                   <span className="text-xs regular sm:text-sm">{job.location}</span>
                 </div>
                 <div className="flex justify-end">
-                  <button className="bg-blue-600 regular hover:bg-blue-700 text-white text-xs sm:text-sm py-2 px-4 rounded-lg transition-all duration-300 flex items-center gap-2 group/btn transform hover:scale-110">
-                    Join
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                  </button>
+                  <button
+  onClick={() => {
+    const target = document.getElementById("apply-jobs");
+    target?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="bg-blue-600 regular hover:bg-blue-700 text-white text-xs sm:text-sm py-2 px-4 rounded-lg transition-all duration-300 flex items-center gap-2 group/btn transform hover:scale-110"
+>
+  Join
+  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+</button>
+
                 </div>
               </div>
             ))}
@@ -621,7 +636,7 @@ const CareersPage = () => {
       </section>
 
 
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
+      <section id="apply-jobs" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
         <div className="max-w-full mx-auto">
           <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 sm:p-12 md:p-16 text-center relative overflow-hidden">
             {/* Only 2 background circles */}
@@ -757,150 +772,7 @@ const CareersPage = () => {
           </div>
         </div>
       </section>
-      {/* <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
-  <div className="max-w-full mx-auto">
-    <div className="bg-gradient-to-br from-[#B2E7F1] to-[#CCB4FE] rounded-3xl p-8 sm:p-12 md:p-16 text-center relative overflow-hidden">
-      <div className="absolute top-4 sm:top-8 left-4 sm:left-8 w-16 sm:w-20 h-16 sm:h-20 bg-[#F1B2B2] rounded-full opacity-40"></div>
-      <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 w-12 sm:w-16 h-12 sm:h-16 bg-[#FFCF72] rounded-full opacity-40"></div>
 
-      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 relative z-10">
-        Apply for Jobs
-      </h2>
-
-      <div className="flex flex-col sm:flex-row items-center justify-center mb-8 relative z-10">
-        <div className="bg-white rounded-2xl px-6 sm:px-8 py-4 shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <span className="text-[#B2E7F1] text-sm sm:text-lg regular">
-            Career@offshore365.in
-          </span>
-          <div className="w-8 h-8 rounded-full bg-[#E8F8FC] flex items-center justify-center">
-            <ChevronRight className="w-4 h-4 text-[#91D8E8]" />
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-3xl mx-auto relative z-10">
-        <p className="text-white leading-relaxed text-sm sm:text-base md:text-lg mb-6">
-          Offshore 365 welcomes all the talented and skilled Architects,
-          Interior Designers, 3D Visualizers, Revit experts, and Engineers
-          to partake in the rapidly growing organization with a global
-          footprint. Offshore 365 values and welcomes all applicants who
-          would help us in our aim of "Accelerating Growth Through
-          Delivery Excellence".
-        </p>
-
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 mb-8">
-          <p className="text-white text-sm sm:text-base leading-relaxed">
-            We welcome all the talented and skilled Architects, Interior
-            Designers, 3D Visualizers, Revit experts, and Engineers to
-            partake in the rapidly growing organization with a global
-            footprint. We value and welcome all applicants who would help
-            Offshore 365 in our aim of "Accelerating Growth Through
-            Delivery Excellence"
-          </p>
-        </div>
-
-        <div>
-          <button 
-            onClick={() => setShowDropdown(!showDropdown)}
-            className="bg-white text-[#B2E7F1] hover:bg-[#f4fafd] regular py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
-          >
-            Send Your Resume
-          </button>
-
-          {showDropdown && (
-            <div className="mt-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-white/30 shadow-2xl animate-in slide-in-from-top-2 duration-300">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-[#0d3557] regular text-lg">Upload Your Resume</h3>
-                <button 
-                  onClick={() => setShowDropdown(false)}
-                  className="text-gray-500 hover:text-gray-700 transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div 
-                className={`border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 ${
-                  isDragOver 
-                    ? 'border-[#B2E7F1] bg-[#E8F8FC]' 
-                    : selectedFile 
-                      ? 'border-green-400 bg-green-50' 
-                      : 'border-gray-300 bg-gray-50 hover:border-[#B2E7F1] hover:bg-[#E8F8FC]'
-                }`}
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-              >
-                {selectedFile ? (
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                        <Upload className="w-6 h-6 text-green-600" />
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-green-700 regular">{selectedFile.name}</p>
-                      <p className="text-gray-500 text-sm">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB</p>
-                    </div>
-                    <button
-                      onClick={removeFile}
-                      className="text-red-500 hover:text-red-700 text-sm regular transition-colors"
-                    >
-                      Remove File
-                    </button>
-                  </div>
-                ) : (
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-center">
-                      <div className="w-12 h-12 bg-[#B2E7F1] rounded-full flex items-center justify-center">
-                        <Upload className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-gray-700 regular mb-2">
-                        Drag and drop your PDF here, or click to browse
-                      </p>
-                      <p className="text-gray-500 text-sm">PDF files only, max 10MB</p>
-                    </div>
-                    <input
-                      type="file"
-                      accept=".pdf"
-                      onChange={handleFileSelect}
-                      className="hidden"
-                      id="resume-upload"
-                    />
-                    <label
-                      htmlFor="resume-upload"
-                      className="inline-block bg-[#B2E7F1] text-white px-6 py-2 rounded-lg regular hover:bg-[#91D8E8] transition-colors cursor-pointer"
-                    >
-                      Choose File
-                    </label>
-                  </div>
-                )}
-              </div>
-
-              <div className="mt-6 flex justify-center">
-                <button
-                  onClick={handleSubmit}
-                  disabled={!selectedFile}
-                  className={`flex items-center space-x-2 px-8 py-3 rounded-lg regular transition-all duration-300 ${
-                    selectedFile
-                      ? 'bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1'
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  }`}
-                >
-                  <Send className="w-5 h-5" />
-                  <span>Send Resume</span>
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  </div>
-</section> */}
-      {/* Custom Styles */}
       <style jsx>{`
         @keyframes fadeIn {
           from {

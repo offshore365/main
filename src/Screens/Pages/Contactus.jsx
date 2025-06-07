@@ -81,7 +81,7 @@ export default function ContactPage() {
         {[...Array(3)].map((_, i) => (
           <div
             key={`bg-wave-${i}`}
-            className="wave absolute w-[300%] h-[300%] opacity-20 sm:opacity-25 lg:opacity-30 left-[-50%] top-[-50%] rounded-full"
+            className="wave absolute w-[250%] h-[250%]  left-[-0%] top-[-50%] rounded-full"
             style={{
               background: "linear-gradient(744deg, #003087, #006BFF 60%, #E6F0FA)",
               animationDelay: `${i * 2}s`,

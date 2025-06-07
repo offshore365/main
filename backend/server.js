@@ -18,7 +18,53 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// API endpoint to handle form submission
+// API endpoint to handle chatbot conversation
+app.post('/send-email', async (req, res) => {
+  const { messages, userData } = req.body;
+
+  // Validate required fields
+  if (!messages || !userData) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  // Format conversation transcript
+  const conversationTranscript = messages
+    .map(msg => {
+      const sender = msg.type === 'user' ? userData.name || 'User' : 'Offshore 365 Bot';
+      const timestamp = new Date(msg.timestamp).toLocaleString();
+      return `[${timestamp}] ${sender}: ${msg.text}`;
+    })
+    .join('\n');
+
+  // Email content
+  const mailOptions = {
+    from: 'vedantsonavane799@gmail.com',
+    to: 'vedantsonavane799@gmail.com',
+    subject: `New Chatbot Conversation from ${userData.name || 'User'}`,
+    text: `
+      New conversation from Offshore 365 Chatbot
+
+      User Details:
+      Name: ${userData.name || 'N/A'}
+      Email: ${userData.email || 'N/A'}
+      Service: ${userData.service || 'N/A'}
+      Usage: ${userData.usage || 'N/A'}
+
+      Conversation Transcript:
+      ${conversationTranscript}
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: 'Email sent successfully' });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
+
+// API endpoint to handle meeting scheduling
 app.post('/api/schedule-meeting', async (req, res) => {
   const {
     service,
@@ -48,8 +94,8 @@ app.post('/api/schedule-meeting', async (req, res) => {
 
   // Email content
   const mailOptions = {
-    from: 'vedantsonavane799@gmail.com', // Hardcoded sender email
-    to: 'recipient@example.com', // Hardcoded receiver email (replace with actual email)
+    from: 'vedantsonavane799@gmail.com',
+    to: 'offshore365.in@gmail.com',
     subject: `New Meeting Scheduled: ${service} with ${name}`,
     html: `
       <h2>New Meeting Request</h2>
@@ -81,6 +127,8 @@ app.post('/api/schedule-meeting', async (req, res) => {
     res.status(500).json({ error: 'Failed to send email' });
   }
 });
+
+// API endpoint to handle contact form submission
 app.post('/api/contact', async (req, res) => {
   const {
     firstName,
@@ -98,8 +146,8 @@ app.post('/api/contact', async (req, res) => {
 
   // Email content
   const mailOptions = {
-    from: 'vedantsonavane799@gmail.com', // Hardcoded sender email
-    to: 'recipient@example.com', // Hardcoded receiver email (replace with actual email)
+    from: 'vedantsonavane799@gmail.com',
+    to: 'offshore365.in@gmail.com',
     subject: `New Contact Request from ${firstName} ${lastName}`,
     html: `
       <h2>New Contact Form Submission</h2>

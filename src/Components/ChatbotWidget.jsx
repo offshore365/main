@@ -125,6 +125,25 @@ const SleekChatbot = () => {
         await delayWithTyping(msg.text, msg.delay);
       }
     }
+    // Send conversation to backend when reaching the final step
+    if (step === 'final') {
+      try {
+        const response = await fetch('http://localhost:8556/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ messages, userData }),
+        });
+        if (response.ok) {
+          console.log('Conversation email sent successfully');
+        } else {
+          console.error('Failed to send conversation email:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error sending conversation email:', error);
+      }
+    }
   };
 
   const handleOptionClick = async (optionId, optionText) => {
