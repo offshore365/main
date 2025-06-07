@@ -19,10 +19,8 @@ import sketchup from "../../assets/sketchup.png";
 import vray from "../../assets/vray.png";
 import lumion from "../../assets/lumion.png";
 import enscape from "../../assets/enscape.png";
-import photoshop from "../../assets/photoshop.jpg";
-import illustrator from "../../assets/illustrator.jpg";
-import archicad from "../../assets/archicad.jpg";
-import msoffice from "../../assets/ms.png";
+import max from "../../assets/3ds max.png";
+import unreal from "../../assets/unreal engine.png";
 
 
 const Architecture = () => {
@@ -34,18 +32,61 @@ const Architecture = () => {
   const tabsRef = useRef(null);
   const placeholderRef = useRef(null);
   const originalTopRef = useRef(null);
+
   const toolsList = [
     { name: "AutoCAD", image: autocad },
     { name: "Revit", image: revit },
-    { name: "SketchUp", image: sketchup },
     { name: "V-Ray", image: vray },
-    { name: "Lumion", image: lumion },
     { name: "Enscape", image: enscape },
-    { name: "Photoshop", image: photoshop },
-    { name: "Illustrator", image: illustrator },
-    { name: "Archicad", image: archicad },
-    { name: "MS Office", image: msoffice },
+    { name: "3ds Max", image: max },
+    { name: "SketchUp", image: sketchup },
+    { name: "Lumion", image: lumion },
+    { name: "Unreal Engine", image: unreal },
   ];
+
+  const [counters, setCounters] = useState([
+    { number: 0, target: 50, label: "Core 3D Team" },
+    { number: 0, target: 5, label: "Avg Years of Experience" },
+    { number: 0, target: 250, label: "Supporting Architects" },
+  ]);
+
+  const benefits = [
+    {
+      title: "Premium Quality",
+      points: [
+        "Industry Leading Standards",
+        "Rigorous Testing Process",
+        "Long-lasting Durability",
+        "Customer Satisfaction Guarantee",
+      ],
+    },
+    {
+      title: "Expert Support",
+      points: [
+        "24/7 Customer Service",
+        "Technical Consultation",
+        "Installation Assistance",
+        "Ongoing Maintenance",
+      ],
+    },
+    {
+      title: "Cost Effective",
+      points: [
+        "Competitive Pricing",
+        "Flexible Payment Options",
+        "Long-term Savings",
+        "ROI Optimization",
+      ],
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % benefits.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [benefits.length]);
 
   const tabs = [
     { id: "services", label: "Services" },
@@ -58,20 +99,20 @@ const Architecture = () => {
 
   const tabData = {
     services: {
-      title: "Comprehensive Architechural Excellence Services",
+      title: "Comprehensive Interior Services",
       description:
-        "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
+        "We provide end-to-end Interior solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
-        { name: "PRE CONCEPT DESIGN", image: serviceImage },
-        { name: "SCHEMATIC DESIGN", image: serviceImage },
-        { name: "DESIGN DEVELOPMENT", image: serviceImage },
-        { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
-        { name: "SPACE PLANING", image: serviceImage },
-        { name: "DRAFTING", image: serviceImage },
-        { name: " 3D MODELLING AND RENDERING", image: serviceImage },
-        { name: " BOQ AND MATERIAL TAKE OFF", image: serviceImage },
-        { name: "WALK THROUGH ANIMATIONS", image: serviceImage },
+
+
+        { name: " 3D EXTERIOR RENDERING", image: serviceImage },
+        { name: "3D INTERIOR RENDERING", image: serviceImage },
+        { name: "STILL RENDERING", image: serviceImage },
+        { name: "MARKETING RENDERING", image: serviceImage },
+        { name: "WALKTHROUGHS AND FLYTHROUGHS", image: serviceImage },
+        { name: "INTERIOR 3D MODELLING & RENDERING", image: serviceImage },
+        { name: "360 DEGREE PANORAMIC VIEW", image: serviceImage },
         { name: "QUALITY CHECKS", image: serviceImage },
       ],
     },
@@ -131,25 +172,44 @@ const Architecture = () => {
       ],
     },
     "why-us": {
-      title: "Why Choose Our Architectural Excellence Services?",
+      title: "Why Choose Our Interior Services?",
       description:
         "We combine creativity with technical expertise to deliver exceptional results.",
       image: whyUsImage,
       stats: [
-        { number: 250, label: "Architects", max: 300, percentage: 83 },
-        { number: 15, label: "Countries", max: 20, percentage: 75 },
-        { number: 500, label: "Global Projects", max: 600, percentage: 83 },
+        {
+          number: 250,
+          label: " Interior Architects",
+          max: 300,
+          percentage: 83,
+        },
+        { number: 21, label: "Countries", max: 20, percentage: 75 },
+        { number: 250, label: "Global Projects", max: 600, percentage: 83 },
       ],
       highlightedBenefits: [
         {
-          title: "Reduced Administrative Burden",
-          description:
-            "Offshore365 handles the administrative tasks associated with hiring and managing staff, such as recruitment, onboarding, and payroll. This allows clients to focus on their core business operations.",
+          title: "Delivery Models",
+          points: [
+            "Agile Design: Visualizing Creative Ideas",
+            "One Time Renderings - A three-step process to Realize Your Design Concept",
+            "Unreal Engine VR Walkthrough Package",
+          ],
         },
         {
-          title: "Time Zone Advantage",
-          description:
-            "Offshore teams can work while your in-house team is off, enabling faster project turnaround times and shorter project cycles. This can be a significant advantage for projects with tight deadlines.",
+          title: "Visualization Softwares",
+          points: [
+            "Expertise in 3ds Max",
+            "Unreal Engine Walkthroughs",
+            "Sketchup Renderings",
+            "Vray & Corona for high quality renderings",
+          ],
+        },
+        {
+          title: "Architectural Precision",
+          points: [
+            "The Renderings are Architecturally precise",
+            "3D team collaborates closely with architects and designers to grasp space dimensions",
+          ],
         },
       ],
       benefits: [
@@ -200,13 +260,14 @@ const Architecture = () => {
       description: "Here are some of the frequently asked questions",
       faqs: [
         {
-          question: "What architectural design services do you offer?",
+          question:
+            "What’s the difference between walkthroughs and flythroughs?",
           answer:
-            "We provide schematic design, concept development, construction documentation, 3D rendering, walkthroughs, interior design, flythroughs, 360° views, and high-quality visualizations.",
+            "While walkthroughs provide an engaging perspective of a building’s interior, our flythrough highlights its exterior.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#CCC987]"
+              className="h-12 w-12 text-[#A6A65F]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -224,13 +285,13 @@ const Architecture = () => {
         },
         {
           question:
-            "How can our firm benefit from outsourcing architectural services?",
+            "What software do you use for creating renderings and animations?",
           answer:
-            "Outsourcing helps reduce costs, access expert talent, improve project delivery speed, and lets you focus on core competencies without expanding internal resources.",
+            "Uppteam uses superior-quality software, including Revit, 3ds Max, Lumion, Photoshop, and SketchUp, to create high-quality visualizations.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#CCC987]"
+              className="h-12 w-12 text-[#A6A65F]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -245,14 +306,13 @@ const Architecture = () => {
           ),
         },
         {
-          question:
-            "Do you provide permit drawings as per U.S. building codes?",
+          question: "Do you provide 3D renderings of the proposed designs?",
           answer:
-            "We can help guide and review permit drawings for compliance with U.S. building codes, but we do not stamp final drawings for permit submission.",
+            "Yes, we offer 3D renderings. However, it will be at an additional cost.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#CCC987]"
+              className="h-12 w-12 text-[#A6A65F]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -267,13 +327,14 @@ const Architecture = () => {
           ),
         },
         {
-          question: "How do you ensure accuracy and quality in your work?",
+          question:
+            "What kinds of architectural visualizations do you produce?",
           answer:
-            "Our certified designers follow strict quality protocols, detailed reviews, and building codes, ensuring accurate, high-standard outputs on every project.",
+            "Our skilled architectural designers can produce commercial, industrial, and residential visualizations, including 3D walkthroughs, flythroughs, 360° views, and more.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#CCC987]"
+              className="h-12 w-12 text-[#A6A65F]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -288,13 +349,14 @@ const Architecture = () => {
           ),
         },
         {
-          question: "How does your team collaborate with in-house architects?",
+          question:
+            "What are the advantages of hiring Uppteam for architectural rendering?",
           answer:
-            "Our team integrates closely with your architects to align on design intent, offer support where needed, and ensure seamless documentation and execution.",
+            "Uppteam’s skilled and certified architectural designers produce architectural renderings that are ideal for seeing what a project will appear after completion.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#CCC987]"
+              className="h-12 w-12 text-[#A6A65F]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -310,22 +372,21 @@ const Architecture = () => {
         },
         {
           question:
-            "Do you offer dedicated teams for long-term architectural support?",
+            "How much time do you need to create 3D visualizations of an entire building?",
           answer:
-            "Yes, we provide dedicated design teams for ongoing partnerships, offering consistent, customized support to match your firm’s workflow and goals.",
+            "While we can produce 3D visualizations of an entire building, it depends on the project’s complexity, size, and scope of work to commit to a specific timeframe. However, our designers keep you updated at every stage of the process.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#CCC987]"
+              className="h-12 w-12 text-[#A6A65F]"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="1"
-                d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"
+                d="M7 24v16M16 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 0 00-1-1H4a1 0 0 00-1 1v14a1 1 0 001 1z"
               />
             </svg>
           ),
@@ -334,7 +395,7 @@ const Architecture = () => {
     },
 
     "get-started": {
-      title: "Start Your Architectural Excellence Project Today",
+      title: "Start Your Interior Project Today",
       description:
         "Get in touch to discuss your project requirements and how we can help bring your vision to life.",
       image: getStartedImage,
@@ -408,6 +469,30 @@ const Architecture = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Counter Animation Effect
+  useEffect(() => {
+    const timers = counters.map((counter, index) => {
+      let start = 0;
+      const duration = 2000; // Animation duration in milliseconds
+      const increment = counter.target / (duration / 16); // Approx 60fps
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= counter.target) {
+          start = counter.target;
+          clearInterval(timer);
+        }
+        setCounters((prev) =>
+          prev.map((item, i) =>
+            i === index ? { ...item, number: Math.floor(start) } : item
+          )
+        );
+      }, 16);
+      return timer;
+    });
+
+    return () => timers.forEach((timer) => clearInterval(timer));
+  }, []);
+
   const setRef = (id, ref) => {
     sectionRefs.current[id] = ref;
   };
@@ -438,7 +523,7 @@ const Architecture = () => {
     return () => clearInterval(interval);
   }, [features.length]);
 
-const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65%, #CCC987)";
+  const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #C8C679 65%, #A6A65F)";
 
   return (
     <div className="min-h-screen">
@@ -470,19 +555,27 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[100px] font-extrabold tracking-wide mb-3 sm:mb-4 drop-shadow-2xl leading-tight"
           >
-            3D Visualization
-          </motion.h1>
+            3D Visualization          </motion.h1>
 
-          <motion.p
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.2 }}
-            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] font-light max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
-          >
-            Offshore365 has completed over 200+ Large Scale Architectural
-            Projects using BIM & CAD, produced in accordance with AIA and RIBA
-            architecture standards.
-          </motion.p>
+          <div className="flex flex-wrap justify-center gap-y-8 gap-x-12 mt-6">
+            {counters.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.7 + index * 0.2, duration: 0.5 }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-white">
+                  {stat.number}+
+                </div>
+                <p className="text-[16px] sm:text-[18px] lg:text-[20px] text-white max-w-[250px]">
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </motion.section>
 
@@ -528,7 +621,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-[#CCC987] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
+        className={`z-20 bg-[#A6A65F] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
           }`}
       >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -541,12 +634,12 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                 whileTap={{ scale: 0.97 }}
                 className={`relative px-4 sm:px-6 py-2 text-sm regular rounded-md transition-all duration-300
             ${activeTab === tab.id
-                    ? "bg-[#A6A65F] text-[#CCC987] font-semibold"
-                    : "text-white hover:bg-[#A6A65F] hover:text-[#CCC987]"
+                    ? "bg-[#E2E0A0] text-[#A6A65F] font-semibold"
+                    : "text-white hover:bg-[#E2E0A0] hover:text-[#A6A65F]"
                   }`}
               >
                 {tab.label}
- 
+
               </motion.button>
             ))}
           </div>
@@ -571,10 +664,10 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
               <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-3 lg:mb-2 text-[#0d3557] tracking-wide leading-tight lg:leading-snug">
-                Amplify Productivity with Offshore 365
+                Discover Cutting-Edge 3D Visualisation with <br /> Offshore 365
               </h1>
               <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] leading-relaxed">
-                Offshore 365 delivers end to end documentation services to a diverse range of sectors, supported by our global team, we empower your projects with accuracy, quality, and efficiency, no matter the scale or complexity.
+                Offshore 365 offers multidimensional architectural visualization services to Architects, Interior Design firms and Realtors. The 3D studio provides renderings, walkthroughs & flythroughs in 3ds Max, Sketchup and Interactive walkthroughs in Unreal Engine.
               </p>
             </div>
 
@@ -590,9 +683,9 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
-                    <div className="bg-[#A6A65F] rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                    <div className="bg-[#E2E0A0] rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
                       <svg
-                        className="w-4 h-4 text-[#CCC987]"
+                        className="w-4 h-4 text-[#A6A65F]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -700,7 +793,6 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                         className="w-full h-full object-contain bg-white p-2 sm:p-3"
                       />
                     </div>
-                    <p className="text-sm sm:text-base text-[#0d3557] font-medium">{tool.name}</p>
                   </div>
                 ))}
               </div>
@@ -727,6 +819,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                 </p>
               </div>
 
+
               {/* Plans Grid - Mobile Horizontal Scroll, Desktop Grid */}
               <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 sm:gap-4 lg:gap-6 sm:justify-items-center">
                 {/* Mobile Horizontal Scroll Container */}
@@ -736,7 +829,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                       {tabData.plans.plans.slice(0, 5).map((plan, index) => (
                         <div
                           key={index}
-                          className="group relative flex-shrink-0 w-[280px] h-[200px] bg-[#CCC987] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
+                          className="group relative flex-shrink-0 w-[280px] h-[200px] bg-[#A6A65F] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
                           style={{
                             border: "2px solid transparent",
                           }}
@@ -750,10 +843,10 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                               style={{
                                 background:
                                   i === 0
-                                    ? "#A6A65F" // Light shore blue
+                                    ? "#E2E0A0" // Light shore blue
                                     : i === 1
-                                      ? "#CCC987" // Core blue
-                                      : "#2C3E47", // Deep slate
+                                      ? "#A6A65F" // Core blue
+                                      : "#E2E0A0", // Deep slate
                                 animationDelay: `${i * 1}s`,
                                 animationDuration: `${5 + i * 2}s`,
                               }}
@@ -775,7 +868,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                                   target.scrollIntoView({ behavior: "smooth" });
                                 }
                               }}
-                              className="w-full py-2.5 text-base rounded-lg bg-white text-[#CCC987] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
+                              className="w-full py-2.5 text-base rounded-lg bg-white text-[#A6A65F] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
                             >
                               Get started
                             </button>
@@ -793,7 +886,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                         const container = document.getElementById('mobile-plans-scroll');
                         container.scrollBy({ left: -300, behavior: 'smooth' });
                       }}
-                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#CCC987] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A6A65F] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 h"
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -807,7 +900,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                         const container = document.getElementById('mobile-plans-scroll');
                         container.scrollBy({ left: 300, behavior: 'smooth' });
                       }}
-                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#CCC987] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A6A65F] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 h"
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -820,7 +913,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                 {tabData.plans.plans.slice(0, 5).map((plan, index) => (
                   <div
                     key={index}
-                    className="group relative hidden sm:block w-full max-w-[280px] sm:w-[250px] lg:w-[240px] xl:w-[250px] h-[180px] sm:h-[200px] lg:h-[220px] xl:h-[200px] bg-[#CCC987] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
+                    className="group relative hidden sm:block w-full max-w-[280px] sm:w-[250px] lg:w-[240px] xl:w-[250px] h-[180px] sm:h-[200px] lg:h-[220px] xl:h-[200px] bg-[#A6A65F] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
                     style={{
                       border: "2px solid transparent",
                     }}
@@ -834,10 +927,10 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                         style={{
                           background:
                             i === 0
-                              ? "#A6A65F" // Light shore blue
+                              ? "#E2E0A0" // Light shore blue
                               : i === 1
-                                ? "#CCC987" // Core blue
-                                : "#2C3E47", // Deep slate
+                                ? "#A6A65F" // Core blue
+                                : "#E2E0A0", // Deep slate
                           animationDelay: `${i * 1}s`,
                           animationDuration: `${5 + i * 2}s`,
                         }}
@@ -859,7 +952,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                             target.scrollIntoView({ behavior: "smooth" });
                           }
                         }}
-                        className="w-full py-2 sm:py-2.5 text-sm sm:text-base lg:text-[16px] rounded-lg bg-white text-[#CCC987] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
+                        className="w-full py-2 sm:py-2.5 text-sm sm:text-base lg:text-[16px] rounded-lg bg-white text-[#A6A65F] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
                       >
                         Get started
                       </button>
@@ -909,7 +1002,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
     /* Mobile horizontal scroll styling */
     .overflow-x-auto {
       scrollbar-width: thin;
-      scrollbar-color: #CCC987 transparent;
+      scrollbar-color: #A6A65F transparent;
     }
 
     .overflow-x-auto::-webkit-scrollbar {
@@ -921,7 +1014,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
     }
 
     .overflow-x-auto::-webkit-scrollbar-thumb {
-      background-color: #CCC987;
+      background-color: #A6A65F;
       border-radius: 3px;
     }
 
@@ -947,130 +1040,143 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
         </>
 
         {/* Why Us Section */}
-        <section
+        <motion.section
           ref={(ref) => setRef("why-us", ref)}
-          className="py-8 sm:py-12 lg:py-16 scroll-mt-20 mb-12 sm:mb-16 lg:mb-20 rounded-2xl px-4 sm:px-6 lg:px-8 text-[#1F3B4D]"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="py-12 sm:py-16 mb-20 scroll-mt-20 rounded-2xl px-4 sm:px-8 text-gray-800"
           id="why-us"
           data-aos="zoom-in"
         >
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row-reverse items-start gap-6 sm:gap-8 lg:gap-12">
+          <div className="flex flex-col items-center gap-8 md:gap-12 w-full">
 
-              {/* Right side content - Stats and Benefits */}
-              <div className="flex-1 w-full" data-aos="fade-left">
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-                  {tabData["why-us"].stats.map((stat, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col items-start"
-                      data-aos="fade-up"
-                      data-aos-delay={index * 100}
-                    >
-                      <div className="text-2xl sm:text-3xl lg:text-[34px] text-[#0d3557] mt-2 sm:mt-4 font-bold mb-1 sm:mb-2">
-                        {stat.number}+
-                      </div>
-                      <div className="text-sm sm:text-lg lg:text-[20px] regular text-[#1F3B4D] mb-2 leading-tight">
-                        {stat.label}
-                      </div>
-                      <div className="w-full bg-[#A5C4BD] rounded-full h-2 sm:h-2.5">
-                        <div
-                          className="bg-[#3C6E71] h-2 sm:h-2.5 rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${stat.percentage}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Benefits Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  {tabData["why-us"].highlightedBenefits.map((benefit, index) => (
-                    <div
-                      key={index}
-                      className="group p-3 sm:p-4 bg-white rounded-xl shadow-lg border border-[#3C6E71]/30 transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                      data-aos="fade-up"
-                      data-aos-delay={index * 100}
-                    >
-                      <div className="flex items-start mb-2">
-                        <div className="bg-[#A6A65F] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
-                          <svg
-                            className="w-3 h-3 sm:w-4 sm:h-4 text-[#CCC987]"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                        </div>
-                        <h1 className="text-sm sm:text-[14px] text-[#3C6E71] tracking-wide font-semibold leading-tight">
-                          {benefit.title}
-                        </h1>
-                      </div>
-                      <p className="text-xs sm:text-[12px] text-[#0d3557] leading-relaxed pl-7 sm:pl-9">
-                        {benefit.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Left side content - Main heading and features */}
-              <div
-                className="flex-1 w-full order-first lg:order-none"
-                data-aos="fade-right"
-              >
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-bold mb-6 sm:mb-8 text-[#0d3557] tracking-wide leading-tight">
-                  Transform the way your organisation works
-                </h1>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-[#1F3B4D]">
-                  {[
-                    "AEC Expertise",
-                    "Global Talent",
-                    "Cost Effective",
-                    "Scalable Teams",
-                    "Boost Productivity",
-                    "Seamless Integration",
-                    "Quality & Reliability",
-                    "Faster Turnaround",
-                  ].map((point, index) => (
-                    <div
-                      key={index}
-                      className="group flex items-start p-2 sm:p-3 bg-white rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#f1f5f9] cursor-pointer"
-                      data-aos="fade-up"
-                      data-aos-delay={index * 100}
-                    >
-                      <div className="bg-[#A6A65F] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 ">
-                        <svg
-                          className="w-3 h-3 sm:w-4 sm:h-4 text-[#CCC987]"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <span className="text-sm sm:text-[14px] uppercase text-[#0d3557] regular">
-                        {point}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] tracking-wide text-[#0d3557] font-extrabold mb-3 sm:mb-4 lg:mb-2 leading-tight">
+                Transform the way your organisation works
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl text-[#0d3557] leading-relaxed max-w-3xl mx-auto px-4">
+                Transform the way your organisation works
+              </p>
             </div>
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+              {benefits.map((benefit, index) => {
+                const isActive = index === activeIndex;
+
+                return (
+                  <div
+                    key={index}
+                    className={`group relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 transition-all duration-500 transform cursor-pointer border border-gray-200 ${isActive
+                        ? "shadow-2xl -translate-y-1 sm:-translate-y-2 scale-102 sm:scale-105"
+                        : "hover:shadow-2xl hover:-translate-y-1 sm:hover:-translate-y-2"
+                      }`}
+                  >
+                    {/* Animated gradient background */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br from-[#F5F4CE]/10 via-[#E2E0A0]/10 to-[#C8C679]/10 rounded-2xl sm:rounded-3xl transition-opacity duration-500 ${isActive
+                          ? "opacity-100"
+                          : "opacity-0 group-hover:opacity-100"
+                        }`}
+                    />
+
+                    {/* Glow effect */}
+                    <div
+                      className={`absolute -inset-1 bg-gradient-to-r from-[#C8C679] to-[#A6A65F] rounded-2xl sm:rounded-3xl blur transition-opacity duration-500 ${isActive
+                          ? "opacity-20"
+                          : "opacity-0 group-hover:opacity-20"
+                        }`}
+                    />
+
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div className="mb-4 sm:mb-6 flex justify-center">
+                        <div
+                          className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#C8C679] to-[#A6A65F] rounded-xl sm:rounded-2xl flex items-center justify-center text-white transition-transform duration-300 ${isActive ? "scale-110" : "group-hover:scale-110"
+                            }`}
+                        >
+                          {benefit.title.toLowerCase().includes("eco") ||
+                            benefit.title.toLowerCase().includes("green") ? (
+                            <svg
+                              className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22.23C9.5,15.93 16,14 16,14C16,14 16.4,9.84 17,8M12.19,21.79C12.7,22.36 13.4,22.5 13.85,22.12C14.29,21.75 14.3,21 13.85,20.56L12,18.76L10.15,20.56C9.7,21 9.71,21.75 10.15,22.12C10.6,22.5 11.3,22.36 11.81,21.79L12.19,21.79M8.5,9.5C9.33,9.5 10,8.83 10,8C10,7.17 9.33,6.5 8.5,6.5C7.67,6.5 7,7.17 7,8C7,8.83 7.67,9.5 8.5,9.5Z" />
+                            </svg>
+                          ) : benefit.title
+                            .toLowerCase()
+                            .includes("quality") ? (
+                            <svg
+                              className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
+                            </svg>
+                          ) : benefit.title
+                            .toLowerCase()
+                            .includes("support") ? (
+                            <svg
+                              className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10.1V11.1C14.8,12.6 13.4,14.1 12,14.1C10.6,14.1 9.2,12.6 9.2,11.1V10.1C9.2,8.6 10.6,7 12,7M18,14.3V11.3C18,16.8 15.7,21.4 12,22.4C8.3,21.4 6,16.8 6,11.3V14.3C6,18.8 8.3,22.4 12,22.4C15.7,22.4 18,18.8 18,14.3Z" />
+                            </svg>
+                          ) : (
+                            <svg
+                              className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Title */}
+                      <h3
+                        className={`text-base sm:text-lg md:text-[20px] font-bold text-[#0d3557] mb-4 sm:mb-6 text-center transition-colors duration-300 ${isActive
+                            ? "text-[#A6A65F]"
+                            : "group-hover:text-[#A6A65F]"
+                          }`}
+                      >
+                        {benefit.title}
+                      </h3>
+
+                      {/* Points */}
+                      <ul className="space-y-2 sm:space-y-3">
+                        {benefit.points?.map((point, i) => (
+                          <li
+                            key={i}
+                            className={`flex items-start space-x-2 sm:space-x-3 transition-colors duration-300 ${isActive
+                                ? "text-gray-700"
+                                : "text-gray-600 group-hover:text-gray-700"
+                              }`}
+                            style={{ animationDelay: `${i * 100}ms` }}
+                          >
+                            <div
+                              className={`flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#C8C679] to-[#A6A65F] rounded-full mt-1.5 sm:mt-2 transition-transform duration-300 ${isActive ? "scale-125" : "group-hover:scale-125"
+                                }`}
+                            />
+                            <span className="text-xs sm:text-sm md:text-[14px] text-[#0d3557] regular leading-relaxed">
+                              {point}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+
+            {/* Points List */}
           </div>
-        </section>
+        </motion.section>
 
         {/* Get Started Section */}
         <section
@@ -1254,7 +1360,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                         data-aos-delay={index * 100}
                       >
                         <div className="flex items-start space-x-3">
-                          <div className="mt-1 flex-shrink-0 text-[#CCC987]">{faq.icon}</div>
+                          <div className="mt-1 flex-shrink-0 text-[#A6A65F]">{faq.icon}</div>
                           <div className="flex-1 min-w-0">
                             <h4 className="text-lg font-bold text-[#0d3557] leading-tight mb-2">
                               {faq.question}
@@ -1276,7 +1382,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                       const container = document.getElementById('mobile-faq-scroll');
                       container.scrollBy({ left: -340, behavior: 'smooth' });
                     }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#CCC987] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A6A65F] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 "
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -1290,7 +1396,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
                       const container = document.getElementById('mobile-faq-scroll');
                       container.scrollBy({ left: 340, behavior: 'smooth' });
                     }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#CCC987] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#A6A65F] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 "
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -1332,7 +1438,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
     /* Mobile horizontal scroll styling */
     .overflow-x-auto {
       scrollbar-width: thin;
-      scrollbar-color: #CCC987 transparent;
+      scrollbar-color: #A6A65F transparent;
     }
 
     .overflow-x-auto::-webkit-scrollbar {
@@ -1344,7 +1450,7 @@ const activeGradient = "linear-gradient(744deg, #F5F4CE, #E2E0A0 30%, #A6A65F 65
     }
 
     .overflow-x-auto::-webkit-scrollbar-thumb {
-      background-color: #CCC987;
+      background-color: #A6A65F;
       border-radius: 3px;
     }
 

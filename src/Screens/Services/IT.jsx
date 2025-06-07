@@ -39,18 +39,12 @@ const Architecture = () => {
     { name: "Revit", image: revit },
     { name: "SketchUp", image: sketchup },
     { name: "V-Ray", image: vray },
-    { name: "Lumion", image: lumion },
-    { name: "Enscape", image: enscape },
-    { name: "Photoshop", image: photoshop },
-    { name: "Illustrator", image: illustrator },
-    { name: "Archicad", image: archicad },
-    { name: "MS Office", image: msoffice },
+
   ];
 
   const tabs = [
     { id: "services", label: "Services" },
     { id: "tools", label: "Tools" },
-    { id: "plans", label: "Plans" },
     { id: "why-us", label: "Why Us?" },
     { id: "get-started", label: "Get Started" },
     { id: "faq", label: "FAQ" },
@@ -60,23 +54,17 @@ const Architecture = () => {
     services: {
       title: "Comprehensive Architechural Excellence Services",
       description:
-        "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
+        "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailopurple to your specific needs and vision.",
       image: architectureHero,
       features: [
-        { name: "PRE CONCEPT DESIGN", image: serviceImage },
-        { name: "SCHEMATIC DESIGN", image: serviceImage },
-        { name: "DESIGN DEVELOPMENT", image: serviceImage },
-        { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
-        { name: "SPACE PLANING", image: serviceImage },
-        { name: "DRAFTING", image: serviceImage },
-        { name: " 3D MODELLING AND RENDERING", image: serviceImage },
-        { name: " BOQ AND MATERIAL TAKE OFF", image: serviceImage },
-        { name: "WALK THROUGH ANIMATIONS", image: serviceImage },
-        { name: "QUALITY CHECKS", image: serviceImage },
+        { name: "WEB DEVELOPMENT", image: serviceImage },
+        { name: "DIGITAL MARKETING", image: serviceImage },
+        { name: "APP DEVELOPMENT", image: serviceImage },
+        { name: "CRM / ERP", image: serviceImage },
       ],
     },
     tools: {
-      title: "Connect with Offshore365 with the tools you already use",
+      title: "Connect with Offshore365 with the tools to already use",
       description:
         "Work seamlessly with offshore experts skilled in leading AEC software.",
       image: toolsImage,
@@ -95,7 +83,7 @@ const Architecture = () => {
     },
     plans: {
       title: "Pick the perfect model for your team",
-      description: "Choose from a variety of plans tailored to your needs.",
+      description: "Choose from a variety of plans tailopurple to your needs.",
       image: plansImage,
       plans: [
         {
@@ -142,7 +130,7 @@ const Architecture = () => {
       ],
       highlightedBenefits: [
         {
-          title: "Reduced Administrative Burden",
+          title: "purpleuced Administrative Burden",
           description:
             "Offshore365 handles the administrative tasks associated with hiring and managing staff, such as recruitment, onboarding, and payroll. This allows clients to focus on their core business operations.",
         },
@@ -165,7 +153,7 @@ const Architecture = () => {
         {
           title: "Cost-Effective",
           description:
-            "Reduce costs significantly compared to in-house hiring.",
+            "purpleuce costs significantly compapurple to in-house hiring.",
         },
         {
           title: "Scalable Teams",
@@ -200,13 +188,13 @@ const Architecture = () => {
       description: "Here are some of the frequently asked questions",
       faqs: [
         {
-          question: "What architectural design services do you offer?",
+          question: "What web development services do you offer?",
           answer:
-            "We provide schematic design, concept development, construction documentation, 3D rendering, walkthroughs, interior design, flythroughs, 360° views, and high-quality visualizations.",
+            "We provide a wide range of web development services including Shopify development, WordPress development, Magento development, API development and integration, Wix development, and custom web designing.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#8F6FFF]"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -224,13 +212,13 @@ const Architecture = () => {
         },
         {
           question:
-            "How can our firm benefit from outsourcing architectural services?",
+            "What platforms do you specialize in for e-commerce development?",
           answer:
-            "Outsourcing helps reduce costs, access expert talent, improve project delivery speed, and lets you focus on core competencies without expanding internal resources.",
+            "We specialize in Shopify and Magento development for e-commerce solutions, ensuring a seamless online shopping experience for your customers.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#8F6FFF]"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -245,14 +233,13 @@ const Architecture = () => {
           ),
         },
         {
-          question:
-            "Do you provide permit drawings as per U.S. building codes?",
+          question: "Can you help with custom web design?",
           answer:
-            "We can help guide and review permit drawings for compliance with U.S. building codes, but we do not stamp final drawings for permit submission.",
+            "Yes, we offer custom web designing services tailored to meet your specific business needs and branding requirements.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#8F6FFF]"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -267,13 +254,13 @@ const Architecture = () => {
           ),
         },
         {
-          question: "How do you ensure accuracy and quality in your work?",
+          question: "Do you provide WordPress development services?",
           answer:
-            "Our certified designers follow strict quality protocols, detailed reviews, and building codes, ensuring accurate, high-standard outputs on every project.",
+            "Absolutely! We offer comprehensive WordPress development services, from theme customization to plugin development and site maintenance.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#8F6FFF]"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -288,13 +275,14 @@ const Architecture = () => {
           ),
         },
         {
-          question: "How does your team collaborate with in-house architects?",
+          question:
+            "What is included in your API development and integration services?",
           answer:
-            "Our team integrates closely with your architects to align on design intent, offer support where needed, and ensure seamless documentation and execution.",
+            "Our API development and integration services include creating custom APIs, integrating third-party APIs, and ensuring seamless data flow between different software systems.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#8F6FFF]"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -309,14 +297,13 @@ const Architecture = () => {
           ),
         },
         {
-          question:
-            "Do you offer dedicated teams for long-term architectural support?",
+          question: "How do you approach custom web designing projects?",
           answer:
-            "Yes, we provide dedicated design teams for ongoing partnerships, offering consistent, customized support to match your firm’s workflow and goals.",
+            "We start with a thorough understanding of your business goals and target audience, followed by creating a unique design that aligns with your brand identity and delivers an exceptional user experience.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#8F6FFF]"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -479,9 +466,7 @@ const Architecture = () => {
             transition={{ delay: 0.7, duration: 0.2 }}
             className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] font-light max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            Offshore365 has completed over 200+ Large Scale Architectural
-            Projects using BIM & CAD, produced in accordance with AIA and RIBA
-            architecture standards.
+            All in One Digital Services
           </motion.p>
         </div>
       </motion.section>
@@ -563,7 +548,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-8 sm:py-12 lg:py-16 scroll-mt-20"
+          className="py-8 sm:py-12 mb-20 lg:py-16 scroll-mt-20"
           id="services"
           data-aos="fade-up"
         >
@@ -571,10 +556,10 @@ const Architecture = () => {
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
               <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-3 lg:mb-2 text-[#0d3557] tracking-wide leading-tight lg:leading-snug">
-                Amplify Productivity with Offshore 365
+                Transform Your Brand With OFFSHORE 365
               </h1>
               <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] leading-relaxed">
-                Offshore 365 delivers end to end documentation services to a diverse range of sectors, supported by our global team, we empower your projects with accuracy, quality, and efficiency, no matter the scale or complexity.
+                we help you transform your brand by providing customized marketing and development solutions tailored specifically to your business needs.
               </p>
             </div>
 
@@ -612,55 +597,7 @@ const Architecture = () => {
                 ))}
               </div>
 
-              {/* Carousel below feature boxes */}
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="relative w-full h-[120px] sm:h-[140px] lg:h-[150px]"
-              >
-                <div className="absolute bottom-0 w-full h-full overflow-hidden rounded-lg">
-                  <motion.div
-                    className="flex"
-                    animate={{
-                      x: `-${activeIndex * (imageWidth + gap)}px`,
-                      transition: {
-                        x: {
-                          duration: 0.5,
-                          ease: "easeInOut",
-                        },
-                      },
-                    }}
-                    style={{
-                      width: `${doubledFeatures.length * (imageWidth + gap)}px`,
-                    }}
-                  >
-                    {doubledFeatures.map((feature, index) => (
-                      <div
-                        key={index}
-                        className="flex flex-col items-center mx-1 sm:mx-2 py-2"
-                        onClick={() => setActiveIndex(index % features.length)}
-                      >
-                        <div
-                          className={`w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden mb-1 cursor-pointer transition-transform duration-200 `}
-                        >
-                          <img
-                            src={feature.image}
-                            alt={feature.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <span className="text-[#0d3557] regular text-xs sm:text-[12px] text-center leading-tight max-w-[80px] sm:max-w-none">
-                          {feature.name}
-                        </span>
-                      </div>
-                    ))}
-                  </motion.div>
-                </div>
 
-
-              </motion.div>
             </div>
           </div>
         </motion.section>
@@ -668,7 +605,7 @@ const Architecture = () => {
         {/* Tools Section */}
         <section
           ref={(ref) => setRef("tools", ref)}
-          className="py-8 sm:py-12 lg:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-6 lg:px-8 text-white"
+          className="py-8 sm:py-12 lg:py-16  mb-20 scroll-mt-20 rounded-2xl px-4 sm:px-6 lg:px-8 text-white"
           id="tools"
           data-aos="fade-up"
         >
@@ -677,11 +614,11 @@ const Architecture = () => {
               {/* Title and Description */}
               <div className="text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] text-[#0d3557] font-extrabold mb-3 sm:mb-4 lg:mb-2 leading-tight">
-                 Advanced tools for your digital presence
+                  Advanced tools for your digital presence
 
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-[#0d3557] leading-relaxed max-w-3xl mx-auto lg:mx-0">
-                Work seamlessly with offshore experts skilled in leading IT software.
+                  Work seamlessly with offshore experts skilled in leading IT software.
                 </p>
               </div>
 
@@ -710,133 +647,159 @@ const Architecture = () => {
           </div>
         </section>
 
-      
 
-        {/* Why Us Section */}
-        <section
-          ref={(ref) => setRef("why-us", ref)}
-          className="py-8 sm:py-12 lg:py-16 scroll-mt-20 mb-12 sm:mb-16 lg:mb-20 rounded-2xl px-4 sm:px-6 lg:px-8 text-[#1F3B4D]"
+
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="py-16 mb-20 px-6 mb-20 sm:px-12 bg-white text-[#3c2063] scroll-mt-20"
           id="why-us"
-          data-aos="zoom-in"
         >
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row-reverse items-start gap-6 sm:gap-8 lg:gap-12">
+          <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-start gap-12">
+            {/* Left Side */}
+            <div className="w-full lg:w-1/2 space-y-6">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] text-[#0d3557] font-extrabold mb-3 sm:mb-4 lg:mb-2 leading-tight">
+                Grow your business with offshore 365
+              </h1>
 
-              {/* Right side content - Stats and Benefits */}
-              <div className="flex-1 w-full" data-aos="fade-left">
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-                  {tabData["why-us"].stats.map((stat, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col items-start"
-                      data-aos="fade-up"
-                      data-aos-delay={index * 100}
-                    >
-                      <div className="text-2xl sm:text-3xl lg:text-[34px] text-[#0d3557] mt-2 sm:mt-4 font-bold mb-1 sm:mb-2">
-                        {stat.number}+
-                      </div>
-                      <div className="text-sm sm:text-lg lg:text-[20px] regular text-[#1F3B4D] mb-2 leading-tight">
-                        {stat.label}
-                      </div>
-                      <div className="w-full bg-[#A5C4BD] rounded-full h-2 sm:h-2.5">
-                        <div
-                          className="bg-[#3C6E71] h-2 sm:h-2.5 rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${stat.percentage}%` }}
-                        />
-                      </div>
+              <div className="space-y-4">
+                {[
+                  "Experience & Expertise",
+                  "Customization",
+                  "Affordable Pricing",
+                  "Proven Track Record",
+                  "Excellent Customer Support",
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="flex items-center  rounded-xl   transition-all duration-300"
+                  >
+                    <div className="bg-[#CCB4FE] regular text-[12px] text-[#8F6FFF] font-bold w-10 h-10 flex items-center justify-center rounded-full mr-4">
+                      {String(idx + 1).padStart(2, "0")}
                     </div>
-                  ))}
-                </div>
-
-                {/* Benefits Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  {tabData["why-us"].highlightedBenefits.map((benefit, index) => (
-                    <div
-                      key={index}
-                      className="group p-3 sm:p-4 bg-white rounded-xl shadow-lg border border-[#3C6E71]/30 transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                      data-aos="fade-up"
-                      data-aos-delay={index * 100}
-                    >
-                      <div className="flex items-start mb-2">
-                        <div className="bg-[#CCB4FE] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
-                          <svg
-                            className="w-3 h-3 sm:w-4 sm:h-4 text-[#8F6FFF]"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                        </div>
-                        <h1 className="text-sm sm:text-[14px] text-[#3C6E71] tracking-wide font-semibold leading-tight">
-                          {benefit.title}
-                        </h1>
-                      </div>
-                      <p className="text-xs sm:text-[12px] text-[#0d3557] leading-relaxed pl-7 sm:pl-9">
-                        {benefit.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Left side content - Main heading and features */}
-              <div
-                className="flex-1 w-full order-first lg:order-none"
-                data-aos="fade-right"
-              >
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-bold mb-6 sm:mb-8 text-[#0d3557] tracking-wide leading-tight">
-                  Transform the way your organisation works
-                </h1>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-[#1F3B4D]">
-                  {[
-                    "AEC Expertise",
-                    "Global Talent",
-                    "Cost Effective",
-                    "Scalable Teams",
-                    "Boost Productivity",
-                    "Seamless Integration",
-                    "Quality & Reliability",
-                    "Faster Turnaround",
-                  ].map((point, index) => (
-                    <div
-                      key={index}
-                      className="group flex items-start p-2 sm:p-3 bg-white rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#f1f5f9] cursor-pointer"
-                      data-aos="fade-up"
-                      data-aos-delay={index * 100}
-                    >
-                      <div className="bg-[#CCB4FE] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 ">
-                        <svg
-                          className="w-3 h-3 sm:w-4 sm:h-4 text-[#8F6FFF]"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <span className="text-sm sm:text-[14px] uppercase text-[#0d3557] regular">
-                        {point}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                    <span className="text-[#0d3557] regular text-sm sm:text-[14px] leading-relaxed">
+                      {item}
+                    </span>
+                  </motion.div>
+                ))}
               </div>
             </div>
+
+            {/* Right Side */}
+            <div className="w-full lg:w-1/2 space-y-6">
+              <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] mb-8 leading-relaxed">
+                Our CRM and ERP development services combine years of expertise
+                with a commitment to building trusted, customized solutions that
+                drive your business’ success.
+              </p>
+
+              {/* Benefits */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  {
+                    text: "Customized Solutions",
+                    icon: (
+                      <svg
+                        className="w-8 h-8 text-[#8F6FFF] "
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m0 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                        />
+                      </svg>
+                    ),
+                  },
+                  {
+                    text: "Scalable Architecture",
+                    icon: (
+                      <svg
+                        className="w-8 h-8 text-[#8F6FFF] "
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.937 3.45c.318.375.49.84.49 1.35v.75H19.5a3 3 0 00-3 3v6.75a3 3 0 003 3h1.5a3 3 0 003-3v-6.75a3 3 0 00-3-3H5.25z"
+                        />
+                      </svg>
+                    ),
+                  },
+                  {
+                    text: "Integration Expertise",
+                    icon: (
+                      <svg
+                        className="w-8 h-8 text-[#8F6FFF] "
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                        />
+                      </svg>
+                    ),
+                  },
+                  {
+                    text: "User-Centric Design",
+                    icon: (
+                      <svg
+                        className="w-8 h-8 text-[#8F6FFF] "
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"
+                        />
+                      </svg>
+                    ),
+                  },
+                ].map((benefit, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.05, rotate: [0, 1, -1, 0] }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="flex flex-col items-center text-center gap-2 backdrop-blur-md rounded-lg px-4 py-5 hover:shadow-md cursor-pointer"
+                  >
+                    {benefit.icon}
+                    <span className="text-[#0d3557] regular text-sm sm:text-[14px] leading-relaxed">
+                      {benefit.text}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* CTA Button */}
+              {/* <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#0d3557] text-white px-6 py-3 rounded-md font-semibold shadow-md hover:bg-[#1a4475] transition-colors duration-300"
+              >
+                Book A Quote
+              </motion.button> */}
+            </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Get Started Section */}
         <section
