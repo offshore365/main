@@ -23,6 +23,16 @@ import archicad from "../../assets/archicad.jpg";
 import msoffice from "../../assets/ms.png";
 import photoshop from "../../assets/ps.png";
 import illustrator from "../../assets/ai.png";
+import {
+  Home,
+  Building2,
+  Hotel,
+  Store,
+  Banknote,
+  Landmark,
+  Stethoscope,
+  LayoutGrid
+} from "lucide-react";
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
@@ -54,7 +64,30 @@ const Architecture = () => {
     { id: "get-started", label: "Get Started" },
     { id: "faq", label: "FAQ" },
   ];
+  const iconSize = 40; // adjust if needed
 
+  const buildings = [
+    { name: "Residential", icon: <Home size={iconSize} /> },
+    { name: "Commercial", icon: <Building2 size={iconSize} /> },
+    { name: "Hospitality", icon: <Hotel size={iconSize} /> },
+    { name: "Retail", icon: <Store size={iconSize} /> },
+    { name: "Corporate", icon: <Banknote size={iconSize} /> }, // Closest minimalist
+    { name: "Mixed-Use", icon: <LayoutGrid size={iconSize} /> },
+    { name: "Healthcare", icon: <Stethoscope size={iconSize} /> },
+    { name: " Buildings", icon: <Landmark size={iconSize} /> },
+  ];
+  const [imageWidth, setImageWidth] = useState(96); // w-24
+  const gap = 12;
+
+  const doubledBuildings = [...buildings, ...buildings];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % buildings.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [buildings.length]);
   const tabData = {
     services: {
       title: "Comprehensive Architechural Excellence Services",
@@ -424,8 +457,6 @@ const Architecture = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const features = tabData.services.features;
   const doubledFeatures = [...features, ...features];
-  const imageWidth = 100;
-  const gap = 16;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -614,7 +645,7 @@ const Architecture = () => {
 
               {/* Carousel below feature boxes */}
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
@@ -633,33 +664,25 @@ const Architecture = () => {
                       },
                     }}
                     style={{
-                      width: `${doubledFeatures.length * (imageWidth + gap)}px`,
+                      width: `${doubledBuildings.length * (imageWidth + gap)}px`,
                     }}
                   >
-                    {doubledFeatures.map((feature, index) => (
+                    {doubledBuildings.map((building, index) => (
                       <div
                         key={index}
-                        className="flex flex-col items-center mx-1 sm:mx-2 py-2"
-                        onClick={() => setActiveIndex(index % features.length)}
+                        className="flex flex-col items-center justify-center mx-1 sm:mx-2 py-2 min-w-[96px]"
+                        onClick={() => setActiveIndex(index % buildings.length)}
                       >
-                        <div
-                          className={`w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden mb-1 cursor-pointer transition-transform duration-200 `}
-                        >
-                          <img
-                            src={feature.image}
-                            alt={feature.name}
-                            className="w-full h-full object-cover"
-                          />
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg  bg-white mb-1 text-[#0d3557] opacity-80 cursor-pointer transition-transform duration-200 hover:scale-105">
+                          {building.icon}
                         </div>
-                        <span className="text-[#0d3557] regular text-xs sm:text-[12px] text-center leading-tight max-w-[80px] sm:max-w-none">
-                          {feature.name}
+                        <span className="text-[#0d3557] regular  text-xs sm:text-[12px] text-center leading-tight max-w-[100px] uppercase sm:max-w-none">
+                          {building.name}
                         </span>
                       </div>
                     ))}
                   </motion.div>
                 </div>
-
-
               </motion.div>
             </div>
           </div>

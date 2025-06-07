@@ -23,7 +23,16 @@ import photoshop from "../../assets/ps.png";
 import illustrator from "../../assets/ai.png";
 import archicad from "../../assets/archicad.jpg";
 import msoffice from "../../assets/ms.png";
-
+import {
+  Home,
+  Building2,
+  Hotel,
+  Store,
+  Banknote,
+  Landmark,
+  Stethoscope,
+  LayoutGrid
+} from "lucide-react";
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
@@ -39,6 +48,24 @@ const Architecture = () => {
     { number: 0, target: 250, label: "Interior Design Projects" },
     { number: 0, target: 21, label: "Countries" },
   ]);
+  const iconSize = 40; // adjust if needed
+
+  const buildings = [
+    { name: "Residential", icon: <Home size={iconSize} /> },
+    { name: "Commercial", icon: <Building2 size={iconSize} /> },
+    { name: "Hospitality", icon: <Hotel size={iconSize} /> },
+    { name: "Retail", icon: <Store size={iconSize} /> },
+    { name: "Corporate", icon: <Banknote size={iconSize} /> }, // Closest minimalist
+    { name: "Mixed-Use", icon: <LayoutGrid size={iconSize} /> },
+    { name: "Healthcare", icon: <Stethoscope size={iconSize} /> },
+    { name: " Buildings", icon: <Landmark size={iconSize} /> },
+  ];
+  const [imageWidth, setImageWidth] = useState(96); // w-24
+  const gap = 12;
+
+  const doubledBuildings = [...buildings, ...buildings];
+
+
   const toolsList = [
     { name: "AutoCAD", image: autocad },
     { name: "Revit", image: revit },
@@ -376,8 +403,7 @@ const Architecture = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const features = tabData.services.features;
   const doubledFeatures = [...features, ...features];
-  const imageWidth = 100;
-  const gap = 16;
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -424,24 +450,24 @@ const Architecture = () => {
             Interior
           </motion.h1>
 
-        <div className="flex flex-wrap justify-center gap-y-8 gap-x-12 mt-6">
-  {counters.map((stat, index) => (
-    <motion.div
-      key={index}
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.7 + index * 0.2, duration: 0.5 }}
-      className="flex flex-col items-center text-center"
-    >
-      <div className="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-white">
-        {stat.number}+
-      </div>
-      <p className="text-[16px] sm:text-[18px] lg:text-[20px] text-white max-w-[250px]">
-        {stat.label}
-      </p>
-    </motion.div>
-  ))}
-</div>
+          <div className="flex flex-wrap justify-center gap-y-8 gap-x-12 mt-6">
+            {counters.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.7 + index * 0.2, duration: 0.5 }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-white">
+                  {stat.number}+
+                </div>
+                <p className="text-[16px] sm:text-[18px] lg:text-[20px] text-white max-w-[250px]">
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
 
         </div>
       </motion.section>
@@ -531,7 +557,7 @@ const Architecture = () => {
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
               <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-3 lg:mb-2 text-[#0d3557] tracking-wide leading-tight lg:leading-snug">
-Efficient Design Documentation for interior professionals
+                Efficient Design Documentation for interior professionals
               </h1>
               <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] leading-relaxed">
                 Offshore 365 delivers end to end documentation services to a diverse range of sectors, supported by our global team, we empower your projects with accuracy, quality, and efficiency, no matter the scale or complexity.
@@ -574,7 +600,7 @@ Efficient Design Documentation for interior professionals
 
               {/* Carousel below feature boxes */}
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
@@ -593,33 +619,25 @@ Efficient Design Documentation for interior professionals
                       },
                     }}
                     style={{
-                      width: `${doubledFeatures.length * (imageWidth + gap)}px`,
+                      width: `${doubledBuildings.length * (imageWidth + gap)}px`,
                     }}
                   >
-                    {doubledFeatures.map((feature, index) => (
+                    {doubledBuildings.map((building, index) => (
                       <div
                         key={index}
-                        className="flex flex-col items-center mx-1 sm:mx-2 py-2"
-                        onClick={() => setActiveIndex(index % features.length)}
+                        className="flex flex-col items-center justify-center mx-1 sm:mx-2 py-2 min-w-[96px]"
+                        onClick={() => setActiveIndex(index % buildings.length)}
                       >
-                        <div
-                          className={`w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden mb-1 cursor-pointer transition-transform duration-200 `}
-                        >
-                          <img
-                            src={feature.image}
-                            alt={feature.name}
-                            className="w-full h-full object-cover"
-                          />
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg  bg-white mb-1 text-[#A66A6C] opacity-80 cursor-pointer transition-transform duration-200 hover:scale-105">
+                          {building.icon}
                         </div>
-                        <span className="text-[#0d3557] regular text-xs sm:text-[12px] text-center leading-tight max-w-[80px] sm:max-w-none">
-                          {feature.name}
+                        <span className="text-[#0d3557] regular  text-xs sm:text-[12px] text-center leading-tight max-w-[100px] uppercase sm:max-w-none">
+                          {building.name}
                         </span>
                       </div>
                     ))}
                   </motion.div>
                 </div>
-
-
               </motion.div>
             </div>
           </div>
