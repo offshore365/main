@@ -1,5 +1,5 @@
-import blog1 from "../../assets/blogs.png";
-import blog2 from "../../assets/blogs3.png";
+import blog1 from "../../assets/blogs2.png";
+import blog2 from "../../assets/blogs2.png";
 import blog3 from "../../assets/blogs3.png";
 import blog4 from "../../assets/blogs3.png";
 import blog5 from "../../assets/blogs3.png";

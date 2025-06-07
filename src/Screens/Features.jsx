@@ -11,12 +11,13 @@ import vray from "../assets/vray.png";
 import lumion from "../assets/lumion.png";
 import enscape from "../assets/enscape.png";
 import max3ds from "../assets/3ds max.png";
-import photoshop from "../assets/photoshop.jpg";
-import illustrator from "../assets/illustrator.jpg";
 import archicad from "../assets/archicad.jpg";
 import navisworks from "../assets/navisworks.png";
-import civil3d from "../assets/civil 360.png";
-import premierepro from "../assets/premier pro.jpeg";
+import civil3d from "../assets/3dcivil.webp";
+import premierepro from "../assets/premierepro.png";
+import photoshop from "../assets/ps.png";
+import illustrator from "../assets/ai.png";
+
 import msoffice from "../assets/ms.png";
 
 const cardData = [

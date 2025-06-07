@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 import { Clock, DollarSign, Layers, Users, TrendingUp } from 'lucide-react';
 import card1 from "../assets/team.webp";
 import card2 from "../assets/fixed.png";
-import card3 from "../assets/time.png";
+import card3 from "../assets/timee.png";
 import card4 from "../assets/project.png";
 import card6 from "../assets/time.png";
 
@@ -188,12 +188,13 @@ const Model = () => {
           <div className="mt-4 text-center">
             <p className="text-sm sm:text-base md:text-lg text-[#0d3557]">
               Not sure which model is right for you?{" "}
-              <a
-                href="#schedule"
-                className="text-blue-600 underline hover:text-blue-800 transition"
-              >
-                Schedule a meet
-              </a>{" "}
+             <a
+  href="#scheduling"
+  className="text-blue-600 underline hover:text-blue-800 transition"
+>
+  Schedule a meet
+</a>
+
               with our experts
             </p>
           </div>

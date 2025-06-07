@@ -19,11 +19,10 @@ import sketchup from "../../assets/sketchup.png";
 import vray from "../../assets/vray.png";
 import lumion from "../../assets/lumion.png";
 import enscape from "../../assets/enscape.png";
-import photoshop from "../../assets/photoshop.jpg";
-import illustrator from "../../assets/illustrator.jpg";
 import archicad from "../../assets/archicad.jpg";
 import msoffice from "../../assets/ms.png";
-
+import photoshop from "../../assets/ps.png";
+import illustrator from "../../assets/ai.png";
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
@@ -686,7 +685,7 @@ const Architecture = () => {
               </div>
 
               {/* Tools Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-5  justify-items-center">
                 {toolsList.map((tool, index) => (
                   <div
                     key={index}
@@ -701,7 +700,6 @@ const Architecture = () => {
                         className="w-full h-full object-contain bg-white p-2 sm:p-3"
                       />
                     </div>
-                    <p className="text-sm sm:text-base text-[#0d3557] font-medium">{tool.name}</p>
                   </div>
                 ))}
               </div>

@@ -11,13 +11,13 @@ import {
 } from "framer-motion";
 import { Link } from "react-router-dom"; // ✅ Import Link for navigation
 
-import card1 from "../assets/architecture.webp";
-import card2 from "../assets/interior.webp";
-import card3 from "../assets/BIM.webp";
-import card4 from "../assets/3DVisualization.webp";
-import card5 from "../assets/admin.png";
-import card6 from "../assets/it.webp";
-import card7 from "../assets/Marketing.webp";
+import card1 from "../assets/ar.png";
+import card2 from "../assets/interior.jpg";
+import card3 from "../assets/BIM.jpg";
+import card4 from "../assets/3DVisualization.jpg";
+import card5 from "../assets/a.png";
+import card6 from "../assets/it.jpg";
+import card7 from "../assets/mr.png";
 
 // ✅ Add route links
 const cards = [
