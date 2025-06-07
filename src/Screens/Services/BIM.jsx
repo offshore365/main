@@ -15,14 +15,16 @@ import figmaLogo from "../../assets/ms.png";
 import offshoreLogo from "../../assets/logowh.png"; // adjust path if needed
 import autocad from "../../assets/autocad.png";
 import revit from "../../assets/revit.jpg";
-import sketchup from "../../assets/sketchup.png";
-import vray from "../../assets/vray.png";
-import lumion from "../../assets/lumion.png";
-import enscape from "../../assets/enscape.png";
-import photoshop from "../../assets/photoshop.jpg";
-import illustrator from "../../assets/illustrator.jpg";
+import bluebeam from "../../assets/Bluebeam.jpeg";
+import navisworks from "../../assets/navisworks.png";
+import bim360 from "../../assets/bim 360.jpg";
+import civil3d from "../../assets/3dcivil.webp";
 import archicad from "../../assets/archicad.jpg";
-import msoffice from "../../assets/ms.png";
+import trimbleconnect from "../../assets/trimble connect.gif";
+import vray from "../../assets/vray.png";
+import enscape from "../../assets/enscape.png";
+
+
 
 
 const Architecture = () => {
@@ -34,20 +36,21 @@ const Architecture = () => {
   const tabsRef = useRef(null);
   const placeholderRef = useRef(null);
   const originalTopRef = useRef(null);
-  const toolsList = [
-    { name: "AutoCAD", image: autocad },
-    { name: "Revit", image: revit },
-    { name: "SketchUp", image: sketchup },
-    { name: "V-Ray", image: vray },
-    { name: "Lumion", image: lumion },
-    { name: "Enscape", image: enscape },
-    { name: "Photoshop", image: photoshop },
-    { name: "Illustrator", image: illustrator },
-    { name: "Archicad", image: archicad },
-    { name: "MS Office", image: msoffice },
-  ];
+const toolsList = [
+  { name: "AutoCAD", image: autocad },
+  { name: "Revit", image: revit },
+  { name: "Bluebeam", image: bluebeam },
+  { name: "Navisworks", image: navisworks },
+  { name: "Autodesk BIM 360", image: bim360 },
+  { name: "Civil 3D", image: civil3d },
+  { name: "Archicad", image: archicad },
+  { name: "Trimble Connect", image: trimbleconnect },
+  { name: "V-Ray", image: vray },
+  { name: "Enscape", image: enscape },
+];
 
-  const tabs = [
+
+   const tabs = [
     { id: "services", label: "Services" },
     { id: "tools", label: "Tools" },
     { id: "plans", label: "Plans" },
@@ -63,22 +66,24 @@ const Architecture = () => {
         "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
-        { name: "PRE CONCEPT DESIGN", image: serviceImage },
-        { name: "SCHEMATIC DESIGN", image: serviceImage },
-        { name: "DESIGN DEVELOPMENT", image: serviceImage },
-        { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
-        { name: "SPACE PLANING", image: serviceImage },
-        { name: "DRAFTING", image: serviceImage },
-        { name: " 3D MODELLING AND RENDERING", image: serviceImage },
-        { name: " BOQ AND MATERIAL TAKE OFF", image: serviceImage },
-        { name: "WALK THROUGH ANIMATIONS", image: serviceImage },
-        { name: "QUALITY CHECKS", image: serviceImage },
-      ],
+        { name: "ARCHITECTURAL BIM", image: serviceImage },
+        { name: "SCAN TO BIM", image: serviceImage },
+        { name: "2D DRAWINGS", image: serviceImage },
+        { name: "CONSTRUCTION DRAWINGS", image: serviceImage },
+        { name: "SHOP DRAWINGS", image: serviceImage },
+        { name: "BIM COORDINATION", image: serviceImage },
+        { name: "CLASH DETECTION", image: serviceImage },
+        { name: "REVIT FAMILY CREATION", image: serviceImage },
+        { name: "POINT CLOUD REGISTRATION", image: serviceImage },
+        { name: "SURVEY MAPPING", image: serviceImage },
+        { name: "4D SCHEDULING", image: serviceImage },
+        { name: "5D QUANTITIES AND COST", image: serviceImage },
+       ],
+
     },
     tools: {
-      title: "Connect with Offshore365 with the tools you already use",
-      description:
-        "Work seamlessly with offshore experts skilled in leading AEC software.",
+      title: "Connect with Offshore365 with the tools to already use",
+      description: "Work seamlessly with offshore experts skilled in leading AEC software.",
       image: toolsImage,
       software: [
         { name: "Zoom", icon: "Z" },
@@ -101,35 +106,31 @@ const Architecture = () => {
         {
           title: "Hourly Billing ",
           description: "Flexible billing based on hours worked.",
-          backDescription:
-            "Billing is based on team hours, ideal for dynamic, evolving project scopes.",
+          backDescription: "Billing is based on team hours, ideal for dynamic, evolving project scopes."
         },
         {
           title: "Fixed Fee ",
           description: "Set price for defined project scope.",
-          backDescription:
-            "A fixed cost is set upfront for clearly defined projects with stable requirements.",
+          backDescription: "A fixed cost is set upfront for clearly defined projects with stable requirements."
         },
         {
           title: "Project Based ",
           description: "Comprehensive pricing for entire projects.",
-          backDescription:
-            "Pricing aligns with project phases and milestones—great for phased delivery.",
+          backDescription: "Pricing aligns with project phases and milestones—great for phased delivery."
         },
         {
           title: "Dedicated Team ",
           description: "Full-time team for ongoing collaboration.",
-          backDescription:
-            "A team works exclusively on your project—best for long-term collaboration.",
+          backDescription: "A team works exclusively on your project—best for long-term collaboration."
         },
         {
           title: "Performance Based",
           description: "Pricing tied to project outcomes.",
-          backDescription:
-            "Payment is based on results, motivating vendors to exceed targets.",
-        },
-      ],
-    },
+          backDescription: "Payment is based on results, motivating vendors to exceed targets."
+        }
+      ]
+    }
+    ,
     "why-us": {
       title: "Why Choose Our Architectural Excellence Services?",
       description:
@@ -200,138 +201,70 @@ const Architecture = () => {
       description: "Here are some of the frequently asked questions",
       faqs: [
         {
-          question: "What architectural design services do you offer?",
+          question: "What are BIM Outsourcing Services?",
           answer:
-            "We provide schematic design, concept development, construction documentation, 3D rendering, walkthroughs, interior design, flythroughs, 360° views, and high-quality visualizations.",
+            "BIM outsourcing includes services like 3D modeling (LOD 100 to 400), construction docs, visualization, and simulation, done by experts like Uppteam.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#E6B95F]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#C28E23]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 14l9-5-9-5-9 5 9 5z" />
               <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
             </svg>
           ),
         },
         {
-          question:
-            "How can our firm benefit from outsourcing architectural services?",
+          question: "Why outsource BIM Modeling Services?",
           answer:
-            "Outsourcing helps reduce costs, access expert talent, improve project delivery speed, and lets you focus on core competencies without expanding internal resources.",
+            "Outsourcing saves time and cuts overhead costs. Uppteam’s expert team delivers fast, quality BIM models to boost your productivity.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#E6B95F]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#C28E23]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           ),
         },
         {
-          question:
-            "Do you provide permit drawings as per U.S. building codes?",
+          question: "What projects benefit from BIM outsourcing?",
           answer:
-            "We can help guide and review permit drawings for compliance with U.S. building codes, but we do not stamp final drawings for permit submission.",
+            "Industrial, residential, commercial, high-rise, prefabricated, renovation, and infrastructure projects all benefit from outsourcing BIM.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#E6B95F]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#C28E23]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
             </svg>
           ),
         },
         {
-          question: "How do you ensure accuracy and quality in your work?",
+          question: "Do you offer 4D and 5D BIM services?",
           answer:
-            "Our certified designers follow strict quality protocols, detailed reviews, and building codes, ensuring accurate, high-standard outputs on every project.",
+            "Yes, Uppteam provides both 4D and 5D BIM services to enhance project planning and cost management.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#E6B95F]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#C28E23]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
             </svg>
           ),
         },
         {
-          question: "How does your team collaborate with in-house architects?",
+          question: "How secure is my data with BIM outsourcing?",
           answer:
-            "Our team integrates closely with your architects to align on design intent, offer support where needed, and ensure seamless documentation and execution.",
+            "We use strict access controls, regular security audits, and comply with data protection laws to keep your BIM data safe.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#E6B95F]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#C28E23]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
             </svg>
           ),
         },
         {
-          question:
-            "Do you offer dedicated teams for long-term architectural support?",
+          question: "How do I start BIM outsourcing with Uppteam?",
           answer:
-            "Yes, we provide dedicated design teams for ongoing partnerships, offering consistent, customized support to match your firm’s workflow and goals.",
+            "Fill out the form, and Uppteam will assign a team who'll manage your project with updates and incorporate your feedback.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#E6B95F]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#C28E23]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
             </svg>
           ),
         },
       ],
     },
+
 
     "get-started": {
       title: "Start Your Architectural Excellence Project Today",
@@ -438,8 +371,7 @@ const Architecture = () => {
     return () => clearInterval(interval);
   }, [features.length]);
 
-  const activeGradient = "linear-gradient(744deg, #FFE3A1, #FCD073 50%, #E6B95F)";
-
+  const activeGradient = "linear-gradient(744deg, #FFE3A1, #FCD073 50%, #C28E23)";
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -479,9 +411,7 @@ const Architecture = () => {
             transition={{ delay: 0.7, duration: 0.2 }}
             className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] font-light max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            Offshore365 has completed over 200+ Large Scale Architectural
-            Projects using BIM & CAD, produced in accordance with AIA and RIBA
-            architecture standards.
+                      Offshore 365 empowers its global clientele with robust BIM solutions, consistently achieving successful outcomes on intricate projects across diverse sizes, sectors, and specialized fields.
           </motion.p>
         </div>
       </motion.section>
@@ -528,7 +458,7 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-[#E6B95F] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
+        className={`z-20 bg-[#C28E23] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
           }`}
       >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -541,8 +471,8 @@ const Architecture = () => {
                 whileTap={{ scale: 0.97 }}
                 className={`relative px-4 sm:px-6 py-2 text-sm regular rounded-md transition-all duration-300
             ${activeTab === tab.id
-                    ? "bg-[#FCD073] text-[#E6B95F] font-semibold"
-                    : "text-white hover:bg-[#FCD073] hover:text-[#E6B95F]"
+                    ? "bg-[#FCD073] text-[#C28E23] font-semibold"
+                    : "text-white hover:bg-[#FCD073] hover:text-[#C28E23]"
                   }`}
               >
                 {tab.label}
@@ -571,7 +501,8 @@ const Architecture = () => {
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
               <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-3 lg:mb-2 text-[#0d3557] tracking-wide leading-tight lg:leading-snug">
-                Amplify Productivity with Offshore 365
+Enhance BIM performance with
+Offshore 365
               </h1>
               <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] leading-relaxed">
                 Offshore 365 delivers end to end documentation services to a diverse range of sectors, supported by our global team, we empower your projects with accuracy, quality, and efficiency, no matter the scale or complexity.
@@ -592,7 +523,7 @@ const Architecture = () => {
                   >
                     <div className="bg-[#FCD073] rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
                       <svg
-                        className="w-4 h-4 text-[#E6B95F]"
+                        className="w-4 h-4 text-[#C28E23]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -685,7 +616,7 @@ const Architecture = () => {
               </div>
 
               {/* Tools Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
                 {toolsList.map((tool, index) => (
                   <div
                     key={index}
@@ -736,7 +667,7 @@ const Architecture = () => {
                       {tabData.plans.plans.slice(0, 5).map((plan, index) => (
                         <div
                           key={index}
-                          className="group relative flex-shrink-0 w-[280px] h-[200px] bg-[#E6B95F] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
+                          className="group relative flex-shrink-0 w-[280px] h-[200px] bg-[#C28E23] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
                           style={{
                             border: "2px solid transparent",
                           }}
@@ -752,8 +683,8 @@ const Architecture = () => {
                                   i === 0
                                     ? "#FCD073" // Light shore blue
                                     : i === 1
-                                      ? "#E6B95F" // Core blue
-                                      : "#2C3E47", // Deep slate
+                                      ? "#C28E23" // Core blue
+                                      : "#FFE3A1", // Deep slate
                                 animationDelay: `${i * 1}s`,
                                 animationDuration: `${5 + i * 2}s`,
                               }}
@@ -775,7 +706,7 @@ const Architecture = () => {
                                   target.scrollIntoView({ behavior: "smooth" });
                                 }
                               }}
-                              className="w-full py-2.5 text-base rounded-lg bg-white text-[#E6B95F] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
+                              className="w-full py-2.5 text-base rounded-lg bg-white text-[#C28E23] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
                             >
                               Get started
                             </button>
@@ -793,7 +724,7 @@ const Architecture = () => {
                         const container = document.getElementById('mobile-plans-scroll');
                         container.scrollBy({ left: -300, behavior: 'smooth' });
                       }}
-                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#E6B95F] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#C28E23] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -807,7 +738,7 @@ const Architecture = () => {
                         const container = document.getElementById('mobile-plans-scroll');
                         container.scrollBy({ left: 300, behavior: 'smooth' });
                       }}
-                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#E6B95F] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#C28E23] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -820,7 +751,7 @@ const Architecture = () => {
                 {tabData.plans.plans.slice(0, 5).map((plan, index) => (
                   <div
                     key={index}
-                    className="group relative hidden sm:block w-full max-w-[280px] sm:w-[250px] lg:w-[240px] xl:w-[250px] h-[180px] sm:h-[200px] lg:h-[220px] xl:h-[200px] bg-[#E6B95F] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
+                    className="group relative hidden sm:block w-full max-w-[280px] sm:w-[250px] lg:w-[240px] xl:w-[250px] h-[180px] sm:h-[200px] lg:h-[220px] xl:h-[200px] bg-[#C28E23] shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105"
                     style={{
                       border: "2px solid transparent",
                     }}
@@ -836,8 +767,8 @@ const Architecture = () => {
                             i === 0
                               ? "#FCD073" // Light shore blue
                               : i === 1
-                                ? "#E6B95F" // Core blue
-                                : "#2C3E47", // Deep slate
+                                ? "#C28E23" // Core blue
+                                : "#FFE3A1", // Deep slate
                           animationDelay: `${i * 1}s`,
                           animationDuration: `${5 + i * 2}s`,
                         }}
@@ -859,7 +790,7 @@ const Architecture = () => {
                             target.scrollIntoView({ behavior: "smooth" });
                           }
                         }}
-                        className="w-full py-2 sm:py-2.5 text-sm sm:text-base lg:text-[16px] rounded-lg bg-white text-[#E6B95F] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
+                        className="w-full py-2 sm:py-2.5 text-sm sm:text-base lg:text-[16px] rounded-lg bg-white text-[#C28E23] font-regular transition duration-300 hover:bg-gray-100 hover:shadow-md active:scale-95"
                       >
                         Get started
                       </button>
@@ -909,7 +840,7 @@ const Architecture = () => {
     /* Mobile horizontal scroll styling */
     .overflow-x-auto {
       scrollbar-width: thin;
-      scrollbar-color: #E6B95F transparent;
+      scrollbar-color: #C28E23 transparent;
     }
 
     .overflow-x-auto::-webkit-scrollbar {
@@ -921,7 +852,7 @@ const Architecture = () => {
     }
 
     .overflow-x-auto::-webkit-scrollbar-thumb {
-      background-color: #E6B95F;
+      background-color: #C28E23;
       border-radius: 3px;
     }
 
@@ -973,9 +904,9 @@ const Architecture = () => {
                       <div className="text-sm sm:text-lg lg:text-[20px] regular text-[#1F3B4D] mb-2 leading-tight">
                         {stat.label}
                       </div>
-                      <div className="w-full bg-[#A5C4BD] rounded-full h-2 sm:h-2.5">
+                      <div className="w-full bg-[#FFE3A1] rounded-full h-2 sm:h-2.5">
                         <div
-                          className="bg-[#3C6E71] h-2 sm:h-2.5 rounded-full transition-all duration-1000 ease-out"
+                          className="bg-[#C28E23] h-2 sm:h-2.5 rounded-full transition-all duration-1000 ease-out"
                           style={{ width: `${stat.percentage}%` }}
                         />
                       </div>
@@ -995,7 +926,7 @@ const Architecture = () => {
                       <div className="flex items-start mb-2">
                         <div className="bg-[#FCD073] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
                           <svg
-                            className="w-3 h-3 sm:w-4 sm:h-4 text-[#E6B95F]"
+                            className="w-3 h-3 sm:w-4 sm:h-4 text-[#C28E23]"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -1008,7 +939,7 @@ const Architecture = () => {
                             />
                           </svg>
                         </div>
-                        <h1 className="text-sm sm:text-[14px] text-[#3C6E71] tracking-wide font-semibold leading-tight">
+                        <h1 className="text-sm sm:text-[14px] text-[#C28E23] tracking-wide font-semibold leading-tight">
                           {benefit.title}
                         </h1>
                       </div>
@@ -1048,7 +979,7 @@ const Architecture = () => {
                     >
                       <div className="bg-[#FCD073] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 ">
                         <svg
-                          className="w-3 h-3 sm:w-4 sm:h-4 text-[#E6B95F]"
+                          className="w-3 h-3 sm:w-4 sm:h-4 text-[#C28E23]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -1254,7 +1185,7 @@ const Architecture = () => {
                         data-aos-delay={index * 100}
                       >
                         <div className="flex items-start space-x-3">
-                          <div className="mt-1 flex-shrink-0 text-[#E6B95F]">{faq.icon}</div>
+                          <div className="mt-1 flex-shrink-0 text-[#C28E23]">{faq.icon}</div>
                           <div className="flex-1 min-w-0">
                             <h4 className="text-lg font-bold text-[#0d3557] leading-tight mb-2">
                               {faq.question}
@@ -1276,7 +1207,7 @@ const Architecture = () => {
                       const container = document.getElementById('mobile-faq-scroll');
                       container.scrollBy({ left: -340, behavior: 'smooth' });
                     }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#E6B95F] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#C28E23] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -1290,7 +1221,7 @@ const Architecture = () => {
                       const container = document.getElementById('mobile-faq-scroll');
                       container.scrollBy({ left: 340, behavior: 'smooth' });
                     }}
-                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#E6B95F] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-[#C28E23] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#0d3557]"
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -1332,7 +1263,7 @@ const Architecture = () => {
     /* Mobile horizontal scroll styling */
     .overflow-x-auto {
       scrollbar-width: thin;
-      scrollbar-color: #E6B95F transparent;
+      scrollbar-color: #C28E23 transparent;
     }
 
     .overflow-x-auto::-webkit-scrollbar {
@@ -1344,7 +1275,7 @@ const Architecture = () => {
     }
 
     .overflow-x-auto::-webkit-scrollbar-thumb {
-      background-color: #E6B95F;
+      background-color: #C28E23;
       border-radius: 3px;
     }
 

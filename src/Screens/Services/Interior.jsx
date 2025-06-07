@@ -19,8 +19,8 @@ import sketchup from "../../assets/sketchup.png";
 import vray from "../../assets/vray.png";
 import lumion from "../../assets/lumion.png";
 import enscape from "../../assets/enscape.png";
-import photoshop from "../../assets/photoshop.jpg";
-import illustrator from "../../assets/illustrator.jpg";
+import photoshop from "../../assets/ps.png";
+import illustrator from "../../assets/ai.png";
 import archicad from "../../assets/archicad.jpg";
 import msoffice from "../../assets/ms.png";
 
@@ -34,6 +34,11 @@ const Architecture = () => {
   const tabsRef = useRef(null);
   const placeholderRef = useRef(null);
   const originalTopRef = useRef(null);
+  const [counters, setCounters] = useState([
+    { number: 0, target: 60, label: "Interior Designers" },
+    { number: 0, target: 250, label: "Interior Design Projects" },
+    { number: 0, target: 21, label: "Countries" },
+  ]);
   const toolsList = [
     { name: "AutoCAD", image: autocad },
     { name: "Revit", image: revit },
@@ -46,7 +51,6 @@ const Architecture = () => {
     { name: "Archicad", image: archicad },
     { name: "MS Office", image: msoffice },
   ];
-
   const tabs = [
     { id: "services", label: "Services" },
     { id: "tools", label: "Tools" },
@@ -58,27 +62,27 @@ const Architecture = () => {
 
   const tabData = {
     services: {
-      title: "Comprehensive Architechural Excellence Services",
+      title: "Comprehensive Interior Services",
       description:
-        "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
+        "We provide end-to-end Interior solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
-        { name: "PRE CONCEPT DESIGN", image: serviceImage },
         { name: "SCHEMATIC DESIGN", image: serviceImage },
         { name: "DESIGN DEVELOPMENT", image: serviceImage },
         { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
-        { name: "SPACE PLANING", image: serviceImage },
+        { name: "SPACE PLANNING", image: serviceImage },
         { name: "DRAFTING", image: serviceImage },
-        { name: " 3D MODELLING AND RENDERING", image: serviceImage },
-        { name: " BOQ AND MATERIAL TAKE OFF", image: serviceImage },
-        { name: "WALK THROUGH ANIMATIONS", image: serviceImage },
+        { name: "INTERIOR 3D MODELLING & RENDERING", image: serviceImage },
+        { name: "360 DEGREE INTERIOR", image: serviceImage },
+        { name: "MILLWORK DRAWINGS", image: serviceImage },
         { name: "QUALITY CHECKS", image: serviceImage },
+        { name: "BOQ AND MATERIAL TAKE OFF", image: serviceImage },
       ],
+
     },
     tools: {
-      title: "Connect with Offshore365 with the tools you already use",
-      description:
-        "Work seamlessly with offshore experts skilled in leading AEC software.",
+      title: "Connect with Offshore365 with the tools to already use",
+      description: "Work seamlessly with offshore experts skilled in leading AEC software.",
       image: toolsImage,
       software: [
         { name: "Zoom", icon: "Z" },
@@ -101,44 +105,39 @@ const Architecture = () => {
         {
           title: "Hourly Billing ",
           description: "Flexible billing based on hours worked.",
-          backDescription:
-            "Billing is based on team hours, ideal for dynamic, evolving project scopes.",
+          backDescription: "Billing is based on team hours, ideal for dynamic, evolving project scopes."
         },
         {
           title: "Fixed Fee ",
           description: "Set price for defined project scope.",
-          backDescription:
-            "A fixed cost is set upfront for clearly defined projects with stable requirements.",
+          backDescription: "A fixed cost is set upfront for clearly defined projects with stable requirements."
         },
         {
           title: "Project Based ",
           description: "Comprehensive pricing for entire projects.",
-          backDescription:
-            "Pricing aligns with project phases and milestones—great for phased delivery.",
+          backDescription: "Pricing aligns with project phases and milestones—great for phased delivery."
         },
         {
           title: "Dedicated Team ",
           description: "Full-time team for ongoing collaboration.",
-          backDescription:
-            "A team works exclusively on your project—best for long-term collaboration.",
+          backDescription: "A team works exclusively on your project—best for long-term collaboration."
         },
         {
           title: "Performance Based",
           description: "Pricing tied to project outcomes.",
-          backDescription:
-            "Payment is based on results, motivating vendors to exceed targets.",
-        },
-      ],
+          backDescription: "Payment is based on results, motivating vendors to exceed targets."
+        }
+      ]
     },
     "why-us": {
-      title: "Why Choose Our Architectural Excellence Services?",
+      title: "Why Choose Our Interior Services?",
       description:
         "We combine creativity with technical expertise to deliver exceptional results.",
       image: whyUsImage,
       stats: [
-        { number: 250, label: "Architects", max: 300, percentage: 83 },
-        { number: 15, label: "Countries", max: 20, percentage: 75 },
-        { number: 500, label: "Global Projects", max: 600, percentage: 83 },
+        { number: 250, label: " Interior Architects", max: 300, percentage: 83 },
+        { number: 21, label: "Countries", max: 20, percentage: 75 },
+        { number: 250, label: "Global Projects", max: 600, percentage: 83 },
       ],
       highlightedBenefits: [
         {
@@ -200,69 +199,34 @@ const Architecture = () => {
       description: "Here are some of the frequently asked questions",
       faqs: [
         {
-          question: "What architectural design services do you offer?",
+          question: "What Interior design services do you offer?",
           answer:
             "We provide schematic design, concept development, construction documentation, 3D rendering, walkthroughs, interior design, flythroughs, 360° views, and high-quality visualizations.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#A66A6C]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#A66A6C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 14l9-5-9-5-9 5 9 5z" />
               <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
             </svg>
           ),
         },
         {
-          question:
-            "How can our firm benefit from outsourcing architectural services?",
+          question: "How can our firm benefit from outsourcing Interior services?",
           answer:
             "Outsourcing helps reduce costs, access expert talent, improve project delivery speed, and lets you focus on core competencies without expanding internal resources.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#A66A6C]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#A66A6C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           ),
         },
         {
-          question:
-            "Do you provide permit drawings as per U.S. building codes?",
+          question: "Do you provide permit drawings as per U.S. building codes?",
           answer:
             "We can help guide and review permit drawings for compliance with U.S. building codes, but we do not stamp final drawings for permit submission.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#A66A6C]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#A66A6C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
             </svg>
           ),
         },
@@ -271,62 +235,28 @@ const Architecture = () => {
           answer:
             "Our certified designers follow strict quality protocols, detailed reviews, and building codes, ensuring accurate, high-standard outputs on every project.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#A66A6C]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#A66A6C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
             </svg>
           ),
         },
         {
-          question: "How does your team collaborate with in-house architects?",
+          question: "How does your team collaborate with in-house teams?",
           answer:
-            "Our team integrates closely with your architects to align on design intent, offer support where needed, and ensure seamless documentation and execution.",
+            "Our team integrates closely with your interior team to align on design intent, offer support where needed, and ensure seamless documentation and execution.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#A66A6C]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#A66A6C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
             </svg>
           ),
         },
         {
-          question:
-            "Do you offer dedicated teams for long-term architectural support?",
+          question: "Do you offer dedicated teams for long-term Interior support?",
           answer:
             "Yes, we provide dedicated design teams for ongoing partnerships, offering consistent, customized support to match your firm’s workflow and goals.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-[#A66A6C]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#A66A6C]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 4v16M16 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
             </svg>
           ),
         },
@@ -334,7 +264,7 @@ const Architecture = () => {
     },
 
     "get-started": {
-      title: "Start Your Architectural Excellence Project Today",
+      title: "Start Your Interior Project Today",
       description:
         "Get in touch to discuss your project requirements and how we can help bring your vision to life.",
       image: getStartedImage,
@@ -384,10 +314,7 @@ const Architecture = () => {
       });
     };
 
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
 
     Object.values(sectionRefs.current).forEach((section) => {
       if (section) observer.observe(section);
@@ -406,6 +333,30 @@ const Architecture = () => {
       setCarouselIndex((prev) => (prev + 1) % tabData.tools.software.length);
     }, 3000);
     return () => clearInterval(interval);
+  }, []);
+
+  // Counter Animation Effect
+  useEffect(() => {
+    const timers = counters.map((counter, index) => {
+      let start = 0;
+      const duration = 2000; // Animation duration in milliseconds
+      const increment = counter.target / (duration / 16); // Approx 60fps
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= counter.target) {
+          start = counter.target;
+          clearInterval(timer);
+        }
+        setCounters((prev) =>
+          prev.map((item, i) =>
+            i === index ? { ...item, number: Math.floor(start) } : item
+          )
+        );
+      }, 16);
+      return timer;
+    });
+
+    return () => timers.forEach((timer) => clearInterval(timer));
   }, []);
 
   const setRef = (id, ref) => {
@@ -473,16 +424,25 @@ const Architecture = () => {
             Interior
           </motion.h1>
 
-          <motion.p
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.2 }}
-            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] font-light max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
-          >
-            Offshore365 has completed over 200+ Large Scale Architectural
-            Projects using BIM & CAD, produced in accordance with AIA and RIBA
-            architecture standards.
-          </motion.p>
+        <div className="flex flex-wrap justify-center gap-y-8 gap-x-12 mt-6">
+  {counters.map((stat, index) => (
+    <motion.div
+      key={index}
+      initial={{ y: 30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.7 + index * 0.2, duration: 0.5 }}
+      className="flex flex-col items-center text-center"
+    >
+      <div className="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-white">
+        {stat.number}+
+      </div>
+      <p className="text-[16px] sm:text-[18px] lg:text-[20px] text-white max-w-[250px]">
+        {stat.label}
+      </p>
+    </motion.div>
+  ))}
+</div>
+
         </div>
       </motion.section>
 
@@ -571,7 +531,7 @@ const Architecture = () => {
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
               <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-3 lg:mb-2 text-[#0d3557] tracking-wide leading-tight lg:leading-snug">
-                Amplify Productivity with Offshore 365
+Efficient Design Documentation for interior professionals
               </h1>
               <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] leading-relaxed">
                 Offshore 365 delivers end to end documentation services to a diverse range of sectors, supported by our global team, we empower your projects with accuracy, quality, and efficiency, no matter the scale or complexity.
@@ -685,7 +645,7 @@ const Architecture = () => {
               </div>
 
               {/* Tools Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
                 {toolsList.map((tool, index) => (
                   <div
                     key={index}
@@ -700,7 +660,6 @@ const Architecture = () => {
                         className="w-full h-full object-contain bg-white p-2 sm:p-3"
                       />
                     </div>
-                    <p className="text-sm sm:text-base text-[#0d3557] font-medium">{tool.name}</p>
                   </div>
                 ))}
               </div>
