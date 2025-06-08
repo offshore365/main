@@ -565,7 +565,7 @@ const UserForm = ({ values, onChange, selectedService, selectedDate, selectedTim
             >
               <option value="">Select company size</option>
               {companySizes.map((size) => (
-                <option key={size} value={size}>
+                <option key={size} className="regular" value={size}>
                   {size}
                 </option>
               ))}

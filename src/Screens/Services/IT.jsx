@@ -769,9 +769,8 @@ const toolsList = [
                 ].map((benefit, i) => (
                   <motion.div
                     key={i}
-                    whileHover={{ scale: 1.05, rotate: [0, 1, -1, 0] }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="flex flex-col items-center text-center gap-2 backdrop-blur-md rounded-lg px-4 py-5 hover:shadow-md cursor-pointer"
+                    className="flex flex-col items-center text-center gap-2 backdrop-blur-md rounded-lg px-4 py-5 cursor-pointer"
                   >
                     {benefit.icon}
                     <span className="text-[#0d3557] regular text-sm sm:text-[14px] leading-relaxed">

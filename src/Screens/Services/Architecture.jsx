@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import AOS from "aos";
+import { useNavigate } from "react-router-dom";
 import "aos/dist/aos.css";
 import architectureHero from "../../assets/architecture.png";
 import serviceImage from "../../assets/architecture.png";
@@ -36,6 +37,8 @@ import {
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
+  const navigate = useNavigate();
+
   const [isSticky, setIsSticky] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [showSchedulingSection, setShowSchedulingSection] = useState(false);
@@ -1159,11 +1162,12 @@ const scrollToSection = (id) => {
                 <span className="group-hover:animate-pulse regular">Schedule a Meet</span>
               </button>
 
-              <button
-                className="group px-6 sm:px-8 py-3 sm:py-3.5 border border-white text-white rounded-xl hover:bg-white hover:text-gray-700 transition-all duration-300 regular text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
-              >
-                <span className="group-hover:animate-pulse regular">Contact Our Team</span>
-              </button>
+            <button
+  onClick={() => navigate("/contact")}
+  className="group px-6 sm:px-8 py-3 sm:py-3.5 border border-white text-white rounded-xl hover:bg-white hover:text-gray-700 transition-all duration-300 regular text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
+>
+  <span className="group-hover:animate-pulse regular">Contact Our Team</span>
+</button>
             </div>
 
 

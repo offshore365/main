@@ -672,7 +672,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 mb-20 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8 "
+          className="py-12 mb-20 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-16 "
           id="why-us"
           data-aos="zoom-in"
         >
@@ -686,7 +686,7 @@ const Architecture = () => {
               viewport={{ once: true }}
               data-aos="fade-right"
             >
-              <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
+              <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-3 lg:mb-2 text-[#0d3557] tracking-wide leading-tight lg:leading-snug">
                 Grow your business with Offshore 365
               </h1>
 
@@ -710,7 +710,7 @@ const Architecture = () => {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-start p-3 bg-white rounded-lg hover:shadow-lg transition-all duration-300"
+                    className="flex items-start p-1 bg-white rounded-lg hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >

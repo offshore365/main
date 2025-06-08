@@ -75,10 +75,12 @@ const SleekChatbot = () => {
       ],
       options: [
         { id: 'architecture', text: 'Architecture', icon: Layout },
-        { id: 'interior', text: 'Interior', icon: Home },
+                { id: 'visualization', text: '3D Visualization', icon: Eye },
+
         { id: 'bim', text: 'BIM', icon: Code },
-        { id: 'visualization', text: '3D Visualization', icon: Eye },
-        { id: 'it', text: 'IT', icon: User },
+          { id: 'it', text: 'IT', icon: User },
+              { id: 'interior', text: 'Interior', icon: Home },
+
         { id: 'marketing', text: 'Marketing', icon: Sparkles },
         { id: 'admin', text: 'Admin', icon: Briefcase }
       ]
@@ -247,19 +249,63 @@ const SleekChatbot = () => {
 
         {/* Input or Options */}
         <div className="p-2 border-t bg-white rounded-b-lg">
-          {showOptions() && (
-            <div className="grid grid-cols-2 gap-2">
-              {chatFlow[currentStep].options.map(option => (
-                <button
-                  key={option.id}
-                  onClick={() => handleOptionClick(option.id, option.text)}
-                  className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
-                >
-                  {option.text}
-                </button>
-              ))}
-            </div>
-          )}
+         {showOptions() && currentStep === 'service' ? (
+  <div className="space-y-2">
+    {/* First row: 2 columns */}
+    <div className="grid grid-cols-2 gap-2">
+      {chatFlow.service.options.slice(0, 2).map(option => (
+        <button
+          key={option.id}
+          onClick={() => handleOptionClick(option.id, option.text)}
+          className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
+        >
+          {option.text}
+        </button>
+      ))}
+    </div>
+
+    {/* Second row: 3 columns */}
+    <div className="grid grid-cols-3 gap-2">
+      {chatFlow.service.options.slice(2, 5).map(option => (
+        <button
+          key={option.id}
+          onClick={() => handleOptionClick(option.id, option.text)}
+          className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
+        >
+          {option.text}
+        </button>
+      ))}
+    </div>
+
+    {/* Third row: 2 columns */}
+    <div className="grid grid-cols-2 gap-2">
+      {chatFlow.service.options.slice(5).map(option => (
+        <button
+          key={option.id}
+          onClick={() => handleOptionClick(option.id, option.text)}
+          className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
+        >
+          {option.text}
+        </button>
+      ))}
+    </div>
+  </div>
+) : (
+  showOptions() && (
+    <div className="grid grid-cols-2 gap-2">
+      {chatFlow[currentStep].options.map(option => (
+        <button
+          key={option.id}
+          onClick={() => handleOptionClick(option.id, option.text)}
+          className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
+        >
+          {option.text}
+        </button>
+      ))}
+    </div>
+  )
+)}
+
           {showInput() && (
             <form onSubmit={handleInputSubmit} className="flex mt-2 space-x-2">
               <input
