@@ -111,10 +111,10 @@ const FeatureCard = React.memo(({ data, dataIndex }) => {
       animate="visible"
     >
       <div className="flex flex-col justify-start relative z-20">
-        <h3 className="text-[28px] sm:text-[34px] font-bold text-[#0d3557] mb-4 text-left tracking-tight group-hover:text-white transition-colors duration-500">
+        <h3 className="text-[28px] sm:text-[34px] font-bold text-[#0d3557] mb-4 text-left tracking-tight group-hover:text-[#0d3557] transition-colors duration-500">
           {data.title}
         </h3>
-        <p className="text-[16px] sm:text-[20px] text-[#0d3557] text-left leading-relaxed group-hover:text-white transition-colors duration-500">
+        <p className="text-[16px] sm:text-[20px] text-[#0d3557] text-left leading-relaxed group-hover:text-[#0d3557] transition-colors duration-500">
           {data.description}
         </p>
       </div>

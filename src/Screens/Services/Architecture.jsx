@@ -55,6 +55,19 @@ const Architecture = () => {
     { name: "Archicad", image: archicad },
     { name: "MS Office", image: msoffice },
   ];
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  const offset = 64; // Adjust this to your tab height
+  const bodyRect = document.body.getBoundingClientRect().top;
+  const elementRect = element.getBoundingClientRect().top;
+  const elementPosition = elementRect - bodyRect;
+  const offsetPosition = elementPosition - offset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  });
+};
 
   const tabs = [
     { id: "services", label: "Services" },
@@ -1097,7 +1110,7 @@ const Architecture = () => {
         {/* Get Started Section */}
         <section
           ref={(ref) => setRef("get-started", ref)}
-          className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 min-h-[400px] sm:min-h-[500px] lg:h-[550px] transition-all duration-1000 text-white flex rounded-2xl justify-center items-center relative overflow-hidden"
+          className="py-12 sm:py-16 lg:py-20 px-4 scroll-mt-20 sm:px-6 lg:px-8 min-h-[400px] sm:min-h-[500px] lg:h-[550px] transition-all duration-1000 text-white flex rounded-2xl justify-center items-center relative overflow-hidden"
           style={{ background: activeGradient }}
           id="get-started"
         >

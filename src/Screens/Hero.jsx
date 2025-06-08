@@ -191,18 +191,16 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.span
-                  className="regular cursor-pointer"
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.3 }}
-                  onClick={() => {
-                    const section = document.getElementById("scheduling");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  Schedule a Meet
-                </motion.span>
+        className="regular cursor-pointer"
+        whileHover={{ x: 5 }}
+        transition={{ duration: 0.3 }}
+         onClick={() => {
+                        const section = document.getElementById("scheduling");
+                        if (section) section.scrollIntoView({ behavior: "smooth" });
+                      }}
+      >
+        Schedule a Meet
+      </motion.span>
               </motion.button>
             </motion.div>
           </AnimatedSection>
