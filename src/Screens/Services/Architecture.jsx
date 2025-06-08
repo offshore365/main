@@ -1163,11 +1163,15 @@ const scrollToSection = (id) => {
               </button>
 
             <button
-  onClick={() => navigate("/contact")}
+  onClick={() => {
+    navigate("/contact");
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" }); // Scroll to top immediately
+  }}
   className="group px-6 sm:px-8 py-3 sm:py-3.5 border border-white text-white rounded-xl hover:bg-white hover:text-gray-700 transition-all duration-300 regular text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
 >
   <span className="group-hover:animate-pulse regular">Contact Our Team</span>
 </button>
+
             </div>
 
 

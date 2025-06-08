@@ -336,31 +336,32 @@ const TimeSelector = ({ selected, onChange, date, userTimeZone, onTimeZoneChange
   return (
     <div className="space-y-4 sm:space-y-6">
       <div className="max-w-xs sm:max-w-lg mx-auto">
-        <motion.div
-          className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-3 mb-4"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Clock className="w-5 h-5 text-blue-600" />
-          <select
-            value={userTimeZone}
-            onChange={onTimeZoneChange}
-            className="bg-transparent regular text-sm text-[#0d3557] outline-none cursor-pointer w-full sm:w-auto"
-            size={5} // Show 5 options at a time
-            style={{
-              overflowY: "auto",
-              scrollBehavior: "smooth", // smooth scrolling
-            }}
-          >
-            <option value="" className="regular">Select Timezone</option>
-            {timeZones.map((tz) => (
-              <option className="regular" key={tz.country + tz.zone} value={tz.zone}>
-                {tz.country} ({tz.zone} - {tz.region})
-              </option>
-            ))}
-          </select>
-        </motion.div>
+    <motion.div
+  className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-3 mb-4"
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.3 }}
+>
+  <Clock className="w-5 h-5 text-blue-600 mr-2" />
+
+  <div className="relative w-full sm:w-auto">
+    <select
+      value={userTimeZone}
+      onChange={onTimeZoneChange}
+      className="appearance-none w-full regular text-sm text-[#0d3557] bg-white border border-gray-300 rounded-md py-2 px-3 pr-8 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+      <option value="" className="regular">Select Timezone</option>
+      {timeZones.map((tz) => (
+        <option className="regular" key={tz.country + tz.zone} value={tz.zone}>
+          {tz.country} ({tz.zone} - {tz.region})
+        </option>
+      ))}
+    </select>
+
+    {/* Chevron Down Icon */}
+    <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
+  </div>
+</motion.div>
 
       </div>
 
@@ -498,7 +499,7 @@ const UserForm = ({ values, onChange, selectedService, selectedDate, selectedTim
               value={countryCode}
               onChange={handleCountryCodeChange}
               required
-              className="w-1/5 px-2 py-2 border border-gray-200 rounded-l-lg text-[12px] text-[#0d3557] regular focus:ring-1 focus:ring-blue-400 focus:border-blue-400 outline-none appearance-none bg-white"
+              className="w-1/5 px-2 py-2 border border-gray-200 rounded-l-lg text-[10px] text-[#0d3557] regular focus:ring-1 focus:ring-blue-400 focus:border-blue-400 outline-none appearance-none bg-white"
             >
               {countryCodes.map((cc) => (
                 <option key={cc.code + cc.country} value={cc.code}>
