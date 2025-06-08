@@ -99,7 +99,7 @@ export default function TestimonialMetrics() {
   }, [])
 
   const displaySlides = [...testimonials, ...testimonials, ...testimonials]
-  const cardWidth = visibleSlides === 1 ? 280 : visibleSlides === 2 ? 260 : 250
+  const cardWidth = visibleSlides === 1 ? 280 : visibleSlides === 2 ? 260 : 310
   const gap = visibleSlides === 1 ? 16 : 12
   const slideWidth = cardWidth + gap
   const containerWidth = slideWidth * visibleSlides
@@ -117,7 +117,7 @@ export default function TestimonialMetrics() {
               Discover how businesses grow with offshore 365
             </p>
           </div>
-          <div className="flex space-x-3">
+          {/* <div className="flex space-x-3">
             <button
               onClick={prevSlide}
               className="p-3 sm:p-4 border border-gray-300 rounded-full hover:bg-gray-100"
@@ -132,7 +132,7 @@ export default function TestimonialMetrics() {
             >
               <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-[#0d3557]" />
             </button>
-          </div>
+          </div> */}
         </div>
 
         <div
@@ -152,7 +152,7 @@ export default function TestimonialMetrics() {
             {displaySlides.map((item, index) => (
               <div
                 key={index}
-                className={`testimonial-card ${item.color} ${item.textColor} rounded-2xl shadow-xl`}
+                className={`testimonial-card ${item.color} ${item.textColor} rounded-2xl `}
                 style={{
                   minWidth: `${cardWidth}px`,
                   height: visibleSlides === 1 ? "400px" : "370px",

@@ -64,7 +64,6 @@ const SleekChatbot = () => {
     email: {
       botMessages: [
         { text: `Thank you, ${userData.name}. Great to meet you.`, delay: 800 },
-        { text: `I'll make sure you receive personalized follow-up.`, delay: 1000 },
         { text: "Could you share your email address?", delay: 1200 }
       ],
       inputType: 'email'
@@ -78,6 +77,7 @@ const SleekChatbot = () => {
         { id: 'architecture', text: 'Architecture', icon: Layout },
         { id: 'interior', text: 'Interior', icon: Home },
         { id: 'bim', text: 'BIM', icon: Code },
+        { id: 'visualization', text: '3D Visualization', icon: Eye },
         { id: 'it', text: 'IT', icon: User },
         { id: 'marketing', text: 'Marketing', icon: Sparkles },
         { id: 'admin', text: 'Admin', icon: Briefcase }
@@ -91,14 +91,13 @@ const SleekChatbot = () => {
       ],
       options: [
         { id: 'startup', text: 'Scaling startup operations', icon: Target },
-        { id: 'enterprise', text: 'Enterprise-level solutions', icon: Briefcase },
-      
+        { id: 'enterprise', text: 'Enterprise-level solutions', icon: Briefcase }
       ]
     },
     final: {
       botMessages: [
         { text: `Thanks, ${userData.name}.`, delay: 600 },
-        { text: `You’re interested in ${userData.service} .`, delay: 1000 },
+        { text: `You’re interested in ${userData.service}.`, delay: 1000 },
         { text: `A specialist will contact you at ${userData.email} within 24 hours.`, delay: 1400 },
         { text: "Thank you for choosing Offshore 365. We look forward to supporting your vision.", delay: 1800 }
       ]
@@ -123,14 +122,11 @@ const SleekChatbot = () => {
         await delayWithTyping(msg.text, msg.delay);
       }
     }
-    // Send conversation to backend when reaching the final step
     if (step === 'final') {
       try {
         const response = await fetch('http://localhost:8556/send-email', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ messages, userData }),
         });
         if (response.ok) {
@@ -162,7 +158,7 @@ const SleekChatbot = () => {
   };
 
   const handleInputSubmit = async (e) => {
-    if (e && e.preventDefault) e.preventDefault();
+    e?.preventDefault();
     if (!userInput.trim()) return;
     setMessages(prev => [...prev, { type: 'user', text: userInput, timestamp: Date.now() }]);
 
@@ -193,15 +189,20 @@ const SleekChatbot = () => {
 
   return (
     <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
-      {/* Chat Button */}
-      <button
-        onClick={toggleChat}
-        className={`w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center ${
-          isOpen ? 'scale-0' : 'scale-100'
-        }`}
-      >
-        <MessageCircle size={24} />
-      </button>
+      {/* Chat Button with Tooltip */}
+      <div className="relative group">
+        <button
+          onClick={toggleChat}
+          className={`w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center ${
+            isOpen ? 'scale-0' : 'scale-100'
+          }`}
+        >
+          <MessageCircle size={24} />
+        </button>
+        <div className="absolute bottom-full mb-2 regular left-[-50px] transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-blue-500 text-white text-xs rounded py-1 px-2 pointer-events-none whitespace-nowrap z-10">
+          Hey, I'm your Offshore AI assistant. <br /> Here to help!
+        </div>
+      </div>
 
       {/* Chat Window */}
       <div className={`absolute bottom-0 right-0 w-80 h-[500px] sm:w-96 sm:h-[550px] bg-white rounded-lg shadow-2xl transition-all duration-300 transform origin-bottom-right border ${
@@ -224,7 +225,7 @@ const SleekChatbot = () => {
         </div>
 
         {/* Messages */}
-        <div className="h-[300px] sm:h-[350px]  overflow-y-auto p-4 space-y-3 bg-gray-50">
+        <div className="h-[300px] sm:h-[350px] overflow-y-auto p-4 space-y-3 bg-gray-50">
           {messages.map((message, index) => (
             <div key={index} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
               <div className={`max-w-xs px-3 py-2 rounded-lg text-sm regular ${
@@ -244,7 +245,7 @@ const SleekChatbot = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input/Options */}
+        {/* Input or Options */}
         <div className="p-2 border-t bg-white rounded-b-lg">
           {showOptions() && (
             <div className="grid grid-cols-2 gap-2">
@@ -254,7 +255,6 @@ const SleekChatbot = () => {
                   onClick={() => handleOptionClick(option.id, option.text)}
                   className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
                 >
-                 
                   {option.text}
                 </button>
               ))}

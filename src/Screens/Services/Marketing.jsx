@@ -23,7 +23,14 @@ import photoshop from "../../assets/photoshop.jpg";
 import illustrator from "../../assets/illustrator.jpg";
 import archicad from "../../assets/archicad.jpg";
 import msoffice from "../../assets/ms.png";
-
+import {
+  Building2,
+  MonitorSmartphone,
+  Banknote,
+  Headset,
+  HeartPulse,
+  HelpCircle,
+} from "lucide-react";
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
@@ -34,6 +41,60 @@ const Architecture = () => {
   const tabsRef = useRef(null);
   const placeholderRef = useRef(null);
   const originalTopRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // SVG icons data for carousel
+  const carouselIcons = [
+    {
+      id: 1,
+      icon: <Building2 className="w-12 h-12 text-[#3A8CA1]" />,
+      title: "Office Space, Desks & Tools",
+    },
+    {
+      id: 2,
+      icon: <MonitorSmartphone className="w-12 h-12 text-[#3A8CA1]" />,
+      title: "Computer Hardware + Office Software",
+    },
+    {
+      id: 3,
+      icon: <Banknote className="w-12 h-12 text-[#3A8CA1]" />,
+      title: "Payroll, Taxes & Benefits",
+    },
+    {
+      id: 4,
+      icon: <Headset className="w-12 h-12 text-[#3A8CA1]" />,
+      title: "Remote Tools, Training & Support",
+    },
+    {
+      id: 5,
+      icon: <HeartPulse className="w-12 h-12 text-[#3A8CA1]" />,
+      title: "Family Health Insurance",
+    },
+    {
+      id: 6,
+      icon: <HelpCircle className="w-12 h-12 text-[#3A8CA1]" />,
+      title: "24/7 Support & Assistance",
+    },
+  ];
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselIcons.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(timer);
+  }, [carouselIcons.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselIcons.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + carouselIcons.length) % carouselIcons.length);
+  };
+
+
   const toolsList = [
     { name: "AutoCAD", image: autocad },
     { name: "Revit", image: revit },
@@ -48,7 +109,6 @@ const Architecture = () => {
   ];
   const tabs = [
     { id: "services", label: "Services" },
-    { id: "tools", label: "Tools" },
     { id: "why-us", label: "Why Us?" },
     { id: "get-started", label: "Get Started" },
     { id: "faq", label: "FAQ" },
@@ -557,7 +617,7 @@ const Architecture = () => {
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
               <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-3 lg:mb-2 text-[#0d3557] tracking-wide leading-tight lg:leading-snug">
-                Transform Your Brand With OFFSHORE 365
+                Transform Your Brand With Offshore 365
               </h1>
               <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] leading-relaxed">
                 we help you transform your brand by providing customized marketing solutions tailored specifically to your business needs.
@@ -598,7 +658,7 @@ const Architecture = () => {
                 ))}
               </div>
 
-           
+
             </div>
           </div>
         </motion.section>
@@ -606,140 +666,18 @@ const Architecture = () => {
 
 
 
-        {/* Why Us Section */}
         <motion.section
           ref={(ref) => setRef("why-us", ref)}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 mb-20 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8 text-gray-800"
+          className="py-12 mb-20 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8 "
           id="why-us"
           data-aos="zoom-in"
         >
-          <div className="flex flex-col lg:flex-row-reverse items-start gap-8 md:gap-12">
-            <div
-              className="flex-1 grid grid-cols-2 gap-6 place-items-center"
-              data-aos="fade-left"
-            >
-              {/* Box 1 */}
-              <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
-                <div className="flex justify-center mb-4">
-                  {/* Office icon */}
-                  <svg
-                    className="w-8 h-8 text-[#3A8CA1]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 21V3h6v6h6v6h6v6H3z"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <h2 className="text-[14px] text-[#0d3557] regular">
-                  Office Space, Desks & Tools
-                </h2>
-              </div>
-
-              {/* Box 2 */}
-              <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
-                <div className="flex justify-center mb-4">
-                  {/* Laptop icon */}
-                  <svg
-                    className="w-8 h-8 text-[#3A8CA1]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M4 6h16v10H4V6zm0 10h16v2H4v-2z"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <h2 className="text-[14px] text-[#0d3557] regular">
-                  Computer Hardware + Office Software
-                </h2>
-              </div>
-
-              {/* Box 3 (centered) */}
-              <div className="col-span-2 flex justify-center">
-                <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
-                  <div className="flex justify-center mb-4">
-                    {/* Money icon */}
-                    <svg
-                      className="w-8 h-8 text-[#3A8CA1]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={1.5}
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 8c-1.5 0-2.5.5-2.5 1.5s1 1.5 2.5 1.5 2.5.5 2.5 1.5-1 1.5-2.5 1.5M12 5v14"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <h2 className="text-[14px] text-[#0d3557] regular">
-                    Payroll, Taxes & Benefits
-                  </h2>
-                </div>
-              </div>
-
-              {/* Box 4 */}
-              <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
-                <div className="flex justify-center mb-4">
-                  {/* Remote icon */}
-                  <svg
-                    className="w-8 h-8 text-[#3A8CA1]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 3v18m-9-9h18"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <h2 className="text-[14px] text-[#0d3557] regular">
-                  Remote Tools, Training & Support
-                </h2>
-              </div>
-
-              {/* Box 5 */}
-              <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
-                <div className="flex justify-center mb-4">
-                  {/* Health icon */}
-                  <svg
-                    className="w-8 h-8 text-[#3A8CA1]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 21C12 21 3 13.5 3 8.5 3 5.4 5.4 3 8.5 3c1.8 0 3.4.9 4.5 2.1C14.1 3.9 15.7 3 17.5 3 20.6 3 23 5.4 23 8.5c0 5-9 12.5-9 12.5z"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <h2 className="text-[14px] text-[#0d3557] regular">
-                  Family Health Insurance
-                </h2>
-              </div>
-            </div>
-
+          <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-12">
+            {/* Left side - Title and Description */}
             <motion.div
               className="flex-1"
               initial={{ scale: 0.9, opacity: 0 }}
@@ -749,17 +687,20 @@ const Architecture = () => {
               data-aos="fade-right"
             >
               <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
-                Grow your business with offshore 365
+                Grow your business with Offshore 365
               </h1>
 
-              {/* New paragraph below the title */}
               <p className="text-sm sm:text-base lg:text-[18px] mb-8 text-[#0d3557] leading-relaxed">
                 Grow your business with our reliable digital marketing services.
                 We use proven strategies to build trust, drive traffic, and
                 increase sales, ensuring your success online.
               </p>
+            </motion.div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-[#1F3B4D]">
+            {/* Right side - Checkmark points and Carousel */}
+            <div className="flex-1" data-aos="fade-left">
+              {/* Checkmark Points */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-[#1F3B4D] mb-8">
                 {[
                   "Personal Campaign Manager",
                   "Monthly Meetings",
@@ -769,7 +710,7 @@ const Architecture = () => {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-start p-1 bg-white rounded-lg hover:shadow-lg transition-all duration-300"
+                    className="flex items-start p-3 bg-white rounded-lg hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -794,7 +735,30 @@ const Architecture = () => {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+
+              {/* SVG Icons Carousel */}
+
+              {/* Carousel Content */}
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+                className="text-center"
+              >
+                <div className="flex justify-center mb-4">
+                  {carouselIcons[currentSlide].icon}
+                </div>
+                <h4 className="text-[16px] text-[#0d3557] regular font-medium">
+                  {carouselIcons[currentSlide].title}
+                </h4>
+              </motion.div>
+
+
+
+
+            </div>
           </div>
         </motion.section>
 

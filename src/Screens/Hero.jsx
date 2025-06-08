@@ -9,25 +9,25 @@ import {
   useInView,
   useAnimation,
 } from "framer-motion";
-import { Link } from "react-router-dom"; // ✅ Import Link for navigation
+import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 
-import card1 from "../assets/archi.png";
-import card2 from "../assets/interior.webp";
-import card3 from "../assets/bim.webp";
-import card4 from "../assets/3d.webp";
+import card1 from "../assets/h1.png";
+import card2 from "../assets/h2.jpg";
+import card3 from "../assets/h3.jpg";
+import card4 from "../assets/h4.jpg";
 import card5 from "../assets/aa.png";
 import card6 from "../assets/it.png";
 import card7 from "../assets/mrr.png";
 
-// ✅ Add route links
 const cards = [
-  { id: 1, title: "Reduce no-shows", image: card1, overlayText: "Architecture", link: "/architecture" },
-  { id: 2, title: "Share your booking page", image: card2, overlayText: "Interior", link: "/interior" },
-  { id: 3, title: "Manage your schedule", image: card3, overlayText: "BIM", link: "/bim" },
-  { id: 4, title: "Connect your calendar", image: card4, overlayText: "3D Visualisation", link: "/3dvisualization" },
-  { id: 5, title: "Customize your experience", image: card6, overlayText: "IT", link: "/it" },
-  { id: 6, title: "Marketing Tools", image: card7, overlayText: "Marketing", link: "/marketing" },
-  { id: 7, title: "Admin Tools", image: card5, overlayText: "Admin", link: "/admin" },
+  { id: 1, title: "Architecture", image: card1, link: "/architecture" },
+  { id: 2, title: "Interior", image: card2, link: "/interior" },
+  { id: 3, title: "BIM", image: card3, link: "/bim" },
+  { id: 4, title: "3D Visualisation", image: card4, link: "/3dvisualization" },
+  { id: 5, title: "IT", image: card6, link: "/it" },
+  { id: 6, title: "Marketing", image: card7, link: "/marketing" },
+  { id: 7, title: "Admin", image: card5, link: "/admin" },
 ];
 
 const AnimatedText = ({ text, className, delay = 0 }) => {
@@ -122,30 +122,19 @@ const CardCarousel = () => {
                 pointerEvents: isActive ? "auto" : "none",
               }}
             >
-              <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100 h-full">
+              <div className=" rounded-xl shadow-2xl overflow-hidden border h-full">
                 <div className="relative h-full">
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 flex top-[80%] justify-center">
-                    <motion.h2
-                      className="text-2xl md:text-3xl regular tracking-wide text-white"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: isActive ? 0.2 : 0 }}
-                    >
-                      {card.overlayText}
-                    </motion.h2>
-                  </div>
-
-                  {/* ✅ Learn More link */}
                   <Link to={card.link}>
-                    <motion.p
-                      className="absolute top-4 right-4 text-white bg-white/30 px-4 py-2 rounded-full text-sm hover:bg-white/60 transition-colors cursor-pointer"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: isActive ? 0.4 : 0 }}
+                    <motion.div
+                      className="absolute bottom-8 right-8 border border-white bg-white/20 text-white px-6 py-2 rounded-full text-sm sm:text-base md:text-lg font-medium flex items-center gap-2 hover:bg-white/30 transition-all duration-300 group"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: isActive ? 0.3 : 0 }}
                     >
-                      Learn More
-                    </motion.p>
+                      <span className="regular">{card.title}</span>
+                      <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    </motion.div>
                   </Link>
                 </div>
               </div>
@@ -170,12 +159,11 @@ const Hero = () => {
 
   return (
     <div
-      className="w-full min-h-screen bg-white flex items-start justify-center py-12 px-4 sm:px-6 lg:px-8"
+      className="w-full min-h-screen bg-white/90 flex items-start justify-center py-12 px-4 sm:px-6 lg:px-8"
       ref={containerRef}
     >
       <motion.div className="container mx-auto relative z-10 max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          {/* Left Column */}
           <AnimatedSection className="w-full lg:w-5/12 text-center lg:text-left" initialX={-100}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d3557] leading-tight">
               <AnimatedText text="Unlock" className="text-[#0d3557]" delay={0.2} />
@@ -219,7 +207,6 @@ const Hero = () => {
             </motion.div>
           </AnimatedSection>
 
-          {/* Right Column */}
           <AnimatedSection className="w-full lg:w-7/12" initialX={100}>
             <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
               <CardCarousel />
@@ -232,3 +219,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

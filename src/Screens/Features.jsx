@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import AOS from 'aos';
 import gsap from 'gsap';
 import 'aos/dist/aos.css';
+
 import autocad from "../assets/autocad.png";
 import revit from "../assets/revit.jpg";
 import sketchup from "../assets/sketchup.png";
@@ -17,7 +18,6 @@ import civil3d from "../assets/3dcivil.webp";
 import premierepro from "../assets/premierepro.png";
 import photoshop from "../assets/ps.png";
 import illustrator from "../assets/ai.png";
-
 import msoffice from "../assets/ms.png";
 
 const cardData = [
@@ -54,6 +54,7 @@ const cardData = [
     description: "Enabling your in-house staff to focus on strategic growth.",
   },
 ];
+
 const toolIcons = [
   { name: "AutoCAD", image: autocad },
   { name: "Revit", image: revit },
@@ -70,6 +71,7 @@ const toolIcons = [
   { name: "Premiere Pro", image: premierepro },
   { name: "MS Office", image: msoffice },
 ];
+
 const readMoreColors = ['pastel-red', 'pastel-yellow', 'pastel-green', 'pastel-blue'];
 const colorMap = {
   'pastel-red': '#F4E7DD',
@@ -129,7 +131,6 @@ const FeatureCard = React.memo(({ data, dataIndex }) => {
             style={{ backgroundColor: colorMap[readMoreColor] }}
             className="absolute bottom-0 right-0 w-32 h-16 rounded-tl-full overflow-hidden flex items-center justify-center"
           >
-            {/* Optional: Add icon or text here */}
           </div>
         </div>
       </motion.div>
@@ -139,13 +140,32 @@ const FeatureCard = React.memo(({ data, dataIndex }) => {
 
 const Features = () => {
   const ref = useRef();
+  const intervalRef = useRef(null);
+
+  const startAutoplay = () => {
+    intervalRef.current = setInterval(() => {
+      ref.current?.goNext();
+    }, 2000);
+  };
+
+  const stopAutoplay = () => {
+    clearInterval(intervalRef.current);
+  };
+
+  const handleMouseEnter = () => {
+    stopAutoplay();
+    document.body.style.pointerEvents = "none";
+    document.querySelector('.carousel-container').style.pointerEvents = 'auto';
+  };
+
+  const handleMouseLeave = () => {
+    startAutoplay();
+    document.body.style.pointerEvents = "auto";
+  };
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-
-    const interval = setInterval(() => {
-      ref.current?.goNext();
-    }, 2000);
+    startAutoplay();
 
     gsap.from(".gsap-heading span", {
       y: 60,
@@ -163,7 +183,7 @@ const Features = () => {
       ease: "power2.out",
     });
 
-    return () => clearInterval(interval);
+    return () => stopAutoplay();
   }, []);
 
   return (
@@ -176,7 +196,11 @@ const Features = () => {
         Deliver seamless projects with our exceptional expertise
       </p>
 
-      <div className="flex justify-center overflow-x-auto">
+      <div
+        className="carousel-container flex justify-center overflow-x-auto"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <StackedCarousel
           ref={ref}
           slideComponent={(props) => (
@@ -192,11 +216,10 @@ const Features = () => {
       </div>
 
       <div className="relative w-full mt-16 overflow-hidden">
-        {/* Gradient sides */}
         <div className="absolute top-0 left-0 w-16 sm:w-24 h-full z-10 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
         <div className="absolute top-0 right-0 w-16 sm:w-24 h-full z-10 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none" />
 
-        <p className="text-[16px] px-12 sm:px  sm:text-[20px] text-[#0d3557] mb-10 max-w-2xl mx-auto leading-relaxed px-1-">
+        <p className="text-[16px] px-12 sm:px sm:text-[20px] text-[#0d3557] mb-10 max-w-2xl mx-auto leading-relaxed">
           We bring together the finest talent and the most advanced technologies to empower your business.
         </p>
 
@@ -212,16 +235,15 @@ const Features = () => {
             }}
           >
             {[...Array(2)].map((_, i) => (
-  <div key={i} className="flex gap-10 sm:gap-12">
-    {toolIcons.map((tool, idx) => (
-      <div key={`${i}-${idx}`} className="flex flex-col items-center min-w-[80px] sm:min-w-[100px]">
-        <img src={tool.image} alt={tool.name} className="w-8 h-8 sm:w-10 sm:h-10" />
-        <p className="text-[12px] sm:text-[14px] text-[#0d3557] mt-2">{tool.name}</p>
-      </div>
-    ))}
-  </div>
-))}
-
+              <div key={i} className="flex gap-10 sm:gap-12">
+                {toolIcons.map((tool, idx) => (
+                  <div key={`${i}-${idx}`} className="flex flex-col items-center min-w-[80px] sm:min-w-[100px]">
+                    <img src={tool.image} alt={tool.name} className="w-8 h-8 sm:w-10 sm:h-10" />
+                    <p className="text-[12px] sm:text-[14px] text-[#0d3557] mt-2">{tool.name}</p>
+                  </div>
+                ))}
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>

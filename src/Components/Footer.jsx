@@ -30,7 +30,7 @@ const Footer = () => {
           {/* About Us */}
           <div className="sm:col-span-2 lg:col-span-1" data-aos="fade-up">
             <img src={logo} alt="OffShore365 Logo" className="h-10 sm:h-12 mb-3 sm:mb-4" />
-            <p className="text-xs sm:text-sm text-[#0d3557] mb-3 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#0d3557] mb-3 leading-relaxed text-justify">
               Your global productivity partner delivering tech smart workforce solutions tailored for your AEC Business ensuring seamless expansion and efficiency.
             </p>
           </div>

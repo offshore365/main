@@ -422,19 +422,7 @@ const AboutOffshore365 = () => {
               data-aos-delay="700"
             >
               <div className="absolute inset-0 flex items-center justify-center opacity-20 scale-[3] sm:scale-[4] group-hover:translate-x-6 group-hover:-translate-y-6 transition-transform duration-500 pointer-events-none">
-                <svg
-                  className="w-16 h-16 sm:w-24 sm:h-24 text-blue-600"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+              
               </div>
               <div className="mb-6 relative z-10">
                 <h3 className="text-xl sm:text-2xl font-bold text-[#0d3557] mb-4">
@@ -455,15 +443,7 @@ const AboutOffshore365 = () => {
               data-aos-delay="800"
             >
               <div className="absolute inset-0 flex items-center justify-center opacity-20 scale-[3] sm:scale-[4] group-hover:translate-x-6 group-hover:-translate-y-6 transition-transform duration-500 pointer-events-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="64"
-                  width="64"
-                  viewBox="0 -960 960 960"
-                  fill="#75FB4C"
-                >
-                  <path d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm34-102 102-44 104 44 56-96 110-26-10-112 74-84-74-86 10-112-110-24-58-96-102 44-104-44-56 96-110 24 10 112-74 86 74 84-10 114 110 24 58 96Zm102-318Zm-42 142 226-226-56-58-170 170-86-84-56 56 142 142Z" />
-                </svg>
+                
               </div>
               <div className="mb-6 relative z-10">
                 <h3 className="text-xl sm:text-2xl font-bold text-[#0d3557] mb-4">

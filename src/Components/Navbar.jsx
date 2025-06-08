@@ -1,6 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Users, Mail, Briefcase, FileText, Home, Zap, Award, Calendar, Settings, Palette, Building, Monitor, Code, TrendingUp, Shield } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Users,
+  Mail,
+  Briefcase,
+  FileText,
+  Home,
+  Zap,
+  Award,
+  Calendar,
+  Settings,
+  Palette,
+  Building,
+  Monitor,
+  Code,
+  TrendingUp,
+  Shield,
+  GanttChart,
+  NotebookPen,
+  ClipboardList,
+  Newspaper,
+  PenLine,
+  MessageSquareText
+} from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
@@ -14,95 +39,94 @@ const Navbar = () => {
 
   // Define tabs for each navigation link
   const navLinksWithTabs = [
-    { 
-      label: "Architecture", 
+    {
+      label: "Architecture",
       href: "/architecture",
       activeColor: "bg-[#2C3E47] text-white",
       hoverColor: "hover:bg-[#E3E8EA] hover:text-[#2C3E47]",
       tabs: [
-        { id: "services", label: "Services", icon: Home },
+        { id: "services", label: "Services", icon: Settings }, // or GanttChart
         { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: Briefcase },
+        { id: "plans", label: "Plans", icon: NotebookPen },    // or ClipboardList
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
       ]
     },
-    { 
-      label: "Interior", 
+    {
+      label: "Interior",
       href: "/interior",
       activeColor: "bg-[#A66A6C] text-white",
       hoverColor: "hover:bg-[#F0E6E6] hover:text-[#A66A6C]",
       tabs: [
-        { id: "services", label: "Services", icon: Home },
+        { id: "services", label: "Services", icon: Settings }, // or GanttChart
         { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: Briefcase },
+        { id: "plans", label: "Plans", icon: NotebookPen },    // or ClipboardList
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
       ]
     },
-    { 
-      label: "BIM", 
+    {
+      label: "BIM",
       href: "/bim",
       activeColor: "bg-[#C28E23] text-white",
       hoverColor: "hover:bg-[#F5EBD5] hover:text-[#C28E23]",
       tabs: [
-        { id: "services", label: "Services", icon: Home },
+        { id: "services", label: "Services", icon: Settings }, // or GanttChart
         { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: Briefcase },
+        { id: "plans", label: "Plans", icon: NotebookPen },    // or ClipboardList
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
       ]
     },
-    { 
-      label: "3D Visualization", 
+    {
+      label: "3D Visualization",
       href: "/3dvisualization",
       activeColor: "bg-[#A6A65F] text-white",
       hoverColor: "hover:bg-[#F4F4E3] hover:text-[#A6A65F]",
       tabs: [
-        { id: "services", label: "Services", icon: Home },
+        { id: "services", label: "Services", icon: Settings }, // or GanttChart
         { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: Briefcase },
+        { id: "plans", label: "Plans", icon: NotebookPen },    // or ClipboardList
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
       ]
     },
-    { 
-      label: "IT", 
+    {
+      label: "IT",
       href: "/it",
       activeColor: "bg-[#8F6FFF] text-white",
       hoverColor: "hover:bg-[#ECE9FF] hover:text-[#8F6FFF]",
       tabs: [
-        { id: "services", label: "Services", icon: Home },
+        { id: "services", label: "Services", icon: Settings }, // or GanttChart
         { id: "tools", label: "Tools", icon: Zap },
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
       ]
     },
-    { 
-      label: "Marketing", 
+    {
+      label: "Marketing",
       href: "/marketing",
       activeColor: "bg-[#3A8CA1] text-white",
       hoverColor: "hover:bg-[#E1EFF3] hover:text-[#3A8CA1]",
       tabs: [
-        { id: "services", label: "Services", icon: Home },
-        { id: "tools", label: "Tools", icon: Zap },
+        { id: "services", label: "Services", icon: Settings }, // or GanttChart
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
       ]
     },
-    { 
-      label: "Admin", 
+    {
+      label: "Admin",
       href: "/admin",
       activeColor: "bg-[#8F8A75] text-white",
       hoverColor: "hover:bg-[#EFEDE6] hover:text-[#8F8A75]",
       tabs: [
-        { id: "services", label: "Services", icon: Home },
+        { id: "services", label: "Services", icon: Settings }, // or GanttChart
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
@@ -113,9 +137,10 @@ const Navbar = () => {
   const moreLinks = [
     { label: "About Us", href: "/about", icon: Users },
     { label: "Careers", href: "/careers", icon: Briefcase },
-    { label: "Blogs", href: "/blogs", icon: FileText },
+    { label: "Blogs", href: "/blogs", icon: Newspaper }, // changed from FileText
     { label: "Contact", href: "/contact", icon: Mail },
   ];
+
 
   // Function to restore scroll position to top for new page loads
   const resetScrollPosition = () => {
@@ -187,12 +212,12 @@ const Navbar = () => {
   const handleTabClick = (navHref, tabId) => {
     const currentPath = location.pathname;
     const targetPath = navHref;
-    
+
     if (currentPath === targetPath) {
       // Same page - just scroll to section
       const element = document.getElementById(tabId);
       if (element) {
-        element.scrollIntoView({ 
+        element.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
@@ -205,7 +230,7 @@ const Navbar = () => {
       setTimeout(() => {
         const element = document.getElementById(tabId);
         if (element) {
-          element.scrollIntoView({ 
+          element.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
           });
@@ -223,19 +248,19 @@ const Navbar = () => {
   // Custom SVG Menu Icon with white circle and blue border
   const CustomMenuIcon = ({ isOpen = false }) => (
     <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white border-2 border-blue-600 shadow-sm hover:shadow-md transition-all duration-200 group">
-      <svg 
-        width="18" 
-        height="18" 
-        viewBox="0 0 18 18" 
-        fill="none" 
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={`transition-all duration-300 ${isOpen ? 'rotate-90' : ''}`}
       >
-        <path 
-          d="M2 4.5h14M2 9h14M2 13.5h14" 
-          stroke="#2563eb" 
-          strokeWidth="1.5" 
-          strokeLinecap="round" 
+        <path
+          d="M2 4.5h14M2 9h14M2 13.5h14"
+          stroke="#2563eb"
+          strokeWidth="1.5"
+          strokeLinecap="round"
           strokeLinejoin="round"
           className="group-hover:stroke-blue-700 transition-colors duration-200"
         />
@@ -249,19 +274,19 @@ const Navbar = () => {
   // Alternative elegant menu icon design
   const ElegantMenuIcon = ({ isOpen = false }) => (
     <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white border-2 border-blue-600 shadow-sm hover:shadow-md transition-all duration-200 group hover:border-blue-700">
-      <svg 
-        width="20" 
-        height="20" 
-        viewBox="0 0 20 20" 
-        fill="none" 
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={`transition-all duration-300 ${isOpen ? 'rotate-180' : ''}`}
       >
-        <path 
-          d="M3 5h14M3 10h10M3 15h14" 
-          stroke="#2563eb" 
-          strokeWidth="2" 
-          strokeLinecap="round" 
+        <path
+          d="M3 5h14M3 10h10M3 15h14"
+          stroke="#2563eb"
+          strokeWidth="2"
+          strokeLinecap="round"
           strokeLinejoin="round"
           className="group-hover:stroke-blue-700 transition-colors duration-200"
         />
@@ -271,7 +296,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -279,9 +304,9 @@ const Navbar = () => {
               className="flex items-center cursor-pointer transform transition-all duration-200 hover:scale-100"
               onClick={() => handleLinkClick('/')}
             >
-              <img 
-                src={logo} 
-                alt="OffShore365 Logo" 
+              <img
+                src={logo}
+                alt="OffShore365 Logo"
                 className="h-12 w-auto"
               />
             </div>
@@ -301,17 +326,15 @@ const Navbar = () => {
                   >
                     <button
                       onClick={() => handleLinkClick(link.href)}
-                      className={`flex items-center px-3 py-2 text-sm regular transition-all duration-200 rounded-lg transform hover:scale-105 ${
-                        isActive 
-                          ? link.activeColor 
+                      className={`flex items-center px-3 py-2 text-sm regular transition-all duration-200 rounded-lg transform hover:scale-105 ${isActive
+                          ? link.activeColor
                           : `text-gray-700 ${link.hoverColor} hover:bg-gray-50`
-                      }`}
+                        }`}
                     >
                       {link.label}
                       <ChevronDown
-                        className={`ml-1 h-4 w-4 transition-transform duration-300 ${
-                          activeDropdown === index ? 'rotate-180' : ''
-                        }`}
+                        className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeDropdown === index ? 'rotate-180' : ''
+                          }`}
                       />
                     </button>
                     {activeDropdown === index && (
@@ -410,9 +433,9 @@ const Navbar = () => {
             <div className="p-4">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center">
-                  <img 
-                    src={logo} 
-                    alt="OffShore365 Logo" 
+                  <img
+                    src={logo}
+                    alt="OffShore365 Logo"
                     className="h-12 w-auto"
                   />
                 </div>
@@ -435,11 +458,10 @@ const Navbar = () => {
                             handleLinkClick(link.href);
                             setMobileOpen(false);
                           }}
-                          className={`flex-1 text-left px-3 py-2 rounded-lg transition-all duration-200 regular transform hover:scale-[1.02] text-sm ${
-                            isActive 
-                              ? link.activeColor 
+                          className={`flex-1 text-left px-3 py-2 rounded-lg transition-all duration-200 regular transform hover:scale-[1.02] text-sm ${isActive
+                              ? link.activeColor
                               : `text-gray-700 ${link.hoverColor}`
-                          }`}
+                            }`}
                         >
                           {link.label}
                         </button>
@@ -448,9 +470,8 @@ const Navbar = () => {
                           className="p-2 text-gray-500 hover:text-gray-700 transition-colors duration-200"
                         >
                           <ChevronDown
-                            className={`h-4 w-4 transition-transform duration-300 ${
-                              isDropdownOpen ? 'rotate-180' : ''
-                            }`}
+                            className={`h-4 w-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''
+                              }`}
                           />
                         </button>
                       </div>

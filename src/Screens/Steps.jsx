@@ -10,31 +10,31 @@ const steps = [
     id: 1,
     title: "Understanding business needs",
     description: "Ensuring solutions that aligns perfectly for your unique project needs.",
-    gradient: "linear-gradient(744deg, #A1D9E2 40%, #7AC1CD 70%, #3A8CA1)", // Green
+    gradient: "linear-gradient(744deg, #A1D9E2 40%, #7AC1CD 70%, #3A8CA1)",
   },
   {
     id: 2,
     title: "Assign the right Experts",
     description: "Providing right skills for right projects at the right time.",
-    gradient: "linear-gradient(744deg, #FFE3A1, #FCD073 50%, #C28E23)", // Yellow
+    gradient: "linear-gradient(744deg, #FFE3A1, #FCD073 50%, #C28E23)",
   },
   {
     id: 3,
     title: "Seamless integration",
     description: "Our team smoothly works with your existing workflows and tools.",
-    gradient: "linear-gradient(744deg, #E6D9FF, #CCB4FE 50%, #8F6FFF)", // Blue
+    gradient: "linear-gradient(744deg, #E6D9FF, #CCB4FE 50%, #8F6FFF)",
   },
   {
     id: 4,
     title: "Measure and optimise",
     description: "Track progress and continuously optimize to ensure success.",
-    gradient: "linear-gradient(744deg, #E2E0A0 30%, #C8C679 65%, #A6A65F)", // Red
+    gradient: "linear-gradient(744deg, #E2E0A0 30%, #C8C679 65%, #A6A65F)",
   },
 ];
 
 const StepsSection = () => {
   const [activeGradientIndex, setActiveGradientIndex] = useState(0)
-  const [hoveredGradient, setHoveredGradient] = useState("")
+  const [hoveredIndex, setHoveredIndex] = useState(null)
   const intervalRef = useRef(null)
 
   useEffect(() => {
@@ -55,7 +55,8 @@ const StepsSection = () => {
     startInterval()
   }
 
-  const activeGradient = hoveredGradient || steps[activeGradientIndex].gradient
+  const currentIndex = hoveredIndex !== null ? hoveredIndex : activeGradientIndex
+  const activeGradient = steps[currentIndex].gradient
 
   return (
     <section
@@ -65,7 +66,7 @@ const StepsSection = () => {
       {[...Array(3)].map((_, i) => (
         <div
           key={`bg-wave-${i}`}
-          className={`section-wave absolute w-[100%] h-[100%] opacity-30 left-[-50%] top-[-50%] rounded-[40%]`}
+          className="section-wave absolute w-[100%] h-[100%] opacity-30 left-[-50%] top-[-50%] rounded-[40%]"
           style={{
             background: activeGradient,
             animationDelay: `${i * 2}s`,
@@ -74,7 +75,6 @@ const StepsSection = () => {
         />
       ))}
 
-      {/* Header */}
       <motion.div
         className="text-center mb-16 relative z-10"
         initial={{ opacity: 0, y: -50 }}
@@ -90,44 +90,45 @@ const StepsSection = () => {
         </p>
       </motion.div>
 
-      {/* Cards */}
       <div className="mx-auto px-4 relative z-10">
         <div className="flex flex-wrap justify-center gap-12">
           {steps.map((step, index) => {
-            const isActive = activeGradientIndex === index
+            const isActive = hoveredIndex === index || (hoveredIndex === null && activeGradientIndex === index)
             return (
               <motion.div
                 key={index}
-                className={`group e-card playing relative w-[300px] h-[400px] bg-transparent shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 ${isActive ? "scale-105 shadow-white/30 shadow-lg z-20" : "hover:scale-105 z-10"
-                  }`}
-                onMouseEnter={() => setHoveredGradient(step.gradient)}
-                onMouseLeave={() => setHoveredGradient("")}
+                className={`group e-card playing relative w-[300px] h-[400px] bg-transparent shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer ${isActive ? "scale-105 shadow-white/30 shadow-lg z-20" : "hover:scale-105 z-10"}`}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => handleDotClick(index)}
                 style={{
                   border: isActive ? "2px solid white" : "2px solid transparent",
                   transform: isActive ? "scale(1.05)" : "scale(1)",
                 }}
               >
+                {/* Gradient Waves */}
                 {[...Array(3)].map((_, i) => (
                   <div
                     key={i}
-                    className={`wave absolute w-[540px] h-[700px] opacity-60 left-0 ${i === 0 ? "top-0 -mt-[70%]" : "top-[210px]"
-                      } -ml-[50%] rounded-[40%]`}
+                    className={`wave absolute w-[540px] h-[700px] opacity-60 left-0 ${i === 0 ? "top-0 -mt-[70%]" : "top-[210px]"} -ml-[50%] rounded-[40%]`}
                     style={{ background: step.gradient }}
                   />
                 ))}
 
+                {/* Full Card Blur Background */}
+                <div className="absolute inset-0 backdrop-blur-md bg-white/10 z-10" />
+
                 {/* Step Number */}
-                <div className="absolute group-hover:scale-110 top-20 left-1/2 transform -translate-x-1/2 border-2 border-white text-white font-bold text-sm sm:text-base w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full shadow-lg z-10">
+                <div className="absolute group-hover:scale-110 top-20 left-1/2 transform -translate-x-1/2 border-2 border-white text-white font-bold text-sm sm:text-base w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full shadow-lg z-20 bg-white/20">
                   {step.id}
                 </div>
 
-                {/* Card Content */}
-                <div className="infotop absolute top-36 left-0 right-0 text-center text-white px-6">
-                  <h3 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] tracking-wide font-semibold mb-6 transition-transform duration-300 group-hover:scale-110">
+                {/* Text Content */}
+                <div className="absolute top-36 left-0 right-0 text-center text-white px-6 py-6 mx-4 rounded-xl z-20">
+                  <h3 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-semibold mb-4 group-hover:scale-110 transition-transform duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-[14px] sm:text-[15px] md:text-[16px] font-light px-1 transition-transform duration-300 group-hover:scale-110">
+                  <p className="text-[14px] sm:text-[15px] md:text-[16px] font-light group-hover:scale-110 transition-transform duration-300">
                     {step.description}
                   </p>
                 </div>
@@ -137,7 +138,7 @@ const StepsSection = () => {
         </div>
       </div>
 
-      {/* Liquid Dots Navigation */}
+      {/* Dots Navigation */}
       <div className="flex justify-center mt-16 relative z-10" data-aos="fade-up">
         <div className="flex space-x-4">
           {steps.map((step, index) => {
@@ -150,15 +151,11 @@ const StepsSection = () => {
                 aria-label={`Go to step ${step.id}: ${step.title}`}
               >
                 <div
-                  className={`liquid-dot w-3 h-3 border border-white rounded-full transition-all duration-500 flex items-center justify-center ${isActive ? "scale-125" : "scale-100 opacity-70 hover:opacity-100"
-                    }`}
+                  className={`liquid-dot w-3 h-3 border border-white rounded-full transition-all duration-500 flex items-center justify-center ${isActive ? "scale-125" : "scale-100 opacity-70 hover:opacity-100"}`}
                   style={{ background: step.gradient }}
                 >
                   <div className={`absolute inset-0 rounded-full overflow-hidden ${isActive ? "animate-pulse" : ""}`}>
-                    <div
-                      className="liquid-bubble absolute w-5 h-5 rounded-full"
-                      style={{ background: step.gradient }}
-                    />
+                    <div className="liquid-bubble absolute w-5 h-5 rounded-full" style={{ background: step.gradient }} />
                   </div>
                 </div>
               </button>
@@ -167,7 +164,7 @@ const StepsSection = () => {
         </div>
       </div>
 
-      {/* Wave and Liquid Animations */}
+      {/* Animations */}
       <style jsx>{`
         .wave {
           animation: wave 155s infinite linear;

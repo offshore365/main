@@ -345,14 +345,14 @@ const CareersPage = () => {
               innovation — together.
             </p>
             <div className="mt-8">
-            <a
-  href="#apply-jobs"
-  className="inline-block regular px-6 py-3 bg-blue-600 text-white text-base sm:text-lg rounded-xl shadow hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
-  data-aos="zoom-in"
-  data-aos-delay="100"
->
-  Join Our Journey
-</a>
+              <a
+                href="#apply-jobs"
+                className="inline-block regular px-6 py-3 bg-blue-600 text-white text-base sm:text-lg rounded-xl shadow hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+              >
+                Join Our Journey
+              </a>
 
             </div>
           </div>
@@ -372,15 +372,7 @@ const CareersPage = () => {
               data-aos-delay="100"
             >
               <div className="absolute inset-0 flex items-center justify-center opacity-20 scale-[2.5] sm:scale-[3] md:scale-[4] group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-500 pointer-events-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="64"
-                  width="64"
-                  viewBox="0 -960 960 960"
-                  fill="#4CC9F0"
-                >
-                  <path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" />
-                </svg>
+               
               </div>
               <div className="relative z-10">
                 <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0d3557] mb-4">
@@ -403,15 +395,7 @@ const CareersPage = () => {
               data-aos-delay="200"
             >
               <div className="absolute inset-0 flex items-center justify-center opacity-20 scale-[2.5] sm:scale-[3] md:scale-[4] group-hover:-translate-x-4 group-hover:-translate-y-4 transition-transform duration-500 pointer-events-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="64"
-                  width="64"
-                  viewBox="0 -960 960 960"
-                  fill="#75FB4C"
-                >
-                  <path d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z" />
-                </svg>
+               
               </div>
               <div className="relative z-10">
                 <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0d3557] mb-4">
@@ -618,15 +602,15 @@ const CareersPage = () => {
                 </div>
                 <div className="flex justify-end">
                   <button
-  onClick={() => {
-    const target = document.getElementById("apply-jobs");
-    target?.scrollIntoView({ behavior: "smooth" });
-  }}
-  className="bg-blue-600 regular hover:bg-blue-700 text-white text-xs sm:text-sm py-2 px-4 rounded-lg transition-all duration-300 flex items-center gap-2 group/btn transform hover:scale-110"
->
-  Join
-  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-</button>
+                    onClick={() => {
+                      const target = document.getElementById("apply-jobs");
+                      target?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="bg-blue-600 regular hover:bg-blue-700 text-white text-xs sm:text-sm py-2 px-4 rounded-lg transition-all duration-300 flex items-center gap-2 group/btn transform hover:scale-110"
+                  >
+                    Join
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                  </button>
 
                 </div>
               </div>

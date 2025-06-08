@@ -550,7 +550,7 @@ const toolsList = [
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
               <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-3 lg:mb-2 text-[#0d3557] tracking-wide leading-tight lg:leading-snug">
-                Transform Your Brand With OFFSHORE 365
+                Transform Your Brand With Offshore 365
               </h1>
               <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] leading-relaxed">
                 we help you transform your brand by providing customized marketing and development solutions tailored specifically to your business needs.
@@ -654,7 +654,7 @@ const toolsList = [
             {/* Left Side */}
             <div className="w-full lg:w-1/2 space-y-6">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] text-[#0d3557] font-extrabold mb-3 sm:mb-4 lg:mb-2 leading-tight">
-                Grow your business with offshore 365
+                Grow your business with Offshore 365
               </h1>
 
               <div className="space-y-4">
