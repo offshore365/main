@@ -21,38 +21,14 @@ import illustrator from "../assets/ai.png";
 import msoffice from "../assets/ms.png";
 
 const cardData = [
-  {
-    title: "Global Experts",
-    description: "250+ skilled AEC professionals trained to global standards.",
-  },
-  {
-    title: "Value Leader",
-    description: "35–40% more economical than in-house teams.",
-  },
-  {
-    title: " Synergy",
-    description: "Adapting to your standards for consistent, high-quality output.",
-  },
-  {
-    title: "Growth Partner",
-    description: "Commitment to exceptional service and lasting client relationships.",
-  },
-  {
-    title: "BIM Experts",
-    description: "Expertise in cutting-edge AEC software and methodologies.",
-  },
-  {
-    title: " Flexibility",
-    description: "Easily scale teams to meet evolving project needs.",
-  },
-  {
-    title: "System Efficiency",
-    description: "Comprehensive management of infrastructure, HR, and benefits.",
-  },
-  {
-    title: "Team Power",
-    description: "Enabling your in-house staff to focus on strategic growth.",
-  },
+  { title: "Global Experts", description: "250+ skilled AEC professionals trained to global standards." },
+  { title: "Value Leader", description: "35–40% more economical than in-house teams." },
+  { title: "Synergy", description: "Adapting to your standards for consistent, high-quality output." },
+  { title: "Growth Partner", description: "Commitment to exceptional service and lasting client relationships." },
+  { title: "BIM Experts", description: "Expertise in cutting-edge AEC software and methodologies." },
+  { title: "Flexibility", description: "Easily scale teams to meet evolving project needs." },
+  { title: "System Efficiency", description: "Comprehensive management of infrastructure, HR, and benefits." },
+  { title: "Team Power", description: "Enabling your in-house staff to focus on strategic growth." },
 ];
 
 const toolIcons = [
@@ -84,15 +60,11 @@ const FeatureCard = React.memo(({ data, dataIndex }) => {
   const readMoreColor = readMoreColors[dataIndex % readMoreColors.length];
   const hoverBgColor = colorMap[readMoreColor];
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  };
-
-  const readMoreVariants = {
-    hidden: { opacity: 0, x: 20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut", delay: 0.2 } },
-    hover: { scale: 1.1, transition: { duration: 0.3 } },
+  // Prevent all click events
+  const handleClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
   };
 
   return (
@@ -101,37 +73,37 @@ const FeatureCard = React.memo(({ data, dataIndex }) => {
       style={{
         width: '500px',
         height: '250px',
-        backgroundColor: 'white',
         transition: 'background-color 0.5s ease',
+        cursor: 'default', // Remove pointer cursor
       }}
       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = hoverBgColor)}
       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'white')}
-      variants={cardVariants}
-      initial="hidden"
-      animate="visible"
+      onClick={handleClick}
+      onMouseDown={handleClick}
+      onMouseUp={handleClick}
+      onTouchStart={handleClick}
+      onTouchEnd={handleClick}
     >
       <div className="flex flex-col justify-start relative z-20">
-        <h3 className="text-[28px] sm:text-[34px] font-bold text-[#0d3557] mb-4 text-left tracking-tight group-hover:text-[#0d3557] transition-colors duration-500">
+        <h3 className="text-[28px] sm:text-[34px] font-bold text-[#0d3557] mb-4 text-left tracking-tight transition-colors duration-500">
           {data.title}
         </h3>
-        <p className="text-[16px] sm:text-[20px] text-[#0d3557] text-left leading-relaxed group-hover:text-[#0d3557] transition-colors duration-500">
+        <p className="text-[16px] sm:text-[20px] text-[#0d3557] text-left leading-relaxed transition-colors duration-500">
           {data.description}
         </p>
       </div>
 
       <motion.div
         className="absolute bottom-0 right-0 z-10"
-        variants={readMoreVariants}
-        initial="hidden"
-        animate="visible"
-        whileHover="hover"
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } }}
+        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
       >
         <div className="relative w-32 h-16">
           <div
-            style={{ backgroundColor: colorMap[readMoreColor] }}
-            className="absolute bottom-0 right-0 w-32 h-16 rounded-tl-full overflow-hidden flex items-center justify-center"
-          >
-          </div>
+            style={{ backgroundColor: hoverBgColor }}
+            className="absolute bottom-0 right-0 w-32 h-16 rounded-tl-full flex items-center justify-center"
+          ></div>
         </div>
       </motion.div>
     </motion.div>
@@ -154,13 +126,19 @@ const Features = () => {
 
   const handleMouseEnter = () => {
     stopAutoplay();
-    document.body.style.pointerEvents = "none";
-    document.querySelector('.carousel-container').style.pointerEvents = 'auto';
+    document.body.classList.add('disable-click-temporarily');
   };
 
   const handleMouseLeave = () => {
     startAutoplay();
-    document.body.style.pointerEvents = "auto";
+    document.body.classList.remove('disable-click-temporarily');
+  };
+
+  // Prevent clicks on the entire carousel container
+  const handleCarouselClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
   };
 
   useEffect(() => {
@@ -200,6 +178,12 @@ const Features = () => {
         className="carousel-container flex justify-center overflow-x-auto"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onClick={handleCarouselClick}
+        onMouseDown={handleCarouselClick}
+        onMouseUp={handleCarouselClick}
+        onTouchStart={handleCarouselClick}
+        onTouchEnd={handleCarouselClick}
+        style={{ cursor: 'default' }}
       >
         <StackedCarousel
           ref={ref}
@@ -247,6 +231,24 @@ const Features = () => {
           </motion.div>
         </div>
       </div>
+
+      <style>{`
+        .disable-click-temporarily * {
+          pointer-events: none !important;
+        }
+        .carousel-container * {
+          pointer-events: auto !important;
+        }
+        
+        /* Disable all click interactions on carousel cards */
+        .carousel-container .feature-card,
+        .carousel-container .feature-card * {
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+        }
+      `}</style>
     </div>
   );
 };

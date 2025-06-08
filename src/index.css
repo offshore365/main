@@ -18,6 +18,13 @@
 html {
   scroll-behavior: smooth;
 }
+.disable-clicks * {
+  pointer-events: none;
+}
+
+.disable-clicks {
+  pointer-events: auto; /* allow hover but no click */
+}
 
 * {
   font-family: "PlusJakartaSans";
