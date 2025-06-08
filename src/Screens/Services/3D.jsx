@@ -775,7 +775,7 @@ const Architecture = () => {
         </motion.section>
 
         {/* Tools Section */}
-        <section
+       <section
           ref={(ref) => setRef("tools", ref)}
           className="py-8 sm:py-12 lg:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-6 lg:px-8 text-white"
           id="tools"
@@ -794,7 +794,7 @@ const Architecture = () => {
               </div>
 
               {/* Tools Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4  justify-items-center">
                 {toolsList.map((tool, index) => (
                   <div
                     key={index}

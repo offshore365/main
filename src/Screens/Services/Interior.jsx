@@ -19,10 +19,12 @@ import sketchup from "../../assets/sketchup.png";
 import vray from "../../assets/vray.png";
 import lumion from "../../assets/lumion.png";
 import enscape from "../../assets/enscape.png";
-import photoshop from "../../assets/ps.png";
-import illustrator from "../../assets/ai.png";
+import photoshop from "../../assets/ps.png";         // changed from photoshop.jpg
+import illustrator from "../../assets/ai.png";       // changed from illustrator.jpg
 import archicad from "../../assets/archicad.jpg";
-import msoffice from "../../assets/ms.png";
+import msoffice from "../../assets/ms.png";          // changed from ms.jpg
+import max from "../../assets/3ds max.png"; // or whatever the filename is
+
 import {
   Home,
   Building2,
@@ -65,19 +67,20 @@ const Architecture = () => {
 
   const doubledBuildings = [...buildings, ...buildings];
 
+const toolsList = [
+  { name: "AutoCAD", image: autocad },
+  { name: "Revit", image: revit },
+  { name: "SketchUp", image: sketchup },
+  { name: "V-Ray", image: vray },
+  { name: "Lumion", image: lumion },
+  { name: "Enscape", image: enscape },
+  { name: "3ds Max", image: max }, // Add correct import once available
+  { name: "Photoshop", image: photoshop },
+  { name: "Illustrator", image: illustrator },
+  { name: "Archicad", image: archicad },
+  { name: "MS Office", image: msoffice },
+];
 
-  const toolsList = [
-    { name: "AutoCAD", image: autocad },
-    { name: "Revit", image: revit },
-    { name: "SketchUp", image: sketchup },
-    { name: "V-Ray", image: vray },
-    { name: "Lumion", image: lumion },
-    { name: "Enscape", image: enscape },
-    { name: "Photoshop", image: photoshop },
-    { name: "Illustrator", image: illustrator },
-    { name: "Archicad", image: archicad },
-    { name: "MS Office", image: msoffice },
-  ];
   const tabs = [
     { id: "services", label: "Services" },
     { id: "tools", label: "Tools" },
@@ -644,7 +647,7 @@ const Architecture = () => {
         </motion.section>
 
         {/* Tools Section */}
-        <section
+      <section
           ref={(ref) => setRef("tools", ref)}
           className="py-8 sm:py-12 lg:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-6 lg:px-8 text-white"
           id="tools"
@@ -663,7 +666,7 @@ const Architecture = () => {
               </div>
 
               {/* Tools Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-5  justify-items-center">
                 {toolsList.map((tool, index) => (
                   <div
                     key={index}
@@ -685,6 +688,7 @@ const Architecture = () => {
             </div>
           </div>
         </section>
+
 
         {/* Plans Section */}
         <>

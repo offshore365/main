@@ -72,13 +72,12 @@ const SleekChatbot = () => {
     service: {
       botMessages: [
         { text: "Awesome. Let’s narrow things down.", delay: 800 },
-        { text: `${userData.name}, which of our services are you most interested in?`, delay: 1200 }
+        { text: `${userData.name}, which of our Top services are you most interested in?`, delay: 1200 }
       ],
       options: [
         { id: 'architecture', text: 'Architecture', icon: Layout },
         { id: 'interior', text: 'Interior', icon: Home },
         { id: 'bim', text: 'BIM', icon: Code },
-        { id: 'visualization', text: '3D Visualization', icon: Eye },
         { id: 'it', text: 'IT', icon: User },
         { id: 'marketing', text: 'Marketing', icon: Sparkles },
         { id: 'admin', text: 'Admin', icon: Briefcase }
@@ -93,14 +92,13 @@ const SleekChatbot = () => {
       options: [
         { id: 'startup', text: 'Scaling startup operations', icon: Target },
         { id: 'enterprise', text: 'Enterprise-level solutions', icon: Briefcase },
-        { id: 'team', text: 'SMB Team Collaboration', icon: Users },
-        { id: 'personal', text: 'Personal or freelance projects', icon: User }
+      
       ]
     },
     final: {
       botMessages: [
         { text: `Thanks, ${userData.name}.`, delay: 600 },
-        { text: `You’re interested in ${userData.service} for ${userData.usage}.`, delay: 1000 },
+        { text: `You’re interested in ${userData.service} .`, delay: 1000 },
         { text: `A specialist will contact you at ${userData.email} within 24 hours.`, delay: 1400 },
         { text: "Thank you for choosing Offshore 365. We look forward to supporting your vision.", delay: 1800 }
       ]
@@ -216,8 +214,8 @@ const SleekChatbot = () => {
               <div className="w-5 h-5 bg-blue-600 rounded-full" />
             </div>
             <div>
-              <h3 className="text-gray-900 text-sm sm:text-base font-medium">Offshore 365 Chatbot</h3>
-              <p className="text-xs text-gray-500">We reply instantly</p>
+              <h3 className="text-[#0d3557] text-sm sm:text-base regular">Offshore 365 Chatbot</h3>
+              <p className="text-xs text-[#0d3557]">We reply instantly</p>
             </div>
           </div>
           <button onClick={toggleChat} className="text-gray-400 hover:text-gray-600">
@@ -226,11 +224,11 @@ const SleekChatbot = () => {
         </div>
 
         {/* Messages */}
-        <div className="h-[300px] sm:h-[350px] overflow-y-auto p-4 space-y-3 bg-gray-50">
+        <div className="h-[300px] sm:h-[350px]  overflow-y-auto p-4 space-y-3 bg-gray-50">
           {messages.map((message, index) => (
             <div key={index} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
-                message.type === 'user' ? 'bg-blue-600 text-white' : 'bg-white border text-gray-800'
+              <div className={`max-w-xs px-3 py-2 rounded-lg text-sm regular ${
+                message.type === 'user' ? 'bg-blue-600 text-white' : 'bg-white border text-[#0d3557]'
               }`}>
                 {message.text}
               </div>
@@ -239,7 +237,7 @@ const SleekChatbot = () => {
           {isTyping && (
             <div className="flex justify-start">
               <div className="bg-white border px-3 py-2 rounded-lg text-sm text-gray-600 italic animate-pulse">
-                Typing...
+                ...
               </div>
             </div>
           )}
@@ -247,16 +245,16 @@ const SleekChatbot = () => {
         </div>
 
         {/* Input/Options */}
-        <div className="p-4 border-t bg-white rounded-b-lg">
+        <div className="p-2 border-t bg-white rounded-b-lg">
           {showOptions() && (
             <div className="grid grid-cols-2 gap-2">
               {chatFlow[currentStep].options.map(option => (
                 <button
                   key={option.id}
                   onClick={() => handleOptionClick(option.id, option.text)}
-                  className="flex items-center gap-2 px-3 py-2 border rounded-lg text-sm text-gray-700 hover:bg-gray-50 transition"
+                  className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
                 >
-                  <option.icon size={16} />
+                 
                   {option.text}
                 </button>
               ))}
@@ -269,7 +267,7 @@ const SleekChatbot = () => {
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder={showInput() === 'email' ? 'Your email address...' : 'Type your name...'}
-                className="flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="flex-1 border regular rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
               />
               <button type="submit" className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700">
                 <Send size={16} />

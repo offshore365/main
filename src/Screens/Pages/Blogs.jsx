@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { blogsData } from "./blogs";
-import blogImage from "../../assets/blogs4.png"; // Replace with your actual image path
+import blogImage from "../../assets/blogmain.png"; // Replace with your actual image path
 
 const BlogCard = ({ post, onClick }) => (
   <article

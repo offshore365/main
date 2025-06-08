@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Clock, DollarSign, Layers, Users, TrendingUp } from 'lucide-react';
-import card1 from "../assets/team.webp";
-import card2 from "../assets/fixed.png";
+import card1 from "../assets/m4.png";
+import card2 from "../assets/m2.png";
 import card3 from "../assets/timee.png";
-import card4 from "../assets/project.png";
-import card6 from "../assets/time.png";
+import card4 from "../assets/m3.png";
+import card6 from "../assets/m5.png";
 
 const Model = () => {
   const [activeSection, setActiveSection] = useState(0);

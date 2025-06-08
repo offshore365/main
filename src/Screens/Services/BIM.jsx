@@ -23,6 +23,8 @@ import archicad from "../../assets/archicad.jpg";
 import trimbleconnect from "../../assets/trimble connect.gif";
 import vray from "../../assets/vray.png";
 import enscape from "../../assets/enscape.png";
+import bimcollab from "../../assets/bimcollab.jpeg"; // ✅ Make sure this file exists
+
 import {
   Home,
   Building2,
@@ -56,7 +58,9 @@ const toolsList = [
   { name: "Trimble Connect", image: trimbleconnect },
   { name: "V-Ray", image: vray },
   { name: "Enscape", image: enscape },
+  { name: "BIMcollab", image: bimcollab },
 ];
+
 
   const iconSize = 40; // adjust if needed
 
@@ -612,7 +616,7 @@ Offshore 365
         </motion.section>
 
         {/* Tools Section */}
-        <section
+      <section
           ref={(ref) => setRef("tools", ref)}
           className="py-8 sm:py-12 lg:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-6 lg:px-8 text-white"
           id="tools"
@@ -631,7 +635,7 @@ Offshore 365
               </div>
 
               {/* Tools Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-5  justify-items-center">
                 {toolsList.map((tool, index) => (
                   <div
                     key={index}
@@ -646,7 +650,6 @@ Offshore 365
                         className="w-full h-full object-contain bg-white p-2 sm:p-3"
                       />
                     </div>
-                    <p className="text-sm sm:text-base text-[#0d3557] font-medium">{tool.name}</p>
                   </div>
                 ))}
               </div>
@@ -654,6 +657,7 @@ Offshore 365
             </div>
           </div>
         </section>
+
 
         {/* Plans Section */}
         <>

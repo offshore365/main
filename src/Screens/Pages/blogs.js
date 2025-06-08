@@ -1,12 +1,12 @@
-import blog1 from "../../assets/blogs2.png";
+import blog1 from "../../assets/blogs.png";
 import blog2 from "../../assets/blogs2.png";
 import blog3 from "../../assets/blogs3.png";
-import blog4 from "../../assets/blogs3.png";
-import blog5 from "../../assets/blogs3.png";
-import blog6 from "../../assets/blogs3.png";
-import blog7 from "../../assets/blogs3.png";
-import blog8 from "../../assets/blogs3.png";
-import blog9 from "../../assets/blogs3.png";
+import blog4 from "../../assets/blogs4.png";
+import blog5 from "../../assets/blogs5.png";
+import blog6 from "../../assets/blogs6.png";
+import blog7 from "../../assets/blogs7.png";
+import blog8 from "../../assets/blogs8.png";
+import blog9 from "../../assets/blogs9.png";
 import blog10 from "../../assets/blogs3.png";
 
 export const blogsData = [

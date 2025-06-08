@@ -13,16 +13,10 @@ import architectureVideo from "../../assets/architecture.mp4";
 import Scheduling from "../Scheduling";
 import figmaLogo from "../../assets/ms.png";
 import offshoreLogo from "../../assets/logowh.png"; // adjust path if needed
-import autocad from "../../assets/autocad.png";
-import revit from "../../assets/revit.jpg";
-import sketchup from "../../assets/sketchup.png";
-import vray from "../../assets/vray.png";
-import lumion from "../../assets/lumion.png";
-import enscape from "../../assets/enscape.png";
-import photoshop from "../../assets/photoshop.jpg";
-import illustrator from "../../assets/illustrator.jpg";
-import archicad from "../../assets/archicad.jpg";
-import msoffice from "../../assets/ms.png";
+import figma from "../../assets/figma.png";
+import wordpress from "../../assets/wd.png";
+import canva from "../../assets/canva.svg";
+import vscode from "../../assets/vscode.png";
 
 
 const Architecture = () => {
@@ -34,13 +28,13 @@ const Architecture = () => {
   const tabsRef = useRef(null);
   const placeholderRef = useRef(null);
   const originalTopRef = useRef(null);
-  const toolsList = [
-    { name: "AutoCAD", image: autocad },
-    { name: "Revit", image: revit },
-    { name: "SketchUp", image: sketchup },
-    { name: "V-Ray", image: vray },
+const toolsList = [
+  { name: "Figma", image: figma },
+  { name: "WordPress", image: wordpress },
+  { name: "Canva", image: canva },
+  { name: "VS Code", image: vscode },
+];
 
-  ];
 
   const tabs = [
     { id: "services", label: "Services" },
@@ -548,7 +542,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-8 sm:py-12 mb-20 lg:py-16 scroll-mt-20"
+          className="py-8 sm:py-12 mb-20 lg:py-16  scroll-mt-20"
           id="services"
           data-aos="fade-up"
         >
@@ -605,7 +599,7 @@ const Architecture = () => {
         {/* Tools Section */}
         <section
           ref={(ref) => setRef("tools", ref)}
-          className="py-8 sm:py-12 lg:py-16  mb-20 scroll-mt-20 rounded-2xl px-4 sm:px-6 lg:px-8 text-white"
+          className="py-8 sm:py-12 lg:py-16 scroll-mt-20 mb-20 rounded-2xl px-4 sm:px-6 lg:px-8 text-white"
           id="tools"
           data-aos="fade-up"
         >
@@ -614,16 +608,15 @@ const Architecture = () => {
               {/* Title and Description */}
               <div className="text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] text-[#0d3557] font-extrabold mb-3 sm:mb-4 lg:mb-2 leading-tight">
-                  Advanced tools for your digital presence
-
+                  {tabData.tools.title}
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-[#0d3557] leading-relaxed max-w-3xl mx-auto lg:mx-0">
-                  Work seamlessly with offshore experts skilled in leading IT software.
+                  {tabData.tools.description}
                 </p>
               </div>
 
               {/* Tools Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4  justify-items-center">
                 {toolsList.map((tool, index) => (
                   <div
                     key={index}
@@ -638,7 +631,6 @@ const Architecture = () => {
                         className="w-full h-full object-contain bg-white p-2 sm:p-3"
                       />
                     </div>
-                    <p className="text-sm sm:text-base text-[#0d3557] font-medium">{tool.name}</p>
                   </div>
                 ))}
               </div>
@@ -646,6 +638,7 @@ const Architecture = () => {
             </div>
           </div>
         </section>
+
 
 
 
