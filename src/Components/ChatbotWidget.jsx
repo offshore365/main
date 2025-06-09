@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  MessageCircle, X, Send, User, Mail, Home, Briefcase, Target,
+  MessageCircle, Minus, Send, User, Mail, Home, Briefcase, Target,
   HelpCircle, Users, BookOpen, Sparkles, Layout, Eye, Code
 } from 'lucide-react';
 
@@ -17,6 +17,7 @@ const SleekChatbot = () => {
   });
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
+  const chatContainerRef = useRef(null); // Ref for the chat window
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -25,6 +26,24 @@ const SleekChatbot = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages, isTyping]);
+
+  // Handle clicks outside the chatbot to minimize it
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        isOpen &&
+        chatContainerRef.current &&
+        !chatContainerRef.current.contains(event.target)
+      ) {
+        setIsOpen(false); // Minimize the chatbot
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [isOpen]);
 
   const delayWithTyping = async (text, delay) => {
     setIsTyping(true);
@@ -75,12 +94,10 @@ const SleekChatbot = () => {
       ],
       options: [
         { id: 'architecture', text: 'Architecture', icon: Layout },
-                { id: 'visualization', text: '3D Visualization', icon: Eye },
-
+        { id: 'visualization', text: '3D Visualization', icon: Eye },
         { id: 'bim', text: 'BIM', icon: Code },
-          { id: 'it', text: 'IT', icon: User },
-              { id: 'interior', text: 'Interior', icon: Home },
-
+        { id: 'it', text: 'IT', icon: User },
+        { id: 'interior', text: 'Interior', icon: Home },
         { id: 'marketing', text: 'Marketing', icon: Sparkles },
         { id: 'admin', text: 'Admin', icon: Briefcase }
       ]
@@ -179,11 +196,6 @@ const SleekChatbot = () => {
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
-    if (isOpen) {
-      setMessages([]);
-      setCurrentStep('welcome');
-      setUserData({ name: '', email: '', service: '', usage: '' });
-    }
   };
 
   const showOptions = () => chatFlow[currentStep]?.options;
@@ -207,9 +219,12 @@ const SleekChatbot = () => {
       </div>
 
       {/* Chat Window */}
-      <div className={`absolute bottom-0 right-0 w-80 h-[500px] sm:w-96 sm:h-[550px] bg-white rounded-lg shadow-2xl transition-all duration-300 transform origin-bottom-right border ${
-        isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
-      }`}>
+      <div
+        ref={chatContainerRef}
+        className={`absolute bottom-0 right-0 w-80 h-[500px] sm:w-96 sm:h-[550px] bg-white rounded-lg shadow-2xl transition-all duration-300 transform origin-bottom-right border ${
+          isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+        }`}
+      >
         {/* Header */}
         <div className="bg-white border-b p-3 sm:p-4 rounded-t-lg flex items-center justify-between">
           <div className="flex items-center space-x-3">
@@ -222,7 +237,7 @@ const SleekChatbot = () => {
             </div>
           </div>
           <button onClick={toggleChat} className="text-gray-400 hover:text-gray-600">
-            <X size={16} />
+            <Minus size={16} />
           </button>
         </div>
 
@@ -249,62 +264,62 @@ const SleekChatbot = () => {
 
         {/* Input or Options */}
         <div className="p-2 border-t bg-white rounded-b-lg">
-         {showOptions() && currentStep === 'service' ? (
-  <div className="space-y-2">
-    {/* First row: 2 columns */}
-    <div className="grid grid-cols-2 gap-2">
-      {chatFlow.service.options.slice(0, 2).map(option => (
-        <button
-          key={option.id}
-          onClick={() => handleOptionClick(option.id, option.text)}
-          className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
-        >
-          {option.text}
-        </button>
-      ))}
-    </div>
+          {showOptions() && currentStep === 'service' ? (
+            <div className="space-y-2">
+              {/* First row: 2 columns */}
+              <div className="grid grid-cols-2 gap-2">
+                {chatFlow.service.options.slice(0, 2).map(option => (
+                  <button
+                    key={option.id}
+                    onClick={() => handleOptionClick(option.id, option.text)}
+                    className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
+                  >
+                    {option.text}
+                  </button>
+                ))}
+              </div>
 
-    {/* Second row: 3 columns */}
-    <div className="grid grid-cols-3 gap-2">
-      {chatFlow.service.options.slice(2, 5).map(option => (
-        <button
-          key={option.id}
-          onClick={() => handleOptionClick(option.id, option.text)}
-          className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
-        >
-          {option.text}
-        </button>
-      ))}
-    </div>
+              {/* Second row: 3 columns */}
+              <div className="grid grid-cols-3 gap-2">
+                {chatFlow.service.options.slice(2, 5).map(option => (
+                  <button
+                    key={option.id}
+                    onClick={() => handleOptionClick(option.id, option.text)}
+                    className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
+                  >
+                    {option.text}
+                  </button>
+                ))}
+              </div>
 
-    {/* Third row: 2 columns */}
-    <div className="grid grid-cols-2 gap-2">
-      {chatFlow.service.options.slice(5).map(option => (
-        <button
-          key={option.id}
-          onClick={() => handleOptionClick(option.id, option.text)}
-          className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
-        >
-          {option.text}
-        </button>
-      ))}
-    </div>
-  </div>
-) : (
-  showOptions() && (
-    <div className="grid grid-cols-2 gap-2">
-      {chatFlow[currentStep].options.map(option => (
-        <button
-          key={option.id}
-          onClick={() => handleOptionClick(option.id, option.text)}
-          className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
-        >
-          {option.text}
-        </button>
-      ))}
-    </div>
-  )
-)}
+              {/* Third row: 2 columns */}
+              <div className="grid grid-cols-2 gap-2">
+                {chatFlow.service.options.slice(5).map(option => (
+                  <button
+                    key={option.id}
+                    onClick={() => handleOptionClick(option.id, option.text)}
+                    className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
+                  >
+                    {option.text}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            showOptions() && (
+              <div className="grid grid-cols-2 gap-2">
+                {chatFlow[currentStep].options.map(option => (
+                  <button
+                    key={option.id}
+                    onClick={() => handleOptionClick(option.id, option.text)}
+                    className="flex items-center regular gap-2 px-3 py-2 border rounded-lg text-sm text-[#0d3557] hover:bg-gray-50 transition"
+                  >
+                    {option.text}
+                  </button>
+                ))}
+              </div>
+            )
+          )}
 
           {showInput() && (
             <form onSubmit={handleInputSubmit} className="flex mt-2 space-x-2">

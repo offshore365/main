@@ -58,19 +58,19 @@ const Architecture = () => {
     { name: "Archicad", image: archicad },
     { name: "MS Office", image: msoffice },
   ];
-const scrollToSection = (id) => {
-  const element = document.getElementById(id);
-  const offset = 64; // Adjust this to your tab height
-  const bodyRect = document.body.getBoundingClientRect().top;
-  const elementRect = element.getBoundingClientRect().top;
-  const elementPosition = elementRect - bodyRect;
-  const offsetPosition = elementPosition - offset;
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    const offset = 64; // Adjust this to your tab height
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
 
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: "smooth",
-  });
-};
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
 
   const tabs = [
     { id: "services", label: "Services" },
@@ -575,7 +575,7 @@ const scrollToSection = (id) => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-[#4F6D7A] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
+        className={`z-20 bg-[#4F6D7A] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-0 left-0 right-0 shadow-xl" : "relative"
           }`}
       >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -614,6 +614,7 @@ const scrollToSection = (id) => {
           id="services"
           data-aos="fade-up"
         >
+          <div className="regular text-[#0d3557] text-[14px]">Services</div>
           <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
@@ -711,6 +712,8 @@ const scrollToSection = (id) => {
           id="tools"
           data-aos="fade-up"
         >
+                              <div className="regular text-[#0d3557] text-[14px]">Tools</div>
+
           <div className="container max-w-4xl mx-auto flex flex-col lg:flex-row items-start gap-4 lg:gap-8">
             <div className="flex-1 w-full">
               {/* Title and Description */}
@@ -754,6 +757,8 @@ const scrollToSection = (id) => {
             className="py-12 sm:py-16 lg:py-20 mb-12 sm:mb-16 lg:mb-20 scroll-mt-20 px-4 sm:px-6 lg:px-8"
             id="plans"
           >
+                                <div className="regular text-[#0d3557] text-[14px]">plans</div>
+
             <div className="max-w-7xl mx-auto">
               {/* Header Section */}
               <div className="text-center mb-8 sm:mb-12 lg:mb-16">
@@ -991,6 +996,8 @@ const scrollToSection = (id) => {
           id="why-us"
           data-aos="zoom-in"
         >
+                    <div className="regular text-[#0d3557] text-[14px]">Why Choose Us</div>
+
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row-reverse items-start gap-6 sm:gap-8 lg:gap-12">
 
@@ -1109,6 +1116,7 @@ const scrollToSection = (id) => {
             </div>
           </div>
         </section>
+        <div className="regular text-[#0d3557] text-[14px]">Lets Get Started</div>
 
         {/* Get Started Section */}
         <section
@@ -1162,15 +1170,15 @@ const scrollToSection = (id) => {
                 <span className="group-hover:animate-pulse regular">Schedule a Meet</span>
               </button>
 
-            <button
-  onClick={() => {
-    navigate("/contact");
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" }); // Scroll to top immediately
-  }}
-  className="group px-6 sm:px-8 py-3 sm:py-3.5 border border-white text-white rounded-xl hover:bg-white hover:text-gray-700 transition-all duration-300 regular text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
->
-  <span className="group-hover:animate-pulse regular">Contact Our Team</span>
-</button>
+              <button
+                onClick={() => {
+                  navigate("/contact");
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" }); // Scroll to top immediately
+                }}
+                className="group px-6 sm:px-8 py-3 sm:py-3.5 border border-white text-white rounded-xl hover:bg-white hover:text-gray-700 transition-all duration-300 regular text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
+              >
+                <span className="group-hover:animate-pulse regular">Contact Our Team</span>
+              </button>
 
             </div>
 

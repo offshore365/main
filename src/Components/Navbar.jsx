@@ -37,6 +37,20 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Define service pages where navbar should NOT be sticky
+  const servicePages = [
+    '/architecture',
+    '/interior',
+    '/bim',
+    '/3dvisualization',
+    '/it',
+    '/marketing',
+    '/admin'
+  ];
+
+  // Check if current page is a service page
+  const isServicePage = servicePages.includes(location.pathname);
+
   // Define tabs for each navigation link
   const navLinksWithTabs = [
     {
@@ -59,9 +73,9 @@ const Navbar = () => {
       activeColor: "bg-[#A66A6C] text-white",
       hoverColor: "hover:bg-[#F0E6E6] hover:text-[#A66A6C]",
       tabs: [
-        { id: "services", label: "Services", icon: Settings }, // or GanttChart
+        { id: "services", label: "Services", icon: Home },
         { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: NotebookPen },    // or ClipboardList
+        { id: "plans", label: "Plans", icon: Briefcase },
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
@@ -73,9 +87,9 @@ const Navbar = () => {
       activeColor: "bg-[#C28E23] text-white",
       hoverColor: "hover:bg-[#F5EBD5] hover:text-[#C28E23]",
       tabs: [
-        { id: "services", label: "Services", icon: Settings }, // or GanttChart
+        { id: "services", label: "Services", icon: Home },
         { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: NotebookPen },    // or ClipboardList
+        { id: "plans", label: "Plans", icon: Briefcase },
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
@@ -87,9 +101,9 @@ const Navbar = () => {
       activeColor: "bg-[#A6A65F] text-white",
       hoverColor: "hover:bg-[#F4F4E3] hover:text-[#A6A65F]",
       tabs: [
-        { id: "services", label: "Services", icon: Settings }, // or GanttChart
+        { id: "services", label: "Services", icon: Home },
         { id: "tools", label: "Tools", icon: Zap },
-        { id: "plans", label: "Plans", icon: NotebookPen },    // or ClipboardList
+        { id: "plans", label: "Plans", icon: Briefcase },
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
@@ -101,7 +115,7 @@ const Navbar = () => {
       activeColor: "bg-[#8F6FFF] text-white",
       hoverColor: "hover:bg-[#ECE9FF] hover:text-[#8F6FFF]",
       tabs: [
-        { id: "services", label: "Services", icon: Settings }, // or GanttChart
+        { id: "services", label: "Services", icon: Home },
         { id: "tools", label: "Tools", icon: Zap },
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
@@ -114,7 +128,8 @@ const Navbar = () => {
       activeColor: "bg-[#3A8CA1] text-white",
       hoverColor: "hover:bg-[#E1EFF3] hover:text-[#3A8CA1]",
       tabs: [
-        { id: "services", label: "Services", icon: Settings }, // or GanttChart
+        { id: "services", label: "Services", icon: Home },
+        { id: "tools", label: "Tools", icon: Zap },
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
@@ -126,7 +141,7 @@ const Navbar = () => {
       activeColor: "bg-[#8F8A75] text-white",
       hoverColor: "hover:bg-[#EFEDE6] hover:text-[#8F8A75]",
       tabs: [
-        { id: "services", label: "Services", icon: Settings }, // or GanttChart
+        { id: "services", label: "Services", icon: Home },
         { id: "why-us", label: "Why Us?", icon: Award },
         { id: "get-started", label: "Get Started", icon: Calendar },
         { id: "faq", label: "FAQ", icon: FileText },
@@ -295,8 +310,8 @@ const Navbar = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-0">
+    <header className={`${isServicePage ? 'relative' : 'sticky top-0'} z-50 w-full bg-white border-b border-gray-100 shadow-sm`}>
+      <nav className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -433,12 +448,14 @@ const Navbar = () => {
             <div className="p-4">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center">
-                  <img
-                    src={logo}
-                    alt="OffShore365 Logo"
-                    className="h-12 w-auto"
-                  />
-                </div>
+  <a href="/">
+    <img
+      src={logo}
+      alt="OffShore365 Logo"
+      className="h-12 w-auto cursor-pointer  "
+    />
+  </a>
+</div>
                 <button
                   onClick={() => setMobileOpen(false)}
                   className="p-1 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors duration-200"
