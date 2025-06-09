@@ -32,13 +32,11 @@ import {
   Building2,
   Hotel,
   Store,
-  Banknote,
+  University,
   Landmark,
-  Stethoscope,
+  Hospital,
   LayoutGrid
 } from "lucide-react";
-
-
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
@@ -67,15 +65,14 @@ const toolsList = [
 
 
   const iconSize = 40; // adjust if needed
-
   const buildings = [
     { name: "Residential", icon: <Home size={iconSize} /> },
     { name: "Commercial", icon: <Building2 size={iconSize} /> },
     { name: "Hospitality", icon: <Hotel size={iconSize} /> },
     { name: "Retail", icon: <Store size={iconSize} /> },
-    { name: "Corporate", icon: <Banknote size={iconSize} /> }, // Closest minimalist
+    { name: "Corporate", icon: <University size={iconSize} /> }, // Closest minimalist
     { name: "Mixed-Use", icon: <LayoutGrid size={iconSize} /> },
-    { name: "Healthcare", icon: <Stethoscope size={iconSize} /> },
+    { name: "Healthcare", icon: <Hospital size={iconSize} /> },
     { name: " Buildings", icon: <Landmark size={iconSize} /> },
   ];
   const [imageWidth, setImageWidth] = useState(96); // w-24
@@ -506,7 +503,7 @@ const toolsList = [
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-[#C28E23] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
+        className={`z-20 bg-[#C28E23] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-0 left-0 right-0 shadow-xl" : "relative"
           }`}
       >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">

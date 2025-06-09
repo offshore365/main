@@ -29,9 +29,9 @@ import {
   Building2,
   Hotel,
   Store,
-  Banknote,
+  University,
   Landmark,
-  Stethoscope,
+  Hospital,
   LayoutGrid
 } from "lucide-react";
 
@@ -87,9 +87,9 @@ const Architecture = () => {
     { name: "Commercial", icon: <Building2 size={iconSize} /> },
     { name: "Hospitality", icon: <Hotel size={iconSize} /> },
     { name: "Retail", icon: <Store size={iconSize} /> },
-    { name: "Corporate", icon: <Banknote size={iconSize} /> }, // Closest minimalist
+    { name: "Corporate", icon: <University size={iconSize} /> }, // Closest minimalist
     { name: "Mixed-Use", icon: <LayoutGrid size={iconSize} /> },
-    { name: "Healthcare", icon: <Stethoscope size={iconSize} /> },
+    { name: "Healthcare", icon: <Hospital size={iconSize} /> },
     { name: " Buildings", icon: <Landmark size={iconSize} /> },
   ];
   const [imageWidth, setImageWidth] = useState(96); // w-24

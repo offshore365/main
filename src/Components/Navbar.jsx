@@ -56,7 +56,7 @@ const Navbar = () => {
     {
       label: "Architecture",
       href: "/architecture",
-      activeColor: "bg-[#2C3E47] text-white",
+      activeColor: "bg-[#2C3E47]/80 text-white",
       hoverColor: "hover:bg-[#E3E8EA] hover:text-[#2C3E47]",
       tabs: [
         { id: "services", label: "Services", icon: Settings }, // or GanttChart
