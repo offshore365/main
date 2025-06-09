@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight, Code, Megaphone, Smartphone, Settings } from 'lucide-react';
 
 import architectureHero from "../../assets/architecture.png";
 import serviceImage from "../../assets/architecture.png";
@@ -23,8 +24,8 @@ import vscode from "../../assets/vscode.png";
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
-    const navigate = useNavigate();
-  
+  const navigate = useNavigate();
+
   const [isSticky, setIsSticky] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [showSchedulingSection, setShowSchedulingSection] = useState(false);
@@ -32,12 +33,12 @@ const Architecture = () => {
   const tabsRef = useRef(null);
   const placeholderRef = useRef(null);
   const originalTopRef = useRef(null);
-const toolsList = [
-  { name: "Figma", image: figma },
-  { name: "WordPress", image: wordpress },
-  { name: "Canva", image: canva },
-  { name: "VS Code", image: vscode },
-];
+  const toolsList = [
+    { name: "Figma", image: figma },
+    { name: "WordPress", image: wordpress },
+    { name: "Canva", image: canva },
+    { name: "VS Code", image: vscode },
+  ];
 
 
   const tabs = [
@@ -331,6 +332,19 @@ const toolsList = [
       ],
     },
   };
+const scrollToGetStarted = () => {
+  const element = document.getElementById('get-started');
+  if (element) {
+    const offset = 100; // adjust this as needed
+    const elementPosition = element.offsetTop - offset;
+
+    window.scrollTo({
+      top: elementPosition,
+      behavior: 'smooth',
+    });
+  }
+};
+
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -397,32 +411,32 @@ const toolsList = [
     sectionRefs.current[id] = ref;
   };
 
-const handleTabClick = (tabId) => {
-  setActiveTab(tabId);
-  
-  const element = document.getElementById(tabId);
-  if (element) {
-    // Special handling only for get-started tab
-    if (tabId === 'get-started') {
-      // Get the height of your sticky tabs
-      const tabsHeight = tabsRef.current ? tabsRef.current.offsetHeight : 0;
-      const additionalOffset = 100; // Extra space you want
-      
-      const elementPosition = element.offsetTop - tabsHeight - additionalOffset;
-      
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
-    } else {
-      // Regular scrollIntoView behavior for all other tabs
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+
+    const element = document.getElementById(tabId);
+    if (element) {
+      // Special handling only for get-started tab
+      if (tabId === 'get-started') {
+        // Get the height of your sticky tabs
+        const tabsHeight = tabsRef.current ? tabsRef.current.offsetHeight : 0;
+        const additionalOffset = 100; // Extra space you want
+
+        const elementPosition = element.offsetTop - tabsHeight - additionalOffset;
+
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        // Regular scrollIntoView behavior for all other tabs
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
-  }
-};
+  };
 
   const [activeIndex, setActiveIndex] = useState(0);
   const features = tabData.services.features;
@@ -558,62 +572,160 @@ const handleTabClick = (tabId) => {
       <div className="container mx-auto px-2 sm:px-24">
         {/* Services Section */}
         <motion.section
-          ref={(ref) => setRef("services", ref)}
+          ref={(ref) => setRef && setRef("services", ref)}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-8 sm:py-12 mb-20 lg:py-16  scroll-mt-20"
+          className="py-8 sm:py-12 mb-20 lg:py-16 scroll-mt-20"
           id="services"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            {/* LEFT: TEXT SECTION */}
-            <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
-              <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-3 lg:mb-2 text-[#0d3557] tracking-wide leading-tight lg:leading-snug">
+          <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold text-[#0d3557] mb-4 tracking-wide leading-tight lg:leading-snug">
                 Transform Your Brand With Offshore 365
               </h1>
-              <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] leading-relaxed">
-                we help you transform your brand by providing customized marketing and development solutions tailored specifically to your business needs.
+              <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] mb-8  leading-relaxed">
+                we help you transform your brand by providing customized marketing <br /> and development solutions tailored specifically to your business needs.
+
               </p>
-            </div>
-
-            {/* RIGHT: FEATURES + CAROUSEL */}
-            <div className="flex-1 w-full lg:w-auto flex flex-col gap-4 sm:gap-6" data-aos="fade-left">
-              {/* Feature boxes */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-[#1F3B4D]">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.02, backgroundColor: "#f1f5f9" }}
-                    className="flex items-start p-1 sm:p-2 bg-white rounded-xl hover:shadow-lg transition-all duration-300 "
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="bg-[#CCB4FE] rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
-                      <svg
-                        className="w-4 h-4 text-[#8F6FFF]"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-[#0d3557] regular text-sm sm:text-[14px] leading-relaxed">
-                      {feature.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-
 
             </div>
+
+            {/* Feature Cards Grid */}
+            {/* Wrapper */}
+<div>
+  {/* Desktop & Tablet View */}
+  <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {[
+      {
+        title: "Web Development",
+        desc: "Create more efficient and productive teams. Speed up development without disrupting your flow. Modern frameworks connect to the tools, apps, and browsers where your team does their best work.",
+        delay: 0,
+      },
+      {
+        title: "Digital Marketing",
+        desc: "Improve company performance and customer experience. Make it easy for qualified leads to reach you. Time-saving automations empower client-facing teams to convert leads, faster.",
+        delay: 100,
+      },
+      {
+        title: "App Development",
+        desc: "Reduce the total cost of ownership. Consolidate your software investments with a single platform that meets the needs of recruiting, sales, and other meeting-heavy teams.",
+        delay: 200,
+      },
+      {
+        title: "CRM / ERP",
+        desc: "Streamline business operations with integrated solutions. Consolidate your customer relationship management and enterprise resource planning into one powerful platform.",
+        delay: 300,
+      },
+    ].map((service, index) => (
+      <motion.div
+        key={index}
+        className="bg-white rounded-2xl px-8 py-6 border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+        data-aos="fade-up"
+        data-aos-delay={service.delay}
+      >
+        <div>
+          <h3 className="text-xl font-bold text-[#0d3557] mb-4 tracking-wide">
+            {service.title}
+          </h3>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            {service.desc}
+          </p>
+        </div>
+        <div className="mt-4 flex justify-end">
+          <button
+            onClick={scrollToGetStarted}
+            className="group flex items-center text-[#8F6FFF] bg-purple-100 rounded-full px-4 py-2 text-sm transition-all duration-300"
+          >
+            <span className="mr-2 regular">Book a Quote</span>
+            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+          </button>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+
+  {/* Mobile Horizontal Scroll */}
+  <div className="sm:hidden">
+    <div className="overflow-x-auto pb-4" id="mobile-service-scroll">
+      <div className="flex gap-4 px-2" style={{ width: 'max-content' }}>
+        {[
+          {
+            title: "Web Development",
+            desc: "Create more efficient and productive teams. Speed up development without disrupting your flow.",
+            delay: 0,
+          },
+          {
+            title: "Digital Marketing",
+            desc: "Improve company performance and customer experience. Time-saving automations empower teams to convert leads.",
+            delay: 100,
+          },
+          {
+            title: "App Development",
+            desc: "Reduce total ownership costs. Consolidate your software investments with one powerful platform.",
+            delay: 200,
+          },
+          {
+            title: "CRM / ERP",
+            desc: "Streamline operations with integrated solutions for CRM and ERP in one platform.",
+            delay: 300,
+          },
+        ].map((service, index) => (
+          <motion.div
+            key={index}
+            className="flex-shrink-0 w-[300px] bg-white rounded-2xl px-6 py-5 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
+            data-aos="fade-up"
+            data-aos-delay={service.delay}
+          >
+            <h3 className="text-lg font-bold text-[#0d3557] mb-3">{service.title}</h3>
+            <p className="text-sm text-gray-600 mb-4 leading-relaxed">{service.desc}</p>
+            <div className="flex justify-end">
+              <button
+                onClick={scrollToGetStarted}
+                className="group flex items-center text-[#8F6FFF] bg-purple-100 rounded-full px-3 py-1.5 text-sm transition-all duration-300"
+              >
+                <span className="mr-2 regular">Book a Quote</span>
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+
+    {/* Optional Mobile Scroll Buttons */}
+    <div className="flex justify-center items-center gap-4 mt-4">
+      <button
+        onClick={() =>
+          document.getElementById('mobile-service-scroll')?.scrollBy({ left: -320, behavior: 'smooth' })
+        }
+        className="w-8 h-8 rounded-full bg-[#8F6FFF] text-white flex items-center justify-center shadow-md hover:scale-110 transition-all"
+      >
+        <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path d="M15 18L9 12L15 6" />
+        </svg>
+      </button>
+      <button
+        onClick={() =>
+          document.getElementById('mobile-service-scroll')?.scrollBy({ left: 320, behavior: 'smooth' })
+        }
+        className="w-8 h-8 rounded-full bg-[#8F6FFF] text-white flex items-center justify-center shadow-md hover:scale-110 transition-all"
+      >
+        <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path d="M9 18L15 12L9 6" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+            {/* Demo Get Started Section (for testing scroll) */}
+
           </div>
         </motion.section>
 
@@ -866,15 +978,15 @@ const handleTabClick = (tabId) => {
                 <span className="group-hover:animate-pulse regular">Schedule a Meet</span>
               </button>
 
-                <button
-  onClick={() => {
-    navigate("/contact");
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" }); // Scroll to top immediately
-  }}
-  className="group px-6 sm:px-8 py-3 sm:py-3.5 border border-white text-white rounded-xl hover:bg-white hover:text-gray-700 transition-all duration-300 regular text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
->
-  <span className="group-hover:animate-pulse regular">Contact Our Team</span>
-</button>
+              <button
+                onClick={() => {
+                  navigate("/contact");
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" }); // Scroll to top immediately
+                }}
+                className="group px-6 sm:px-8 py-3 sm:py-3.5 border border-white text-white rounded-xl hover:bg-white hover:text-gray-700 transition-all duration-300 regular text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transform"
+              >
+                <span className="group-hover:animate-pulse regular">Contact Our Team</span>
+              </button>
             </div>
 
 
