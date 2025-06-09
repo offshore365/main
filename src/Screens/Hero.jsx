@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
-import card1 from "../assets/h1.png";
+import card1 from "../assets/ar.jpg";
 import card2 from "../assets/interior.jpg";
 import card3 from "../assets/bim.jpg";
 import card4 from "../assets/h4.jpg";
