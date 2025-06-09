@@ -460,15 +460,32 @@ const Architecture = () => {
     sectionRefs.current[id] = ref;
   };
 
-  const handleTabClick = (id) => {
-    setActiveTab(id);
-    if (sectionRefs.current[id]) {
-      sectionRefs.current[id].scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+const handleTabClick = (tabId) => {
+  setActiveTab(tabId);
+  
+  const element = document.getElementById(tabId);
+  if (element) {
+    // Special handling only for get-started tab
+    if (tabId === 'get-started') {
+      // Get the height of your sticky tabs
+      const tabsHeight = tabsRef.current ? tabsRef.current.offsetHeight : 0;
+      const additionalOffset = 80; // Extra space you want
+      
+      const elementPosition = element.offsetTop - tabsHeight - additionalOffset;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    } else {
+      // Regular scrollIntoView behavior for all other tabs
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
     }
-  };
+  }
+};
 
   const [activeIndex, setActiveIndex] = useState(0);
   const features = tabData.services.features;
@@ -614,7 +631,6 @@ const Architecture = () => {
           id="services"
           data-aos="fade-up"
         >
-          <div className="regular text-[#0d3557] text-[14px]">Services</div>
           <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1 w-full lg:w-auto" data-aos="fade-right">
@@ -712,7 +728,6 @@ const Architecture = () => {
           id="tools"
           data-aos="fade-up"
         >
-                              <div className="regular text-[#0d3557] text-[14px]">Tools</div>
 
           <div className="container max-w-4xl mx-auto flex flex-col lg:flex-row items-start gap-4 lg:gap-8">
             <div className="flex-1 w-full">
@@ -757,7 +772,6 @@ const Architecture = () => {
             className="py-12 sm:py-16 lg:py-20 mb-12 sm:mb-16 lg:mb-20 scroll-mt-20 px-4 sm:px-6 lg:px-8"
             id="plans"
           >
-                                <div className="regular text-[#0d3557] text-[14px]">plans</div>
 
             <div className="max-w-7xl mx-auto">
               {/* Header Section */}
@@ -996,7 +1010,6 @@ const Architecture = () => {
           id="why-us"
           data-aos="zoom-in"
         >
-                    <div className="regular text-[#0d3557] text-[14px]">Why Choose Us</div>
 
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row-reverse items-start gap-6 sm:gap-8 lg:gap-12">
@@ -1116,12 +1129,11 @@ const Architecture = () => {
             </div>
           </div>
         </section>
-        <div className="regular text-[#0d3557] text-[14px]">Lets Get Started</div>
 
         {/* Get Started Section */}
         <section
           ref={(ref) => setRef("get-started", ref)}
-          className="py-12 sm:py-16 lg:py-20 px-4 scroll-mt-20 sm:px-6 lg:px-8 min-h-[400px] sm:min-h-[500px] lg:h-[550px] transition-all duration-1000 text-white flex rounded-2xl justify-center items-center relative overflow-hidden"
+          className="py-12 sm:py-16 lg:py-20 px-4 scroll-mt-20 mb-20 sm:px-6 lg:px-8 min-h-[400px] sm:min-h-[500px] lg:h-[550px] transition-all duration-1000 text-white flex rounded-2xl justify-center items-center relative overflow-hidden"
           style={{ background: activeGradient }}
           id="get-started"
         >
