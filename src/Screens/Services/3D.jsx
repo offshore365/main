@@ -526,15 +526,32 @@ const Architecture = () => {
     sectionRefs.current[id] = ref;
   };
 
-  const handleTabClick = (id) => {
-    setActiveTab(id);
-    if (sectionRefs.current[id]) {
-      sectionRefs.current[id].scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+ const handleTabClick = (tabId) => {
+  setActiveTab(tabId);
+  
+  const element = document.getElementById(tabId);
+  if (element) {
+    // Special handling only for get-started tab
+    if (tabId === 'get-started') {
+      // Get the height of your sticky tabs
+      const tabsHeight = tabsRef.current ? tabsRef.current.offsetHeight : 0;
+      const additionalOffset = 100; // Extra space you want
+      
+      const elementPosition = element.offsetTop - tabsHeight - additionalOffset;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    } else {
+      // Regular scrollIntoView behavior for all other tabs
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
     }
-  };
+  }
+};
 
   const [activeIndex, setActiveIndex] = useState(0);
   const features = tabData.services.features;

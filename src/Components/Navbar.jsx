@@ -311,7 +311,7 @@ const Navbar = () => {
 
   return (
     <header className={`${isServicePage ? 'relative' : 'sticky top-0'} z-50 w-full bg-white border-b border-gray-100 shadow-sm`}>
-      <nav className="max-w-7xl mx-auto">
+      <nav className="max-w-7xl mx-auto sm:px-0 px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -342,8 +342,8 @@ const Navbar = () => {
                     <button
                       onClick={() => handleLinkClick(link.href)}
                       className={`flex items-center px-3 py-2 text-sm regular transition-all duration-200 rounded-lg transform hover:scale-105 ${isActive
-                          ? link.activeColor
-                          : `text-gray-700 ${link.hoverColor} hover:bg-gray-50`
+                        ? link.activeColor
+                        : `text-gray-700 ${link.hoverColor} hover:bg-gray-50`
                         }`}
                     >
                       {link.label}
@@ -448,14 +448,14 @@ const Navbar = () => {
             <div className="p-4">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center">
-  <a href="/">
-    <img
-      src={logo}
-      alt="OffShore365 Logo"
-      className="h-12 w-auto cursor-pointer  "
-    />
-  </a>
-</div>
+                  <a href="/">
+                    <img
+                      src={logo}
+                      alt="OffShore365 Logo"
+                      className="h-12 w-auto cursor-pointer  "
+                    />
+                  </a>
+                </div>
                 <button
                   onClick={() => setMobileOpen(false)}
                   className="p-1 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors duration-200"
@@ -476,8 +476,8 @@ const Navbar = () => {
                             setMobileOpen(false);
                           }}
                           className={`flex-1 text-left px-3 py-2 rounded-lg transition-all duration-200 regular transform hover:scale-[1.02] text-sm ${isActive
-                              ? link.activeColor
-                              : `text-gray-700 ${link.hoverColor}`
+                            ? link.activeColor
+                            : `text-gray-700 ${link.hoverColor}`
                             }`}
                         >
                           {link.label}
