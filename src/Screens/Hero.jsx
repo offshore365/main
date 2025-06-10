@@ -169,7 +169,7 @@ const Hero = () => {
               <AnimatedText text="Unlock" className="text-[#0d3557]" delay={0.2} />
               <br />
               <AnimatedText text="Infinite" delay={0.4} />
-              <AnimatedText text="Productivity" delay={0.6} />
+              <AnimatedText text="Productivity" delay={0.6} className='mb-2' />
             </h1>
             <motion.p
               className="mt-2 text-base sm:text-lg md:text-xl text-[#0d3557]"
