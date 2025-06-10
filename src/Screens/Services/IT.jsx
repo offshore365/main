@@ -775,156 +775,148 @@ const scrollToGetStarted = () => {
 
 
 
-        <motion.section
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="py-16 mb-20 px-6 mb-20 sm:px-12 bg-white text-[#3c2063] scroll-mt-20"
-          id="why-us"
-        >
-          <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-start gap-12">
-            {/* Left Side */}
-            <div className="w-full lg:w-1/2 space-y-6">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] text-[#0d3557] font-extrabold mb-3 sm:mb-4 lg:mb-2 leading-tight">
-                Grow your business with Offshore 365
-              </h1>
+      <motion.section
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="py-16 px-6 sm:px-12 bg-white text-[#3c2063] scroll-mt-20 mb-20"
+  id="why-us"
+>
+  <div className="max-w-6xl mx-auto">
+    {/* Heading */}
+    <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] text-[#0d3557] font-extrabold mb-10 leading-tight text-center lg:text-left">
+      Grow your business with Offshore 365
+    </h1>
 
-              <div className="space-y-4">
-                {[
-                  "Experience & Expertise",
-                  "Customization",
-                  "Affordable Pricing",
-                  "Proven Track Record",
-                  "Excellent Customer Support",
-                ].map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="flex items-center  rounded-xl   transition-all duration-300"
-                  >
-                    <div className="bg-[#CCB4FE] regular text-[12px] text-[#8F6FFF] font-bold w-10 h-10 flex items-center justify-center rounded-full mr-4">
-                      {String(idx + 1).padStart(2, "0")}
-                    </div>
-                    <span className="text-[#0d3557] regular text-sm sm:text-[14px] leading-relaxed">
-                      {item}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
+    {/* Side-by-side container */}
+    <div className="flex flex-col lg:flex-row gap-12 items-start">
+      {/* Left Side - Steps */}
+      <div className="w-full lg:w-1/2 space-y-4">
+        {[
+          "Experience & Expertise",
+          "Customization",
+          "Affordable Pricing",
+          "Proven Track Record",
+          "Excellent Customer Support",
+        ].map((item, idx) => (
+          <motion.div
+            key={idx}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="flex items-center  rounded-xl transition-all duration-300"
+          >
+            <div className="bg-[#CCB4FE] text-[12px] text-[#8F6FFF] font-bold w-10 h-10 flex items-center justify-center rounded-full mr-4">
+              {String(idx + 1).padStart(2, "0")}
             </div>
+            <span className="text-[#0d3557] text-sm sm:text-[14px] leading-relaxed regular ">
+              {item}
+            </span>
+          </motion.div>
+        ))}
+      </div>
 
-            {/* Right Side */}
-            <div className="w-full lg:w-1/2 space-y-6">
-              <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] mb-8 leading-relaxed">
-                Our CRM and ERP development services combine years of expertise
-                with a commitment to building trusted, customized solutions that
-                drive your business’ success.
-              </p>
+      {/* Right Side - Benefits */}
+      <div className="w-full lg:w-1/2 space-y-6">
+        <p className="text-sm sm:text-base lg:text-[18px] text-[#0d3557] leading-relaxed">
+          Our CRM and ERP development services combine years of expertise with a
+          commitment to building trusted, customized solutions that drive your
+          business’ success.
+        </p>
 
-              {/* Benefits */}
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  {
-                    text: "Customized Solutions",
-                    icon: (
-                      <svg
-                        className="w-8 h-8 text-[#8F6FFF] "
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m0 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
-                        />
-                      </svg>
-                    ),
-                  },
-                  {
-                    text: "Scalable Architecture",
-                    icon: (
-                      <svg
-                        className="w-8 h-8 text-[#8F6FFF] "
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.937 3.45c.318.375.49.84.49 1.35v.75H19.5a3 3 0 00-3 3v6.75a3 3 0 003 3h1.5a3 3 0 003-3v-6.75a3 3 0 00-3-3H5.25z"
-                        />
-                      </svg>
-                    ),
-                  },
-                  {
-                    text: "Integration Expertise",
-                    icon: (
-                      <svg
-                        className="w-8 h-8 text-[#8F6FFF] "
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
-                        />
-                      </svg>
-                    ),
-                  },
-                  {
-                    text: "User-Centric Design",
-                    icon: (
-                      <svg
-                        className="w-8 h-8 text-[#8F6FFF] "
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"
-                        />
-                      </svg>
-                    ),
-                  },
-                ].map((benefit, i) => (
-                  <motion.div
-                    key={i}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="flex flex-col items-center text-center gap-2 backdrop-blur-md rounded-lg px-4 py-5 cursor-pointer"
-                  >
-                    {benefit.icon}
-                    <span className="text-[#0d3557] regular text-sm sm:text-[14px] leading-relaxed">
-                      {benefit.text}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            {
+              text: "Customized Solutions",
+              icon: (
+                <svg
+                  className="w-8 h-8 text-[#8F6FFF]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m0 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                  />
+                </svg>
+              ),
+            },
+            {
+              text: "Scalable Architecture",
+              icon: (
+                <svg
+                  className="w-8 h-8 text-[#8F6FFF]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.937 3.45c.318.375.49.84.49 1.35v.75H19.5a3 3 0 00-3 3v6.75a3 3 0 003 3h1.5a3 3 0 003-3v-6.75a3 3 0 00-3-3H5.25z"
+                  />
+                </svg>
+              ),
+            },
+            {
+              text: "Integration Expertise",
+              icon: (
+                <svg
+                  className="w-8 h-8 text-[#8F6FFF]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                  />
+                </svg>
+              ),
+            },
+            {
+              text: "User-Centric Design",
+              icon: (
+                <svg
+                  className="w-8 h-8 text-[#8F6FFF]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"
+                  />
+                </svg>
+              ),
+            },
+          ].map((benefit, i) => (
+            <motion.div
+              key={i}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="flex flex-col items-center text-center  backdrop-blur-md rounded-lg px-2 py-2 cursor-pointer"
+            >
+              {benefit.icon}
+              <span className="text-[#0d3557] text-sm sm:text-[14px] leading-relaxed regular">
+                {benefit.text}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</motion.section>
 
-              {/* CTA Button */}
-              {/* <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="bg-[#0d3557] text-white px-6 py-3 rounded-md font-semibold shadow-md hover:bg-[#1a4475] transition-colors duration-300"
-              >
-                Book A Quote
-              </motion.button> */}
-            </div>
-          </div>
-        </motion.section>
 
         {/* Get Started Section */}
         <section

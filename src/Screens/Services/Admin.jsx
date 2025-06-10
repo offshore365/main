@@ -854,7 +854,7 @@ we make admin work efficient for  your brand by providing virtual admin <br /> s
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 mb-20 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-16 "
+          className="py-12 mb-[150px] sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-16 "
           id="why-us"
           data-aos="zoom-in"
         >

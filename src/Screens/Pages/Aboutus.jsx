@@ -87,7 +87,7 @@ const AboutOffshore365 = () => {
       followers: 312,
       following: 48,
       bgColor: "bg-gradient-to-br from-purple-500 to-purple-600",
-      image: shivaniImg,
+      image: rubyImg,
     },
     {
       name: "Shivani Malhotra",
@@ -98,7 +98,8 @@ const AboutOffshore365 = () => {
       followers: 289,
       following: 52,
       bgColor: "bg-gradient-to-br from-teal-500 to-teal-600",
-      image: rubyImg,
+            image: shivaniImg,
+
     },
   ];
 

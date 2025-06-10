@@ -89,7 +89,6 @@ const toolsList = [
   { name: "Photoshop", image: photoshop },
   { name: "Illustrator", image: illustrator },
   { name: "Archicad", image: archicad },
-  { name: "MS Office", image: msoffice },
 ];
 
   const tabs = [

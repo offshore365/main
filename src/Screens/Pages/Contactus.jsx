@@ -147,6 +147,16 @@ export default function ContactPage() {
           <p className="text-md sm:text-lg text-[#0d3557] mb-12 text-center">
             Connect with us across our global locations or explore partnership opportunities!
           </p>
+<div className="flex justify-center items-center gap-6 text-[#0d3557] text-sm sm:text-base mb-12">
+  <div className="flex items-center gap-2">
+    <Phone className="w-4 h-4 text-[#006BFF] regular" />
+    <span className="regular">+91 98765 43210</span>
+  </div>
+  <div className="flex items-center gap-2">
+    <Mail className="w-4 h-4 text-[#006BFF] regular" />
+    <span className="regular">info@example.com</span>
+  </div>
+</div>
 
           {/* Address Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

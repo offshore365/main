@@ -59,7 +59,6 @@ const toolsList = [
   { name: "Archicad", image: archicad },
   { name: "Trimble Connect", image: trimbleconnect },
   { name: "V-Ray", image: vray },
-  { name: "Enscape", image: enscape },
   { name: "BIMcollab", image: bimcollab },
 ];
 
