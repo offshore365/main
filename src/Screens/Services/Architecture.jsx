@@ -1168,7 +1168,7 @@ const handleTabClick = (tabId) => {
             </div>
 
             {/* Tagline */}
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] font-light max-w-xs sm:max-w-md lg:max-w-2xl mx-auto text-gray-200 mb-6 sm:mb-8 leading-relaxed px-4 sm:px-0">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] font-light max-w-xs sm:max-w-md lg:max-w-2xl mx-auto text-white mb-6 sm:mb-8 leading-relaxed px-4 sm:px-0">
               Power Your Business Today with 365 Productivity.
             </p>
 

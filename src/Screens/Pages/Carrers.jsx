@@ -314,7 +314,7 @@ const CareersPage = () => {
 
       {/* Mission Section */}
       <section
-        className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 bg-gradient-to-b from-white via-gray-50 to-white relative"
+        className="py-12 sm:py-16 md:py-28 px-4 sm:px-6 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden"
         data-aos="fade-up"
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center relative z-10">
@@ -361,7 +361,7 @@ const CareersPage = () => {
 
       {/* Culture & Academy Section */}
       <section
-        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-white"
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-white overflow-hidden"
         data-aos="fade-up"
       >
         <div className="max-w-7xl mx-auto">
@@ -417,7 +417,7 @@ const CareersPage = () => {
 
       {/* Recruitment Process Section */}
       <section
-        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6"
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 overflow-hidden"
         data-aos="fade-up"
       >
         <div className="max-w-7xl mx-auto">
@@ -553,7 +553,7 @@ const CareersPage = () => {
 
       {/* Careers Section */}
       <section
-        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6"
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 overflow-hidden"
         data-aos="fade-up"
       >
         <div className="max-w-7xl mx-auto">
@@ -620,7 +620,7 @@ const CareersPage = () => {
       </section>
 
 
-      <section id="apply-jobs" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
+      <section id="apply-jobs" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 overflow-hidden">
         <div className="max-w-full mx-auto">
           <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 sm:p-12 md:p-16 text-center relative overflow-hidden">
             {/* Only 2 background circles */}

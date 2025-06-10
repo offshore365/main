@@ -106,7 +106,7 @@ const AboutOffshore365 = () => {
     <div className="font-sans text-[#0d3557] text-center">
       {/* Hero Section */}
       <section
-        className="py-12 min-h-screen  px-4 sm:px-6 md:px-12 lg:px-24  relative "
+        className="py-12 min-h-screen  px-4 sm:px-6 md:px-12 lg:px-24  relative overflow-hidden "
         data-aos="fade-up"
         data-aos-delay="100"
       >
@@ -170,7 +170,7 @@ const AboutOffshore365 = () => {
 
       {/* Stats Section */}
       <section
-        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24 "
+        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden  "
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -258,7 +258,7 @@ const AboutOffshore365 = () => {
 
       {/* Infrastructure Section */}
       <section
-        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24"
+        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
         data-aos="fade-up"
         data-aos-delay="400"
       >
@@ -349,7 +349,7 @@ const AboutOffshore365 = () => {
 
       {/* Leadership Section */}
       <section
-        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24"
+        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
         data-aos="fade-up"
         data-aos-delay="500"
       >
@@ -399,7 +399,7 @@ const AboutOffshore365 = () => {
 
       {/* CSR Section */}
       <section
-        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24"
+        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
         data-aos="fade-up"
         data-aos-delay="600"
       >
