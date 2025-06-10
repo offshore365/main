@@ -542,7 +542,7 @@ const scrollToGetStarted = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-[#8F6FFF] backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-0 left-0 right-0 shadow-xl" : "relative"
+        className={`z-20 bg-[#8F6FFF]/70 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-0 left-0 right-0 shadow-xl" : "relative"
           }`}
       >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">

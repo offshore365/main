@@ -66,7 +66,15 @@ const Architecture = () => {
     { name: "Corporate", icon: <University size={iconSize} /> }, // Closest minimalist
     { name: "Mixed-Use", icon: <LayoutGrid size={iconSize} /> },
     { name: "Healthcare", icon: <Hospital size={iconSize} /> },
-    { name: " Buildings", icon: <Landmark size={iconSize} /> },
+    { name: " Public", icon: <Landmark size={iconSize} /> },
+        { name: "Residential", icon: <Home size={iconSize} /> },
+    { name: "Commercial", icon: <Building2 size={iconSize} /> },
+    { name: "Hospitality", icon: <Hotel size={iconSize} /> },
+    { name: "Retail", icon: <Store size={iconSize} /> },
+    { name: "Corporate", icon: <University size={iconSize} /> }, // Closest minimalist
+    { name: "Mixed-Use", icon: <LayoutGrid size={iconSize} /> },
+    { name: "Healthcare", icon: <Hospital size={iconSize} /> },
+    { name: " Public", icon: <Landmark size={iconSize} /> },
   ];
   const [imageWidth, setImageWidth] = useState(96); // w-24
   const gap = 12;
