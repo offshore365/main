@@ -154,9 +154,9 @@ const Architecture = () => {
       ],
     },
     tools: {
-      title: "Connect with Offshore365 with the tools you already use",
+      title: "Connect with Offshore 365 with the tools you already use",
       description:
-        "Work seamlessly with offshore experts skilled in leading AEC software.",
+        "Work seamlessly with Offshore experts skilled in leading AEC software.",
       image: toolsImage,
       software: [
         { name: "Zoom", icon: "Z" },

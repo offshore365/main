@@ -121,8 +121,8 @@ const toolsList = [
 
     },
     tools: {
-      title: "Connect with Offshore365 with the tools you already use",
-      description: "Work seamlessly with offshore experts skilled in leading AEC software.",
+      title: "Connect with Offshore 365 with the tools you already use",
+      description: "Work seamlessly with Offshore experts skilled in leading AEC software.",
       image: toolsImage,
       software: [
         { name: "Zoom", icon: "Z" },
@@ -183,7 +183,7 @@ const toolsList = [
         {
           title: "Reduced Administrative Burden",
           description:
-            "Offshore365 handles the administrative tasks associated with hiring and managing staff, such as recruitment, onboarding, and payroll. This allows clients to focus on their core business operations.",
+            "Offshore 365 handles the administrative tasks associated with hiring and managing staff, such as recruitment, onboarding, and payroll. This allows clients to focus on their core business operations.",
         },
         {
           title: "Time Zone Advantage",

@@ -409,7 +409,7 @@ const UserForm = ({ values, onChange, selectedService, selectedDate, selectedTim
             <div>
               <label className="block text-xs text-[#0d3557] regular mb-1 flex items-center gap-1">
                 <User className="w-4 h-4 text-blue-500" />
-                Full Name
+                Full Name *
               </label>
               <input
                 type="text"
@@ -424,7 +424,7 @@ const UserForm = ({ values, onChange, selectedService, selectedDate, selectedTim
             <div>
               <label className="block text-xs text-[#0d3557] mb-1 regular flex items-center gap-1">
                 <Mail className="w-4 h-4 text-blue-500" />
-                Email Address
+                Email Address *
               </label>
               <input
                 type="email"
@@ -439,7 +439,7 @@ const UserForm = ({ values, onChange, selectedService, selectedDate, selectedTim
             <div>
               <label className="block text-xs text-[#0d3557] regular mb-1 flex items-center gap-1">
                 <Phone className="w-4 h-4 text-blue-500" />
-                Phone Number
+                Phone Number *
               </label>
               <div className="flex">
                 <select
@@ -470,7 +470,7 @@ const UserForm = ({ values, onChange, selectedService, selectedDate, selectedTim
             <div>
               <label className="block text-xs text-[#0d3557] regular mb-1 flex items-center gap-1">
                 <Building className="w-4 h-4 text-blue-500" />
-                Company Name
+                Company Name *
               </label>
               <input
                 type="text"
@@ -485,7 +485,7 @@ const UserForm = ({ values, onChange, selectedService, selectedDate, selectedTim
             <div>
               <label className="block text-xs text-[#0d3557] regular mb-1 flex items-center gap-1">
                 <MapPinIcon className="w-4 h-4 text-blue-500" />
-                Company Location
+                Company Location *
               </label>
               <input
                 type="text"
@@ -500,7 +500,7 @@ const UserForm = ({ values, onChange, selectedService, selectedDate, selectedTim
             <div>
               <label className="block text-xs text-[#0d3557] regular mb-1 flex items-center gap-1">
                 <Users className="w-4 h-4 text-blue-500" />
-                Number of Employees
+                Number of Employees *
               </label>
               <div className="relative">
                 <select
@@ -769,7 +769,7 @@ export default function ScheduleMeeting() {
                   >
                     <option value="" className="regular">Choose a service</option>
                     {services.map((service) => (
-                      <option key={service.name} value={service.name}>
+                      <option key={service.name} className="regular" value={service.name}>
                         {service.name} - {service.description}
                       </option>
                     ))}

@@ -42,6 +42,7 @@ const Architecture = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [showSchedulingSection, setShowSchedulingSection] = useState(false);
+  const schedulingRef = useRef(null);
   const sectionRefs = useRef({});
   const tabsRef = useRef(null);
   const placeholderRef = useRef(null);
@@ -90,20 +91,40 @@ const Architecture = () => {
     { name: "Corporate", icon: <University size={iconSize} /> }, // Closest minimalist
     { name: "Mixed-Use", icon: <LayoutGrid size={iconSize} /> },
     { name: "Healthcare", icon: <Hospital size={iconSize} /> },
-    { name: " Public", icon: <Landmark size={iconSize} /> },    { name: "Residential", icon: <Home size={iconSize} /> },
-        { name: "Commercial", icon: <Building2 size={iconSize} /> },
-        { name: "Hospitality", icon: <Hotel size={iconSize} /> },
-        { name: "Retail", icon: <Store size={iconSize} /> },
-        { name: "Corporate", icon: <University size={iconSize} /> }, // Closest minimalist
-        { name: "Mixed-Use", icon: <LayoutGrid size={iconSize} /> },
-        { name: "Healthcare", icon: <Hospital size={iconSize} /> },
-        { name: " Public", icon: <Landmark size={iconSize} /> },
+    { name: " Public", icon: <Landmark size={iconSize} /> }, { name: "Residential", icon: <Home size={iconSize} /> },
+    { name: "Commercial", icon: <Building2 size={iconSize} /> },
+    { name: "Hospitality", icon: <Hotel size={iconSize} /> },
+    { name: "Retail", icon: <Store size={iconSize} /> },
+    { name: "Corporate", icon: <University size={iconSize} /> }, // Closest minimalist
+    { name: "Mixed-Use", icon: <LayoutGrid size={iconSize} /> },
+    { name: "Healthcare", icon: <Hospital size={iconSize} /> },
+    { name: " Public", icon: <Landmark size={iconSize} /> },
   ];
   const [imageWidth, setImageWidth] = useState(96); // w-24
   const gap = 12;
 
   const doubledBuildings = [...buildings, ...buildings];
 
+
+    useEffect(() => {
+    if (showSchedulingSection && schedulingRef.current) {
+      // Delay to allow section to mount
+      setTimeout(() => {
+        const element = schedulingRef.current;
+        const headerOffset = 100; // ← Change this as per your sticky header height or desired spacing
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 100);
+    }
+  }, [showSchedulingSection]);
+
+
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % buildings.length);
@@ -131,9 +152,9 @@ const Architecture = () => {
       ],
     },
     tools: {
-      title: "Connect with Offshore365 with the tools you already use",
+      title: "Connect with Offshore 365 with the tools you already use",
       description:
-        "Work seamlessly with offshore experts skilled in leading AEC software.",
+        "Work seamlessly with Offshore experts skilled in leading AEC software.",
       image: toolsImage,
       software: [
         { name: "Zoom", icon: "Z" },
@@ -467,32 +488,32 @@ const Architecture = () => {
     sectionRefs.current[id] = ref;
   };
 
-const handleTabClick = (tabId) => {
-  setActiveTab(tabId);
-  
-  const element = document.getElementById(tabId);
-  if (element) {
-    // Special handling only for get-started tab
-    if (tabId === 'get-started') {
-      // Get the height of your sticky tabs
-      const tabsHeight = tabsRef.current ? tabsRef.current.offsetHeight : 0;
-      const additionalOffset = 80; // Extra space you want
-      
-      const elementPosition = element.offsetTop - tabsHeight - additionalOffset;
-      
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
-    } else {
-      // Regular scrollIntoView behavior for all other tabs
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+
+    const element = document.getElementById(tabId);
+    if (element) {
+      // Special handling only for get-started tab
+      if (tabId === 'get-started') {
+        // Get the height of your sticky tabs
+        const tabsHeight = tabsRef.current ? tabsRef.current.offsetHeight : 0;
+        const additionalOffset = 80; // Extra space you want
+
+        const elementPosition = element.offsetTop - tabsHeight - additionalOffset;
+
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        // Regular scrollIntoView behavior for all other tabs
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
-  }
-};
+  };
 
   const [activeIndex, setActiveIndex] = useState(0);
   const features = tabData.services.features;
@@ -550,7 +571,7 @@ const handleTabClick = (tabId) => {
             transition={{ delay: 0.7, duration: 0.2 }}
             className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] font-light max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            Offshore365 has completed over 200+ Large Scale Architectural
+            Offshore 365 has completed over 200+ Large Scale Architectural
             Projects using BIM & CAD, produced in accordance with AIA and RIBA
             architecture standards.
           </motion.p>
@@ -1277,8 +1298,9 @@ const handleTabClick = (tabId) => {
             viewport={{ once: true }}
             id="scheduling-section"
             data-aos="fade-up"
+            ref={schedulingRef}
           >
-            <div className="">
+            <div>
               <Scheduling />
             </div>
           </motion.section>

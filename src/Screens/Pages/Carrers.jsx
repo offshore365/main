@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Search, MapPin, ChevronRight, ArrowRight, Upload, X, Send } from "lucide-react";
-import mission from "../../assets/carrers.png";
+import mission from "../../assets/careers.png";
 
 const CareersPage = () => {
   const [searchTerm, setSearchTerm] = useState("");

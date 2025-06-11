@@ -107,7 +107,7 @@ export default function ContactPage() {
             transition={{ delay: 0.7, duration: 0.2 }}
             className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] font-light max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
-            Power up your productivity with Offshore365
+            Power up your productivity with Offshore 365
           </motion.p>
 
          
@@ -150,11 +150,11 @@ export default function ContactPage() {
 <div className="flex justify-center items-center gap-6 text-[#0d3557] text-sm sm:text-base mb-12">
   <div className="flex items-center gap-2">
     <Phone className="w-4 h-4 text-[#006BFF] regular" />
-    <span className="regular">+91 98765 43210</span>
+    <span className="regular">+1 917 905 1135 </span>
   </div>
   <div className="flex items-center gap-2">
     <Mail className="w-4 h-4 text-[#006BFF] regular" />
-    <span className="regular">info@example.com</span>
+    <span className="regular">contact@offshore365.in</span>
   </div>
 </div>
 
