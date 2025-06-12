@@ -270,7 +270,7 @@ const CareersPage = () => {
 
 
           <div className="inline-block bg-blue-100 rounded-full px-3 py-1 mb-6 sm:mb-8">
-            <span className="text-blue-500 text-sm regular">Carrer</span>
+            <span className="text-blue-500 text-sm regular">Career</span>
           </div>
           <h1
             className="text-3xl sm:text-4xl tracking-wide  md:text-5xl font-bold mb-2 sm:mb-8  leading-relaxed relative z-10"

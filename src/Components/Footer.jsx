@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -13,9 +13,59 @@ import "aos/dist/aos.css";
 import logo from "../assets/logo.png"; // Import the logo
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const handleSubscribe = async () => {
+    // Basic validation
+    if (!email) {
+      setMessage('Please enter your email address');
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setMessage('Please enter a valid email address');
+      return;
+    }
+
+    setIsLoading(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('http://localhost:8556/subscribe-newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setMessage('Thank you for subscribing! Check your email for the newsletter.');
+        setEmail(''); // Clear the input
+      } else {
+        setMessage(data.error || 'Subscription failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setMessage('Network error. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSubscribe();
+    }
+  };
 
   return (
     <footer className="relative border-t border-gray-200 text-[#0d3557] pt-8 sm:pt-12 lg:pt-16 pb-6 sm:pb-8 lg:pb-10 bg-white overflow-hidden">
@@ -86,15 +136,10 @@ const Footer = () => {
               </div>
               <div className="flex items-start gap-2">
                 <div className="text-xs sm:text-sm text-[#0d3557] leading-relaxed">
-                  <div className="regular">1755 Broadway
-
-                  </div>
+                  <div className="regular">1755 Broadway</div>
                   <div className="regular">FRNT 3 #1165</div>
-                  <div className="regular">New York, NY 10019
-                  </div>
-
+                  <div className="regular">New York, NY 10019</div>
                   <div className="regular">United States</div>
-
                 </div>
               </div>
             </div>
@@ -106,16 +151,35 @@ const Footer = () => {
             <p className="text-xs sm:text-sm mb-3 sm:mb-4 text-[#0d3557]">
               Join our newsletter for updates and offers.
             </p>
-            <div className="flex flex-col sm:flex-row ">
+            <div className="flex flex-col sm:flex-row">
               <input
                 type="email"
                 placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyPress={handleKeyPress}
                 className="flex-1 px-3 py-2 text-xs sm:text-sm regular text-[#0d3557] bg-[#f0f5ff] rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-[#256bff]"
+                disabled={isLoading}
               />
-              <button className="bg-[#256bff] text-white px-3 py-2 text-xs sm:text-sm rounded-md sm:rounded-l-none sm:rounded-r-md hover:bg-[#1e4cd6] transition whitespace-nowrap">
-                Subscribe
+              <button 
+                onClick={handleSubscribe}
+                disabled={isLoading}
+                className={`${
+                  isLoading 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-[#256bff] hover:bg-[#1e4cd6]'
+                } text-white px-3 py-2 text-xs sm:text-sm rounded-md sm:rounded-l-none sm:rounded-r-md transition whitespace-nowrap`}
+              >
+                {isLoading ? 'Subscribing...' : 'Subscribe'}
               </button>
             </div>
+            {message && (
+              <p className={`text-xs mt-2 ${
+                message.includes('Thank you') ? 'text-green-600' : 'text-red-600'
+              }`}>
+                {message}
+              </p>
+            )}
           </div>
         </div>
 

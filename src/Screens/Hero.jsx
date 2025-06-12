@@ -177,7 +177,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              Join World's #1 Trusted, Tech-Powered Offshore AEC Partner for Seamless Project Delivery
+              Join one Of the World's Most Trusted, Tech-Powered Offshore AEC Partner for Seamless Project Delivery
             </motion.p>
             <motion.div
               className="mt-8 flex justify-center lg:justify-start"
